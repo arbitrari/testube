@@ -1,0 +1,9 @@
+<div class="category" *ngFor="let category of categories">
+    <div class="category-title">
+        {{category.title}}
+    </div>
+    <div class="card-list">
+        <app-card *ngFor="let provider of category.providers" [provider]="provider"></app-card>
+    </div>
+</div>
+<div class="overflow-fade"></div>

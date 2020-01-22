@@ -1,0 +1,20 @@
+mat-toolbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+div {
+    font-size: small;
+    opacity: 0.3;
+}
+
+div.creation {
+    position: absolute;
+    right: 16px;
+}
+
+div a {
+    color: silver;
+}

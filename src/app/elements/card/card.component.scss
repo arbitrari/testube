@@ -1,0 +1,23 @@
+mat-card {
+    width: 200px;
+    height: 100px;
+    margin-right : 16px;
+}
+
+mat-card-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img.logo {
+    display: flex;
+    // justify-self: center;
+    max-width: 70%;
+    max-height: 70%;
+    // margin-left: auto;
+    // marginright: a
+    // margin: auto;
+}

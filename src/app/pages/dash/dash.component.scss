@@ -1,0 +1,29 @@
+.category {
+ margin-left: 32px;
+//  margin-right: 32px;
+}
+
+.overflow-fade {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 16px;
+    z-index: 2;
+    background: linear-gradient(to left,#000 10%,transparent);
+}
+
+.category-title {
+    font-size: x-large;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    overflow-x: auto;
+    max-width: 100vw;
+}

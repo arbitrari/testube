@@ -1,7 +1,16 @@
 <mat-toolbar>
- <div class="copy">
-     &copy; {{today | date: 'yyyy'}} arbitrary.
+ <div class="arbitrary-logo">
+     a.
  </div>   
+ <div class="copy">
+     &copy;{{today | date: 'yyyy'}} arbitrary
+ </div>   
+ <div class="nav">
+    |
+    <a mat-button [routerLink]="about">about</a>
+    <a mat-button href="https://github.com/arbitrarydot/testube/issues">report issue</a>
+    <a mat-button>donate</a>
+ </div>
  <div class="creation">
     a creation by <a href="https://jaxonwright.com">Jaxon Wright</a>
 </div>   

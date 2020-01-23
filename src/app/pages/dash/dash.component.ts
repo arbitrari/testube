@@ -28,8 +28,8 @@ export class DashComponent implements OnInit {
           {
             name: 'YouTube',
             url: 'https://youtube.com',
-            color: '#121212',
-            logo: 'https://www.youtube.com/about/static/svgs/icons/brand-resources/YouTube-logo-full_color_dark.svg',
+            color: '#c2c2c2',
+            logo: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg',
             category: CategoryType.Streaming,
           },
           {
@@ -226,7 +226,7 @@ export class DashComponent implements OnInit {
             name: 'YouTube Gaming',
             url: 'https://youtube.com/gaming',
             color: '#121212',
-            logo: 'https://i.ya-webdesign.com/images/youtube-gaming-logo-png-2.png',
+            logo: 'https://cdn2.iconfinder.com/data/icons/gaming-platforms-logo-shapes/250/youtubegaming_logo-512.png',
             category: CategoryType.Gaming,
           },
           {

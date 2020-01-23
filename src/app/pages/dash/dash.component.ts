@@ -236,6 +236,13 @@ export class DashComponent implements OnInit {
             logo: 'https://mixer.com/_latest/assets/images/main/logos/full.svg?86c2f63af5827cea420c9d7dbce30a41dbea3c81',
             category: CategoryType.Gaming,
           },
+          {
+            name: 'DLive',
+            url: 'https://dlive.tv/',
+            color: '#121212',
+            logo: 'https://dlive.tv/img/logo-darkmode.d6dbeb0a.svg',
+            category: CategoryType.Gaming,
+          },
         ]
       },
       {

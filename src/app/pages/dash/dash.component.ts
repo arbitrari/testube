@@ -271,9 +271,9 @@ export class DashComponent implements OnInit {
           },
           {
             name: 'Tesla',
-            url: 'https://tesla.com/',
+            url: 'https://tesla.com/teslaaccount',
             color: '#e12026',
-            logo: 'https://i.dlpng.com/static/png/162499_thumb.png',
+            logo: 'http://pngimg.com/uploads/tesla_logo/tesla_logo_PNG18.png',
             category: CategoryType.Utility,
           },
           {

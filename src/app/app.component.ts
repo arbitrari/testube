@@ -13,7 +13,8 @@ export class AppComponent {
 
     if (document.fullscreen == false) {
       snack.open('Open in Fullscreen?','Yes').onAction().subscribe(()=>{
-        document.documentElement.requestFullscreen();
+        location.href = 'https://youtube.com/redirect?q=https://testube.app';
+        setTimeout(()=> { location.href = 'https://testube.app'}, 500)
       })
     }
   }

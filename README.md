@@ -8,7 +8,7 @@
 
 ## Preview
 <p align="center">
-    <img src="https://i.imgur.com/LIrSWSv.png" width="800" style="border-radius: 28px; border: solid black 32px; box-shadow: -5px 9px 15px -5px rgba(0,0,0,0.4);">
+    <img src="https://i.imgur.com/uUIvKn3.png" width="800">
 </p>
 
 ## Compatibility

@@ -20,7 +20,12 @@ div.nav {
 
 div.creation {
     position: absolute;
-    right: 16px;
+    right: 32px;
+
+    img {
+        height: 25px;
+        filter: grayscale(100%);
+    }
 }
 
 div a {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'testube';
+
+  constructor(snack : MatSnackBar) {
+
+    if (document.fullscreen == false) {
+      snack.open('Open in Fullscreen?','Yes').onAction().subscribe(()=>{
+        document.documentElement.requestFullscreen();
+      })
+    }
+  }
+
 }

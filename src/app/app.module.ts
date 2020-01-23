@@ -8,13 +8,14 @@ import { AboutComponent } from './pages/about/about.component';
 import { ToolbarComponent } from './elements/toolbar/toolbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './elements/footer/footer.component';
+import { LogoComponent } from './elements/logo/logo.component';
+import { CardComponent } from './elements/card/card.component';
+import { DonateComponent } from './pages/donate/donate.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { LogoComponent } from './elements/logo/logo.component';
-import { CardComponent } from './elements/card/card.component';
-import { DonateComponent } from './pages/donate/donate.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { DonateComponent } from './pages/donate/donate.component';
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

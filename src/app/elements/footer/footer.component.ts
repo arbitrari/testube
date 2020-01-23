@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VERSION } from '../../../environments/version';
 
 @Component({
   selector: 'app-footer',
@@ -7,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   today : Date;
+  hash : string;
 
   constructor() { 
     this.today = new Date();
   }
 
   ngOnInit() {
+    this.hash = VERSION.hash;
   }
 
 }

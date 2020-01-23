@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { LogoComponent } from './elements/logo/logo.component';
 import { CardComponent } from './elements/card/card.component';
+import { DonateComponent } from './pages/donate/donate.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CardComponent } from './elements/card/card.component';
     FooterComponent,
     LogoComponent,
     CardComponent,
+    DonateComponent,
   ],
   imports: [
     BrowserModule,

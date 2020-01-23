@@ -259,7 +259,7 @@ export class DashComponent implements OnInit {
             name: 'ABetterRoutePlanner',
             url: 'https://new.abetterrouteplanner.com',
             color: '#2196f3',
-            logo: 'https://abetterrouteplanner.com/icon/abrp_icon.png',
+            logo: 'https://new.abetterrouteplanner.com/abrp_banner.png',
             category: CategoryType.Utility,
           },
           {

@@ -2,6 +2,7 @@
     <img src="https://i.imgur.com/QIF1lqQ.png" width="350">
 </p>
 <p align="center">___</p>
+
 ## About
 <p>This is a web application that allows Tesla drivers to have easy access to a multitude of media services while their vehicle is in park. What makes this special is that it triggers "Theater Mode", which will make the application and anything clicked within it be open on the entire screen.</p>
 

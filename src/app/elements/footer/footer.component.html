@@ -1,22 +1,27 @@
 <mat-toolbar>
- <div class="arbitrary-logo">
-     a.
- </div>   
- <div class="copy">
-     &copy;{{today | date: 'yyyy'}} arbitrary
- </div>   
- <div class="nav">
-    |
+  <mat-toolbar-row *ngIf="device.isMobile()" style="justify-content: center;">
     <a mat-button routerLink="about">about</a>
     <a mat-button href="https://github.com/arbitrarydot/testube/issues">report issue</a>
     <a mat-button routerLink="donate">donate</a>
-    |
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <div class="arbitrary-logo">
+      a.
+    </div>
+    <div class="copy">
+      &copy;{{today | date: 'yyyy'}} arbitrary |
+    </div>
+    <div *ngIf="device.isMobile() == false" class="nav">
+      <a mat-button routerLink="about">about</a>
+      <a mat-button href="https://github.com/arbitrarydot/testube/issues">report issue</a>
+      <a mat-button routerLink="donate">donate</a>
+      |
+    </div>
     <span class="hash">{{hash}}</span>
- </div>
- <div class="creation">
-   <a mat-icon-button href="https://jaxon.dev">
-      <img src="https://jaxonwright.com/assets/img/branding/white.png"> 
-   </a>
-</div>   
+    <div class="creation">
+      <a mat-icon-button href="https://jaxon.dev">
+        <img src="https://jaxonwright.com/assets/img/branding/white.png">
+      </a>
+    </div>
+  </mat-toolbar-row>
 </mat-toolbar>
-

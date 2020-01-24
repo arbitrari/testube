@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:700&display=swap');
 
 
-div {
+div, span {
     font-size: 15px;
     opacity: 0.3;
     font-weight: 400;
@@ -22,7 +22,7 @@ div.creation {
     }
 }
 
-div a {
+a {
     color: silver;
 }
 

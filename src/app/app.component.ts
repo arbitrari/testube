@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +8,20 @@ import { Location } from '@angular/common';
 })
 export class AppComponent {
   title = 'testube';
+  teslaUserAgentRegEx = /Tesla\/([0-9]{4}.[0-9]{2}.[0-9]{2}.[0-9]{1,2})-(.{7})/g;
 
-  constructor(snack : MatSnackBar,
-              loc   : Location) {
-    // console.log(document.referrer);
-    if (document.referrer != 'https://www.youtube.com/') {
-      snack.open(`Open in Fullscreen?\nClick "GO TO SITE" on next page`,'Yes',{panelClass: 'fullscreen-snack'}).onAction().subscribe(()=>{
-        location.href = 'https://youtube.com/redirect?q=https://testube.app';
-        // setTimeout(()=> { location.href = 'https://testube.app'}, 500)
-      })
+
+
+  constructor(snack : MatSnackBar) {
+    if (document.referrer != 'https://www.youtube.com/' &&
+        navigator.userAgent.match(this.teslaUserAgentRegEx)) {
+
+      snack.open(`Open in Fullscreen?\nClick "GO TO SITE" on next page`,'Yes',
+        {panelClass: 'fullscreen-snack'})
+        .onAction()
+        .subscribe(()=>{
+          location.href = 'https://youtube.com/redirect?q=https://testube.app';
+        })
     }
   }
 

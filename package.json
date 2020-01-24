@@ -24,6 +24,7 @@
     "@angular/router": "~8.2.14",
     "git-describe": "^4.0.4",
     "hammerjs": "^2.0.8",
+    "ngx-device-detector": "^1.3.20",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

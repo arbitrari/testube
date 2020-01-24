@@ -92,7 +92,7 @@ export class DashComponent implements OnInit {
             name: 'funimation',
             url: 'https://funimation.com/shows',
             color: '#410099',
-            logo: 'http://ikkicon.com/wp-content/uploads/2017/04/funimation-logo-WHITE.png',
+            logo: 'https://ikkicon.com/wp-content/uploads/2017/04/funimation-logo-WHITE.png',
             category: CategoryType.Streaming,
           },
         ]
@@ -252,14 +252,14 @@ export class DashComponent implements OnInit {
             name: 'Google Maps',
             url: 'https://maps.google.com/',
             color: '#1c9957',
-            logo: 'http://pluspng.com/img-png/google-maps-png-google-maps-icon-1600.png',
+            logo: 'https://pluspng.com/img-png/google-maps-png-google-maps-icon-1600.png',
             category: CategoryType.Utility,
           },
           {
             name: 'Waze',
             url: 'https://waze.com/livemap',
             color: '#47cfee',
-            logo: 'http://pngimg.com/uploads/waze/waze_PNG23.png',
+            logo: 'https://pngimg.com/uploads/waze/waze_PNG23.png',
             category: CategoryType.Utility,
           },
           {
@@ -280,7 +280,7 @@ export class DashComponent implements OnInit {
             name: 'Tesla',
             url: 'https://tesla.com/teslaaccount',
             color: '#e12026',
-            logo: 'http://pngimg.com/uploads/tesla_logo/tesla_logo_PNG18.png',
+            logo: 'https://pngimg.com/uploads/tesla_logo/tesla_logo_PNG18.png',
             category: CategoryType.Utility,
           },
           {

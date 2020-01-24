@@ -58,6 +58,18 @@ html {
   margin-right: 30%;
 }
 
+@media(max-width:1200px) {
+  .container {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+
+.fullscreen-snack {
+  white-space: pre;
+  margin-bottom: 70px !important;
+}
+
 
 /***
  * Scrollbar 

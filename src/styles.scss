@@ -78,26 +78,26 @@ html {
 /* width */
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 8px !important;
+  height: 8px !important;
 }
 
 /* Track */
 
 ::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 8px;
+  background: transparent !important;
+  border-radius: 8px !important;
 }
 
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(149, 149, 149);
-  border-radius: 8px;
+  background: rgb(149, 149, 149) !important;
+  border-radius: 8px !important;
 }
 
 /* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(206, 206, 206);
+  background: rgb(206, 206, 206) !important;
 }

@@ -95,6 +95,20 @@ export class DashComponent implements OnInit {
             logo: 'https://ikkicon.com/wp-content/uploads/2017/04/funimation-logo-WHITE.png',
             category: CategoryType.Streaming,
           },
+          {
+            name: 'Shudder',
+            url: 'https://shudder.com',
+            color: '#121212',
+            logo: 'https://res.cloudinary.com/amc-svod/image/upload/f_auto,w_600/sh/shudder-logo-flat.png',
+            category: CategoryType.Streaming,
+          },
+          {
+            name: 'hotstar',
+            url: 'https://hotstar.com',
+            color: '#c2c2c2',
+            logo: 'https://www.hotstar.com/assets/daa09635ef39c6b849569203dbd67fcf.svg',
+            category: CategoryType.Streaming,
+          },
         ]
       },
       {

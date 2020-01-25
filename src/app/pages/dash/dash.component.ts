@@ -177,7 +177,7 @@ export class DashComponent implements OnInit {
           },
           {
             name: 'Dropbox',
-            url: 'https://drive.google.com/',
+            url: 'https://dropbox.com/',
             color: '#0d2f81',
             logo: 'https://cfl.dropboxstatic.com/static/images/index/rebrand/logos/wordmarks/wordmark_white.svg',
             category: CategoryType.Personal,

@@ -3,5 +3,5 @@
   <main class="content">
     <router-outlet></router-outlet>
   </main>
-  <app-footer></app-footer>
+  <app-footer [ngClass]="isFullscreen ? 'padded-bottom' : ''"></app-footer>
 </div>

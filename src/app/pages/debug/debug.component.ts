@@ -23,7 +23,10 @@ export class DebugComponent implements OnInit {
     this.userAgent = window.navigator.userAgent;
     this.maxZoom = 2.0;
     this.minZoom = 0;
-    this.zoom = 1;
+    if (document.documentElement.getAttribute('style')) {
+      this.zoom = Number(document.documentElement.getAttribute('style').split(': ')[1]);
+    } else
+      this.zoom = 1;
   }
 
   isTesla() : boolean {

@@ -170,6 +170,13 @@ export class DashComponent implements OnInit {
             logo: 'https://pluto.tv/assets/images/logo.svg',
             category: CategoryType.Live,
           },
+          {
+            name: 'locast',
+            url: 'https://locast.org/',
+            color: '#c2c2c2',
+            logo: 'https://locast.org/assets/images/locast-logo.svg',
+            category: CategoryType.Live,
+          },
         ]
       },
       {

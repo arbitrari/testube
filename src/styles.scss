@@ -39,14 +39,14 @@ $black-app-theme: mat-dark-theme($black-app-primary, $black-app-accent, $app-war
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100%;
   margin: 0;
   display: relative;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .app-frame {
-    min-height: calc(100vh);
+    min-height: 100%;
 }
 
 html {

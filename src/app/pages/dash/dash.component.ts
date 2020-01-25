@@ -150,6 +150,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Live,
           },
           {
+            name: 'philo',
+            url: 'https://philo.com',
+            color: '#066fd0',
+            logo: 'https://static-us-east-2-fastly-a.www.philo.com/storage/images/philo-logo-white.png',
+            category: CategoryType.Live,
+          },
+          {
             name: 'tubi',
             url: 'https://tubitv.com/',
             color: '#fa382f',

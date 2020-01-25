@@ -1,0 +1,33 @@
+<div class="container">
+  <button mat-button routerLink="">&lt; Return to Dashboard</button>
+  <h1>Build Info</h1>
+  <mat-form-field appearance="outline" style="width: 215px">
+    <mat-label>Date</mat-label>
+    <input matInput [value]="buildDate" readonly>
+    <mat-hint>Eastern Time</mat-hint>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Hash</mat-label>
+    <input matInput [value]="buildHash" readonly>
+  </mat-form-field>
+  <h1>Device Info</h1>
+  <mat-form-field appearance="outline" style="width: 100%">
+    <mat-label>UserAgent</mat-label>
+    <input matInput [value]="userAgent" readonly>
+  </mat-form-field>
+  <mat-form-field appearance="outline" *ngIf="isTesla()">
+    <mat-label>Tesla Firmware</mat-label>
+    <input matInput [value]="getTeslaFirmware()" readonly>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Viewport Width</mat-label>
+    <input matInput [value]="getViewport(true)" readonly>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Viewport Height</mat-label>
+    <input matInput [value]="getViewport(false)" readonly>
+  </mat-form-field>
+  <h1>Debugging</h1>
+  <p>HTML Zoom</p>
+  <mat-slider thumbLabel tickInterval [min]="minZoom" [max]="maxZoom" step="0.1" [(ngModel)]="zoom" (change)="updateZoom()"></mat-slider>
+</div>

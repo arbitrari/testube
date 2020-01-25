@@ -26,10 +26,12 @@ a {
     color: silver;
 }
 
-span.hash {
+.hash {
     font-size: x-small;
     margin-left: 8px;
     color: darkgrey;
+    text-decoration: none;
+    opacity: 0.3;
 }
 
 div.arbitrary-logo {

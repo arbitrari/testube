@@ -10,7 +10,7 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 export class FooterComponent implements OnInit {
   today : Date;
   hash : string;
-
+  
   constructor(public device : DeviceDetectorService) { 
     this.today = new Date();
   }

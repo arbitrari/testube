@@ -12,11 +12,16 @@ import { FooterComponent } from './elements/footer/footer.component';
 import { LogoComponent } from './elements/logo/logo.component';
 import { CardComponent } from './elements/card/card.component';
 import { DonateComponent } from './pages/donate/donate.component';
+import { DebugComponent } from './pages/debug/debug.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSliderModule} from '@angular/material/slider';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +33,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     LogoComponent,
     CardComponent,
     DonateComponent,
+    DebugComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +43,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatButtonModule,
     MatCardModule,
     MatSnackBarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSliderModule,
+    FormsModule,
     DeviceDetectorModule.forRoot(),
   ],
   providers: [],

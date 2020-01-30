@@ -68,6 +68,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Streaming,
           },
           {
+            name: 'HBO Now',
+            url: 'https://play.hbonow.com',
+            color: '#121212',
+            logo: 'https://play.hbonow.com/assets/images/branding/desktop/hbonow/header_logo.svg',
+            category: CategoryType.Streaming,
+          },
+          {
             name: 'Apple TV+',
             url: 'https://tv.apple.com/',
             color: '#121212',
@@ -135,13 +142,13 @@ export class DashComponent implements OnInit {
             logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/AT%26T_TV_Now.svg',
             category: CategoryType.Live,
           },
-          // {
-          //   name: 'Xfinity Stream',
-          //   url: 'https://xfinity.com/stream',
-          //   color: '#121212',
-          //   logo: 'https://www.xfinity.com/stream/partners/comcast/logo.svg',
-          //   category: CategoryType.Live,
-          // },
+          {
+            name: 'Xfinity Stream',
+            url: 'https://xfinity.com/stream',
+            color: '#121212',
+            logo: 'https://www.xfinity.com/stream/partners/comcast/logo.svg',
+            category: CategoryType.Live,
+          },
           {
             name: 'fubotv',
             url: 'https://fubo.tv',

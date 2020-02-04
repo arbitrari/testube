@@ -89,6 +89,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Streaming,
           },
           {
+            name: 'Curiosity Stream',
+            url: 'https://curiositystream.com/',
+            color: '#161e37',
+            logo: 'https://theme.zdassets.com/theme_assets/662900/1399663ce17aaccbcbe101c65aaedfedaa9e856a.png',
+            category: CategoryType.Streaming,
+          },
+          {
             name: 'Crunchyroll',
             url: 'https://crunchyroll.com/',
             color: '#c2c2c2',

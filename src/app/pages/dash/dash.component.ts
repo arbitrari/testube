@@ -82,6 +82,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Streaming,
           },
           {
+            name: 'Crackle',
+            url: 'https://crackle.com/',
+            color: '#121212',
+            logo: 'https://www.crackle.com/config/avod/images/logo1x.png',
+            category: CategoryType.Streaming,
+          },
+          {
             name: 'Crunchyroll',
             url: 'https://crunchyroll.com/',
             color: '#c2c2c2',

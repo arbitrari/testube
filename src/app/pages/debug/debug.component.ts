@@ -13,7 +13,7 @@ export class DebugComponent implements OnInit {
   zoom : number;
   maxZoom : number;
   minZoom : number;
-  teslaUserAgentRegEx = /Tesla\/([0-9]{4}.[0-9]{2}.[0-9]{2}.[0-9]{1,2})-(.{7})/g;
+  teslaUserAgentRegEx = /Tesla\/([0-9]{4}.[0-9]{1,2}.?[0-9]{0,2}.?[0-9]{0,2})-(.{7})/g;
 
   constructor() { }
 

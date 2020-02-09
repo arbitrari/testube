@@ -30,4 +30,6 @@
   <h1>Debugging</h1>
   <p>HTML Zoom</p>
   <mat-slider thumbLabel tickInterval [min]="minZoom" [max]="maxZoom" step="0.01" [(ngModel)]="zoom" (change)="updateZoom()"></mat-slider>
+  <br>
+  <button mat-stroked-button (click)="enableController()">Enable Controller Support</button>
 </div>

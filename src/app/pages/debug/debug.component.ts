@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { VERSION } from '../../../environments/version';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  VERSION
+} from '../../../environments/version';
 
 @Component({
   selector: 'app-debug',
@@ -7,15 +12,15 @@ import { VERSION } from '../../../environments/version';
   styleUrls: ['./debug.component.scss']
 })
 export class DebugComponent implements OnInit {
-  buildDate : string;
-  buildHash : string;
-  userAgent : string;
-  zoom : number;
-  maxZoom : number;
-  minZoom : number;
+  buildDate: string;
+  buildHash: string;
+  userAgent: string;
+  zoom: number;
+  maxZoom: number;
+  minZoom: number;
   teslaUserAgentRegEx = /Tesla\/([0-9]{4}.[0-9]{1,2}.?[0-9]{0,2}.?[0-9]{0,2})-(.{7})/g;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.buildDate = VERSION.date;
@@ -29,23 +34,41 @@ export class DebugComponent implements OnInit {
       this.zoom = 1;
   }
 
-  isTesla() : boolean {
+  isTesla(): boolean {
     if (this.userAgent.match(this.teslaUserAgentRegEx)) return true;
     return false;
   }
 
-  getTeslaFirmware() : string {
+  getTeslaFirmware(): string {
     console.log(this.userAgent.match(this.teslaUserAgentRegEx))
     return this.userAgent.match(this.teslaUserAgentRegEx)[0].split('/')[1];
   }
 
-  getViewport(width: boolean) : string {
+  getViewport(width: boolean): string {
     if (width) return document.documentElement.clientWidth.toString();
     return document.documentElement.clientHeight.toString();
   }
 
   updateZoom() {
-    document.documentElement.setAttribute('style','zoom: '+ this.zoom)
+    document.documentElement.setAttribute('style', 'zoom: ' + this.zoom)
+  }
+
+
+  enableController() {
+    let gg = window.navigator.getGamepads;
+    window.navigator.getGamepads = function () {
+      let g = gg.apply(window.navigator);
+      if (g[0] !== null) {
+        let g0 = {};
+        for (var property in g[0]) {
+          g0[property] = g[0][property]
+        };
+        g0['mapping'] = "standard";
+        return [g0, null, null, null]
+      };
+      return g;
+    }
+    
   }
 
 }

@@ -293,6 +293,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Gaming,
           },
           {
+            name: 'Caffeine',
+            url: 'https://caffeine.tv/',
+            color: '#28283c',
+            logo: 'https://caffeine.custhelp.com/euf/generated/optimized/1580858487/themes/standard/images/Caffeine-Footer-HexLogo-White.svg',
+            category: CategoryType.Gaming,
+          },
+          {
             name: 'Stadia',
             url: 'https://stadia.google.com/home',
             color: '#c2c2c2',

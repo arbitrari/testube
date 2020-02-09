@@ -292,6 +292,13 @@ export class DashComponent implements OnInit {
             logo: 'https://dlive.tv/img/logo-darkmode.d6dbeb0a.svg',
             category: CategoryType.Gaming,
           },
+          {
+            name: 'Stadia',
+            url: 'https://stadia.google.com/home',
+            color: '#c2c2c2',
+            logo: 'https://ssl.gstatic.com/stadia/gamers/landing_page_icons/stadia_icon_61x40_1.png',
+            category: CategoryType.Gaming,
+          },
         ]
       },
       {

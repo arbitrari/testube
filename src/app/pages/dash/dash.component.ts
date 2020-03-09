@@ -43,7 +43,7 @@ export class DashComponent implements OnInit {
             name: 'Hulu',
             url: 'https://hulu.com',
             color: '#121212',
-            logo: 'https://www.hulu.com/press/wp-content/uploads/2016/10/hulu-interactive-rgb-1-2-800x510.png',
+            logo: 'https://press.hulu.com/wp-content/uploads/2020/02/hulu-green-digital.png',
             category: CategoryType.Streaming,
           },
           // {

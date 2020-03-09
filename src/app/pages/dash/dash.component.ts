@@ -300,6 +300,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Gaming,
           },
           {
+            name: 'Rainway',
+            url: 'https://play.rainway.com',
+            color: '#15121f',
+            logo: 'https://play.rainway.com/extra/rainway-logo.svg',
+            category: CategoryType.Gaming,
+          },
+          {
             name: 'Stadia',
             url: 'https://stadia.google.com/home',
             color: '#c2c2c2',

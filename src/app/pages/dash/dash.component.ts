@@ -127,7 +127,7 @@ export class DashComponent implements OnInit {
             name: 'hotstar',
             url: 'https://hotstar.com',
             color: '#c2c2c2',
-            logo: 'https://www.hotstar.com/assets/daa09635ef39c6b849569203dbd67fcf.svg',
+            logo: 'https://www.hotstar.com/assets/c326c351ba2c65242cd03b18f4ccda8e.svg',
             category: CategoryType.Streaming,
           },
         ]
@@ -296,7 +296,7 @@ export class DashComponent implements OnInit {
             name: 'Caffeine',
             url: 'https://caffeine.tv/',
             color: '#28283c',
-            logo: 'https://caffeine.custhelp.com/euf/generated/optimized/1580858487/themes/standard/images/Caffeine-Footer-HexLogo-White.svg',
+            logo: 'https://caffeine.custhelp.com/euf/generated/optimized/1588715487/themes/standard/images/Caffeine-Footer-HexLogo-White.svg',
             category: CategoryType.Gaming,
           },
           {

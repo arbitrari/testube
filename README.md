@@ -7,7 +7,7 @@
 <p>This is a web application that allows Tesla drivers to have easy access to a multitude of media services while their vehicle is in park. What makes this special is that it triggers "Theater Mode", which will make the application and anything clicked within it be open on the entire screen. Accessing any platforms other than the defaults that Tesla gives you was a chore, but not anymore!</p>
 
 ## Preview
-Below is what the project looks like on a Model 3 when in theater mode.
+Below is what the project looks like on a Model 3 or Model Y when in theater mode.
 <p align="center">
     <img src="https://i.imgur.com/uUIvKn3.png" width="800">
 </p>

@@ -295,8 +295,8 @@ export class DashComponent implements OnInit {
           {
             name: 'Caffeine',
             url: 'https://caffeine.tv/',
-            color: '#28283c',
-            logo: 'https://caffeine.custhelp.com/euf/generated/optimized/1588715487/themes/standard/images/Caffeine-Footer-HexLogo-White.svg',
+            color: '#0000ff',
+            logo: 'https://cdn.apk-cloud.com/detail/screenshot/uIs50DZc_Wun-tXMjGT8TR9HlNM17NyGpzpJ_jKp2LDi2WmfvtQlELjZhyHP_Py0Mw=h900.webp?vr',
             category: CategoryType.Gaming,
           },
           {

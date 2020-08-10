@@ -71,7 +71,14 @@ export class DashComponent implements OnInit {
             name: 'HBO Now',
             url: 'https://play.hbonow.com',
             color: '#121212',
-            logo: 'https://play.hbonow.com/assets/images/branding/desktop/hbonow/header_logo.svg',
+            logo: 'https://www.logolynx.com/images/logolynx/4c/4cbb96f6ec860f96ab3351a9a1612d5a.png',
+            category: CategoryType.Streaming,
+          },
+          {
+            name: 'HBO Max',
+            url: 'https://hbomax.com/',
+            color: '#0d062f',
+            logo: 'https://www.hbomax.com/img/hbo-max-h-w-l.svg',
             category: CategoryType.Streaming,
           },
           {

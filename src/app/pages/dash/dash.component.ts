@@ -64,7 +64,7 @@ export class DashComponent implements OnInit {
             name: 'HBO Go',
             url: 'https://hbogo.com/',
             color: '#121212',
-            logo: 'https://play.hbogo.com/assets/images/branding/desktop/hbogo/header_logo.svg',
+            logo: 'https://logodix.com/logo/470321.png',
             category: CategoryType.Streaming,
           },
           {

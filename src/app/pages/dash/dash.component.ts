@@ -137,6 +137,13 @@ export class DashComponent implements OnInit {
             logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Disney%2B_Hotstar_logo.svg/1920px-Disney%2B_Hotstar_logo.svg.png',
             category: CategoryType.Streaming,
           },
+          {
+            name: 'ESPN Plus',
+            url: 'https://plus.espn.com/',
+            color: '#121212',
+            logo: 'https://espn-cannonball-cdn.bamgrid.com/assets/originals/desktop@3x.png',
+            category: CategoryType.Streaming,
+          },
         ]
       },
       {

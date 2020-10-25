@@ -144,6 +144,13 @@ export class DashComponent implements OnInit {
             logo: 'https://espn-cannonball-cdn.bamgrid.com/assets/originals/desktop@3x.png',
             category: CategoryType.Streaming,
           },
+          {
+            name: 'PBS Kids',
+            url: 'https://pbskids.org/video/livetv',
+            color: '#121212',
+            logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/76/PBS_Kids_Logo.svg/150px-PBS_Kids_Logo.svg.png',
+            category: CategoryType.Streaming,
+          },
         ]
       },
       {

@@ -151,6 +151,13 @@ export class DashComponent implements OnInit {
             logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/76/PBS_Kids_Logo.svg/150px-PBS_Kids_Logo.svg.png',
             category: CategoryType.Streaming,
           },
+          {
+            name: 'Peacock',
+            url: 'https://www.peacocktv.com/watch/home',
+            color: '#c2c2c2',
+            logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/NBCUniversal_Peacock_Logo.svg/250px-NBCUniversal_Peacock_Logo.svg.png',
+            category: CategoryType.Streaming,
+          },
         ]
       },
       {

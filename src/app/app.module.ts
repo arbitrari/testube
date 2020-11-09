@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { DeviceDetectorModule } from 'ngx-device-detector';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -47,7 +46,6 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatSliderModule,
     FormsModule,
-    DeviceDetectorModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

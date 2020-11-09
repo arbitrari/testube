@@ -46,13 +46,13 @@ export class DashComponent implements OnInit {
             logo: 'https://press.hulu.com/wp-content/uploads/2020/02/hulu-green-digital.png',
             category: CategoryType.Streaming,
           },
-          // {
-          //   name: 'Amazon Prime Video',
-          //   url: 'https://www.amazon.com/Amazon-Video/b/?ie=UTF8&node=2858778011',
-          //   color: '#232f3e',
-          //   logo: 'https://images-na.ssl-images-amazon.com/images/G/01/digital/video/acquisition/amazon_video_light._SY32_FMpng_.png',
-          //   category: CategoryType.Streaming,
-          // },
+          {
+            name: 'Amazon Prime Video',
+            url: 'https://www.amazon.com/Amazon-Video/b/?ie=UTF8&node=2858778011',
+            color: '#232f3e',
+            logo: 'https://images-na.ssl-images-amazon.com/images/G/01/digital/video/acquisition/amazon_video_light._SY32_FMpng_.png',
+            category: CategoryType.Streaming,
+          },
           {
             name: 'Disney+',
             url: 'https://disneyplus.com/',
@@ -86,6 +86,13 @@ export class DashComponent implements OnInit {
             url: 'https://tv.apple.com/',
             color: '#121212',
             logo: 'https://tv.apple.com/assets/brands/Apple_TV_Plus_logo_white-fa7126f2bf5269837b484153a88493f8.png',
+            category: CategoryType.Streaming,
+          },
+          {
+            name: 'Peacock',
+            url: 'https://www.peacocktv.com/watch/home',
+            color: '#c2c2c2',
+            logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/NBCUniversal_Peacock_Logo.svg/250px-NBCUniversal_Peacock_Logo.svg.png',
             category: CategoryType.Streaming,
           },
           {
@@ -150,14 +157,7 @@ export class DashComponent implements OnInit {
             color: '#121212',
             logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/76/PBS_Kids_Logo.svg/150px-PBS_Kids_Logo.svg.png',
             category: CategoryType.Streaming,
-          },
-          {
-            name: 'Peacock',
-            url: 'https://www.peacocktv.com/watch/home',
-            color: '#c2c2c2',
-            logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/NBCUniversal_Peacock_Logo.svg/250px-NBCUniversal_Peacock_Logo.svg.png',
-            category: CategoryType.Streaming,
-          },
+          }
         ]
       },
       {
@@ -339,6 +339,13 @@ export class DashComponent implements OnInit {
             url: 'https://stadia.google.com/home',
             color: '#c2c2c2',
             logo: 'https://ssl.gstatic.com/stadia/gamers/landing_page_icons/stadia_icon_61x40_1.png',
+            category: CategoryType.Gaming,
+          },
+          {
+            name: 'Amazon Luna',
+            url: 'https://www.amazon.com/luna/',
+            color: '#3c007d',
+            logo: 'https://m.media-amazon.com/images/G/01/T/TC05316420/A07531864/brand/luna-logo.png',
             category: CategoryType.Gaming,
           },
         ]

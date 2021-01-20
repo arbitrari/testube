@@ -20,6 +20,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -46,6 +47,7 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatSliderModule,
     FormsModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

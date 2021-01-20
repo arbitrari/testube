@@ -19,4 +19,7 @@ export class FooterComponent implements OnInit {
     this.hash = VERSION.hash;
   }
 
+  getReferrer() {
+    return document.referrer;
+  }
 }

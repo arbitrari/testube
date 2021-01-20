@@ -23,7 +23,7 @@ export class AppComponent {
         {panelClass: 'fullscreen-snack'})
         .onAction()
         .subscribe(()=>{
-          location.href = 'https://youtube.com/redirect?q=https://testube.app';
+          location.href = 'https://www.youtube.com/redirect?q=https://testube.app';
         })
     } else if (navigator.userAgent.match(this.teslaUserAgentRegEx)) {
       this.isFullscreen = true;

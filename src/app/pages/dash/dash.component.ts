@@ -223,7 +223,7 @@ export class DashComponent implements OnInit {
             name: 'locast',
             url: 'https://locast.org/',
             color: '#c2c2c2',
-            logo: 'https://locast.org/assets/images/locast-logo.svg',
+            logo: 'https://www.locast.org/static/media/locast-logo.85557c57.svg',
             category: CategoryType.Live,
           },
         ]

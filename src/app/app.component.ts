@@ -16,7 +16,7 @@ export class AppComponent {
   constructor(snack : MatSnackBar) {
     this.isFullscreen = false;
 
-    if (document.referrer != 'https://www.youtube.com/' &&
+    if (document.referrer.startsWith('https://www.youtube.com/') == false &&
         navigator.userAgent.match(this.teslaUserAgentRegEx)) {
 
       snack.open(`Open in Fullscreen?\nClick "GO TO SITE" on next page`,'Yes',

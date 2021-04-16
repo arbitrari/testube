@@ -145,13 +145,6 @@ export class DashComponent implements OnInit {
             category: CategoryType.Streaming,
           },
           {
-            name: 'ESPN Plus',
-            url: 'https://plus.espn.com/',
-            color: '#121212',
-            logo: 'https://espn-cannonball-cdn.bamgrid.com/assets/originals/desktop@3x.png',
-            category: CategoryType.Streaming,
-          },
-          {
             name: 'PBS Kids',
             url: 'https://pbskids.org/video/livetv',
             color: '#121212',
@@ -229,6 +222,39 @@ export class DashComponent implements OnInit {
         ]
       },
       {
+        title: 'Sports',
+        providers : [
+          {
+            name: 'ESPN',
+            url: 'https://www.espn.com/watch/',
+            color: '#d00',
+            logo: 'https://secure.espncdn.com/redesign/assets/img/logos/logo-espn-82x20.png',
+            category: CategoryType.Sports,
+          },
+          {
+            name: 'FOX Sports',
+            url: 'https://www.foxsports.com/live',
+            color: '#c2c2c2',
+            logo: 'https://statics.foxsports.com/static/orion/style/images/icons/fox-logos/fox-logo-black.svg',
+            category: CategoryType.Sports,
+          },
+          {
+            name: 'MLBtv',
+            url: 'https://www.mlb.com/tv',
+            color: '#041e42',
+            logo: 'https://images.ctfassets.net/iiozhi00a8lc/78yBC9oWuP1VldT6aJT1sL/8cc2b4b9d9ab83e6a90ee48476b66074/MLBTV_19_ondark_RGB.svg',
+            category: CategoryType.Sports,
+          },
+          {
+            name: 'DAZN',
+            url: 'https://www.dazn.com/',
+            color: '#0c161c',
+            logo: 'https://www.dazn.com/favicon.svg',
+            category: CategoryType.Sports,
+          },
+        ]
+      },
+      {
         title: 'Personal Media',
         providers : [
           {
@@ -277,7 +303,7 @@ export class DashComponent implements OnInit {
             name: 'Box',
             url: 'https://box.com',
             color: '#0061d5',
-            logo: 'https://www.okta.com/sites/default/files/styles/product_logo_set/public/Box_logo_resized_white.png?itok=zGGmEzHE',
+            logo: 'https://www.gainsight.com/wp-content/uploads/2015/09/box-logo.png',
             category: CategoryType.Personal,
           },
           {
@@ -317,7 +343,7 @@ export class DashComponent implements OnInit {
             name: 'DLive',
             url: 'https://dlive.tv/',
             color: '#121212',
-            logo: 'https://dlive.tv/img/logo-darkmode.d6dbeb0a.svg',
+            logo: 'https://dlive.tv/img/logo-darkmode.50133ca0.svg',
             category: CategoryType.Gaming,
           },
           {

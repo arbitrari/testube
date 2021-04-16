@@ -171,10 +171,10 @@ export class DashComponent implements OnInit {
             category: CategoryType.Live,
           },
           {
-            name: 'AT&T TV Now',
-            url: 'https://www.atttvnow.com/',
+            name: 'AT&T TV',
+            url: 'https://www.att.tv/watchnow',
             color: '#c2c2c2',
-            logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/AT%26T_TV_Now.svg',
+            logo: 'https://hd-report.com/wp-content/uploads/2020/08/att-tv-logo-1280px.png',
             category: CategoryType.Live,
           },
           {

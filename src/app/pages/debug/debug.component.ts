@@ -23,7 +23,7 @@ export class DebugComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.buildDate = VERSION.date;
+    this.buildDate = new Date(VERSION.date).toLocaleString('en-US',{ year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });;
     this.buildHash = VERSION.hash;
     this.userAgent = window.navigator.userAgent;
     this.maxZoom = 2.0;

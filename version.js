@@ -9,8 +9,7 @@ const gitInfo = gitDescribeSync({
 });
 
 gitInfo.version = version;
-var options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
-gitInfo.date = new Date().toLocaleString("en-US", options);
+gitInfo.date = new Date();
 
 const file = resolve(__dirname, 'src', 'environments', 'version.ts');
 writeFileSync(file,

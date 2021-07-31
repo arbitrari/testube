@@ -61,10 +61,10 @@ export class DashComponent implements OnInit {
             category: CategoryType.Streaming,
           },
           {
-            name: 'HBO Go',
-            url: 'https://hbogo.com/',
-            color: '#121212',
-            logo: 'https://logodix.com/logo/470321.png',
+            name: 'HBO Max',
+            url: 'https://hbomax.com/',
+            color: '#0d062f',
+            logo: 'https://www.hbomax.com/img/hbo-max-h-w-l.svg',
             category: CategoryType.Streaming,
           },
           {
@@ -72,13 +72,6 @@ export class DashComponent implements OnInit {
             url: 'https://play.hbonow.com',
             color: '#121212',
             logo: 'https://www.logolynx.com/images/logolynx/4c/4cbb96f6ec860f96ab3351a9a1612d5a.png',
-            category: CategoryType.Streaming,
-          },
-          {
-            name: 'HBO Max',
-            url: 'https://hbomax.com/',
-            color: '#0d062f',
-            logo: 'https://www.hbomax.com/img/hbo-max-h-w-l.svg',
             category: CategoryType.Streaming,
           },
           {

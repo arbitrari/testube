@@ -40,6 +40,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Streaming,
           },
           {
+            name: 'Disney+',
+            url: 'https://disneyplus.com/',
+            color: '#040814',
+            logo: 'https://www.logo.wine/a/logo/Disney%2B/Disney%2B-White-Logo.wine.svg',
+            category: CategoryType.Streaming,
+          },
+          {
             name: 'Hulu',
             url: 'https://hulu.com',
             color: '#121212',
@@ -51,13 +58,6 @@ export class DashComponent implements OnInit {
             url: 'https://www.amazon.com/Amazon-Video/b/?ie=UTF8&node=2858778011',
             color: '#232f3e',
             logo: 'https://images-na.ssl-images-amazon.com/images/G/01/digital/video/acquisition/amazon_video_light._SY32_FMpng_.png',
-            category: CategoryType.Streaming,
-          },
-          {
-            name: 'Disney+',
-            url: 'https://disneyplus.com/',
-            color: '#040814',
-            logo: 'https://www.logo.wine/a/logo/Disney%2B/Disney%2B-White-Logo.wine.svg',
             category: CategoryType.Streaming,
           },
           {
@@ -132,7 +132,7 @@ export class DashComponent implements OnInit {
           },
           {
             name: 'Shudder',
-            url: 'https://shudder.com',
+            url: 'https://www.shudder.com',
             color: '#121212',
             logo: 'https://res.cloudinary.com/amc-svod/image/upload/f_auto,w_600/sh/shudder-logo-flat.png',
             category: CategoryType.Streaming,

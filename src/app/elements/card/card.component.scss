@@ -20,4 +20,9 @@ img.logo {
     // margin-left: auto;
     // marginright: a
     // margin: auto;
+
+    &.logo-wine {
+        max-height: 100%;
+        max-width: 100%;
+    }
 }

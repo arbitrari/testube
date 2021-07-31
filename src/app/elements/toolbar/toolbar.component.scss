@@ -5,3 +5,67 @@ app-logo {
 mat-toolbar {
     justify-content: center;
 }
+
+button.mat-button {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+}
+
+.new-curl {
+    position: absolute;
+    left: 162px;
+    top: 15px;
+    background: #1090ff;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.new-curl::before {
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: -19px;
+    top: 7px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid #1090ff;
+}
+
+::ng-deep .url-bar {
+    position: absolute !important;
+    left: 32px;
+    top: 16px;
+    // font-size: 12px;
+    width: 30%;
+
+    input {
+        margin-bottom: 8px;
+    }
+
+    .mat-form-field-flex {
+        padding: 0 0.75em !important;
+    }
+
+     .mat-form-field-infix {
+          padding:0;
+          border-top: 0;
+     }
+     
+     //change top and padding-top as per required
+     .mat-form-field-label-wrapper {
+         top: -0.84375em;
+         padding-top: 0.84375em;
+     }
+
+     mat-icon {
+         cursor: pointer;
+         height: 25px;
+         width: 25px;
+         font-size: 25px !important;
+         margin: 8px 0;
+     }
+}

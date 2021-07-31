@@ -21,6 +21,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -48,6 +49,7 @@ import { FormsModule } from '@angular/forms';
     MatSliderModule,
     FormsModule,
     MatTooltipModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

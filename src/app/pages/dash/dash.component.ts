@@ -336,7 +336,7 @@ export class DashComponent implements OnInit {
             name: 'Facebook Gaming',
             url: 'https://fb.gg',
             color: '#005fec',
-            logo: 'https://logodownload.org/wp-content/uploads/2019/07/facebook-gaming-0.png',
+            logo: 'https://static.xx.fbcdn.net/rsrc.php/yV/r/cE21p7BN2IP.svg',
             category: CategoryType.Gaming,
           },
           {

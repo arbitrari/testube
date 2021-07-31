@@ -390,7 +390,7 @@ export class DashComponent implements OnInit {
             name: 'Waze',
             url: 'https://waze.com/livemap',
             color: '#47cfee',
-            logo: 'https://pngimg.com/uploads/waze/waze_PNG23.png',
+            logo: 'https://upload.wikimedia.org/wikipedia/fr/thumb/d/d0/Waze-logo-2020.svg/800px-Waze-logo-2020.svg.png',
             category: CategoryType.Utility,
           },
           {

@@ -52,23 +52,4 @@ export class DebugComponent implements OnInit {
   updateZoom() {
     document.documentElement.setAttribute('style', 'zoom: ' + this.zoom)
   }
-
-
-  enableController() {
-    let gg = window.navigator.getGamepads;
-    window.navigator.getGamepads = function () {
-      let g = gg.apply(window.navigator);
-      if (g[0] !== null) {
-        let g0 = {};
-        for (var property in g[0]) {
-          g0[property] = g[0][property]
-        };
-        g0['mapping'] = "standard";
-        return [g0, null, null, null]
-      };
-      return g;
-    }
-    
-  }
-
 }

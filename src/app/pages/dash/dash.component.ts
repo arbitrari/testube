@@ -326,13 +326,6 @@ export class DashComponent implements OnInit {
             category: CategoryType.Gaming,
           },
           {
-            name: 'YouTube Gaming',
-            url: 'https://youtube.com/gaming',
-            color: '#121212',
-            logo: 'https://cdn2.iconfinder.com/data/icons/gaming-platforms-logo-shapes/250/youtubegaming_logo-512.png',
-            category: CategoryType.Gaming,
-          },
-          {
             name: 'Facebook Gaming',
             url: 'https://fb.gg',
             color: '#005fec',

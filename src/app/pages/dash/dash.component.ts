@@ -340,6 +340,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Gaming,
           },
           {
+            name: 'Xbox',
+            url: 'https://www.xbox.com/play',
+            color: '#107c10',
+            logo: 'https://cdn.freebiesupply.com/logos/large/2x/xbox-9-logo-black-and-white.png',
+            category: CategoryType.Gaming,
+          },
+          {
             name: 'Stadia',
             url: 'https://stadia.google.com/home',
             color: '#121212',

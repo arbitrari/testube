@@ -165,9 +165,9 @@ export class DashComponent implements OnInit {
           },
           {
             name: 'AT&T TV',
-            url: 'https://www.att.tv/watchnow',
+            url: 'https://stream.directv.com',
             color: '#c2c2c2',
-            logo: 'https://hd-report.com/wp-content/uploads/2020/08/att-tv-logo-1280px.png',
+            logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/DIRECTV_STREAM_2021_logo.svg/220px-DIRECTV_STREAM_2021_logo.svg.png',
             category: CategoryType.Live,
           },
           {

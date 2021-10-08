@@ -134,7 +134,7 @@ export class DashComponent implements OnInit {
             name: 'hotstar',
             url: 'https://hotstar.com',
             color: '#c2c2c2',
-            logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Disney%2B_Hotstar_logo.svg/1920px-Disney%2B_Hotstar_logo.svg.png',
+            logo: 'https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/hotstar-logo.svg',
             category: CategoryType.Streaming,
           },
           {

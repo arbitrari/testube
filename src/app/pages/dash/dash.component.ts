@@ -374,6 +374,13 @@ export class DashComponent implements OnInit {
             logo: 'https://m.media-amazon.com/images/G/01/T/TC05316420/A07531864/brand/luna-logo.png',
             category: CategoryType.Gaming,
           },
+          {
+            name: 'DOOM Shareware',
+            url: 'https://uacorp.space',
+            color: '#121212',
+            logo: 'https://static.wikia.nocookie.net/logopedia/images/0/09/Doom_1.gif',
+            category: CategoryType.Gaming,
+          },
         ]
       },
       {

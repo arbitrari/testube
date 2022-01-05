@@ -1,6 +1,6 @@
 <mat-toolbar>
   <mat-toolbar-row *ngIf="device.isMobile()" style="justify-content: center;">
-    <a mat-button routerLink="about">about</a>
+    <a mat-icon-button routerLink="about">about</a>
     <a mat-button href="https://github.com/arbitrarydot/testube/issues">report issue</a>
     <a mat-button routerLink="donate">donate</a>
   </mat-toolbar-row>
@@ -18,7 +18,6 @@
       <a mat-button routerLink="about">about</a>
       <a mat-button href="https://github.com/arbitrarydot/testube/issues">report issue</a>
       <a mat-button routerLink="donate">donate</a>
-      |
     </div>
     <a class="hash" routerLink="debug">{{hash}}</a>
     <div class="creation">

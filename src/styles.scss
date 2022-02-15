@@ -5,7 +5,10 @@
 @include mat.core();
 
 $mat-black: (50: #000000,
-  contrast: (50: white));
+            100: #000000,
+            500: #000000,
+            700: #000000,
+  contrast: (50: white, 100: white, 500: white, 700: white));
 
 $app-warn: mat.define-palette(mat.$red-palette);
 

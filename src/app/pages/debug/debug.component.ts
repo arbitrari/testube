@@ -18,7 +18,7 @@ export class DebugComponent implements OnInit {
   zoom: number;
   maxZoom: number;
   minZoom: number;
-  teslaUserAgentRegEx = /Tesla\/([0-9]{4}.[0-9]{1,2}.?[0-9]{0,2}.?[0-9]{0,2})-(.*)/g;
+  teslaUserAgentRegEx = /Tesla\/(?:develop-)*([0-9]{4}.[0-9]{1,2}.?[0-9]{0,2}.?[0-9]{0,2})-(.*)/g;
 
   constructor() {}
 
@@ -41,7 +41,7 @@ export class DebugComponent implements OnInit {
 
   getTeslaFirmware(): string {
     console.log(this.userAgent.match(this.teslaUserAgentRegEx))
-    return this.userAgent.match(this.teslaUserAgentRegEx)[0].split('/')[1];
+    return this.teslaUserAgentRegEx.exec(this.userAgent)[1];
   }
 
   getViewport(width: boolean): string {

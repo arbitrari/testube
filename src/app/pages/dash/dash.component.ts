@@ -117,13 +117,6 @@ export class DashComponent implements OnInit {
             category: CategoryType.Streaming,
           },
           {
-            name: 'funimation',
-            url: 'https://funimation.com/shows',
-            color: '#410099',
-            logo: 'https://ikkicon.com/wp-content/uploads/2017/04/funimation-logo-WHITE.png',
-            category: CategoryType.Streaming,
-          },
-          {
             name: 'Shudder',
             url: 'https://www.shudder.com',
             color: '#121212',

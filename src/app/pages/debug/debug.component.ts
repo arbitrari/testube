@@ -18,7 +18,7 @@ export class DebugComponent implements OnInit {
   zoom: number;
   maxZoom: number;
   minZoom: number;
-  teslaUserAgentRegEx = /Tesla\/(?:develop-)*([0-9]{4}.[0-9]{1,2}.?[0-9]{0,2}.?[0-9]{0,2})-(.*)/g;
+  teslaUserAgentRegEx = /Tesla\/(?:develop-)*(?:.*fsd.*)*([0-9]{4}.[0-9]{1,2}.?[0-9]{0,2}.?[0-9]{0,2})*-(.*)/g;
 
   constructor() {}
 
@@ -32,6 +32,7 @@ export class DebugComponent implements OnInit {
       this.zoom = Number(document.documentElement.getAttribute('style').split(': ')[1]);
     } else
       this.zoom = 1;
+    console.log(this.isTesla(), this.userAgent, this.userAgent.match(this.teslaUserAgentRegEx))
   }
 
   isTesla(): boolean {
@@ -41,7 +42,8 @@ export class DebugComponent implements OnInit {
 
   getTeslaFirmware(): string {
     console.log(this.userAgent.match(this.teslaUserAgentRegEx))
-    return this.teslaUserAgentRegEx.exec(this.userAgent)[1];
+    if (this.userAgent.includes('fsd-eap')) return 'FSD Beta';
+    return this.teslaUserAgentRegEx.exec(this.userAgent)[1] ? this.teslaUserAgentRegEx.exec(this.userAgent)[1] : 'Unknown';
   }
 
   getViewport(width: boolean): string {

@@ -5,7 +5,7 @@ import {
 import {
   VERSION
 } from '../../../environments/version';
-
+import {Clipboard} from '@angular/cdk/clipboard';
 @Component({
   selector: 'app-debug',
   templateUrl: './debug.component.html',
@@ -20,7 +20,9 @@ export class DebugComponent implements OnInit {
   minZoom: number;
   teslaUserAgentRegEx = /Tesla\/(?:develop-)*(?:.*fsd.*)*([0-9]{4}.[0-9]{1,2}.?[0-9]{0,2}.?[0-9]{0,2})*-(.*)/g;
 
-  constructor() {}
+  constructor(
+    private clipboard: Clipboard
+  ) {}
 
   ngOnInit() {
     this.buildDate = new Date(VERSION.date).toLocaleString('en-US',{ year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });;
@@ -53,5 +55,9 @@ export class DebugComponent implements OnInit {
 
   updateZoom() {
     document.documentElement.setAttribute('style', 'zoom: ' + this.zoom)
+  }
+
+  copyUserAgent() {
+    this.clipboard.copy(this.userAgent);
   }
 }

@@ -13,6 +13,7 @@
   <mat-form-field appearance="outline" style="width: 100%">
     <mat-label>UserAgent</mat-label>
     <input matInput [value]="userAgent" readonly>
+    <button mat-icon-button matSuffix (click)="copyUserAgent()"><mat-icon>content_copy</mat-icon></button>
   </mat-form-field>
   <mat-form-field appearance="outline" *ngIf="isTesla()">
     <mat-label>Tesla Firmware</mat-label>

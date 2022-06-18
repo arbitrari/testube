@@ -15,14 +15,6 @@ export class ToolbarComponent implements OnInit {
     this.url = 'https://'
   }
 
-  closeNewCurl() {
-    localStorage.setItem('curlNewSeen','true');
-  }
-
-  curlNotSeen() : boolean {
-    return localStorage.getItem('curlNewSeen') == null;
-  }
-
   navigate() {
     window.open(this.url);
   }

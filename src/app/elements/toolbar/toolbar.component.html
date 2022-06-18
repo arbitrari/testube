@@ -1,5 +1,5 @@
 <mat-toolbar>
-    <button mat-button *ngIf="!urlBarOpen" (click)="urlBarOpen = true; closeNewCurl();">
+    <button mat-button *ngIf="!urlBarOpen" (click)="urlBarOpen = true">
         <mat-icon>link</mat-icon>
         Custom URL
     </button>
@@ -7,11 +7,5 @@
         <input matInput autofocus [(ngModel)]="url">
         <mat-icon matSuffix (click)="navigate()">login</mat-icon>
     </mat-form-field>
-    <div class="new-curl" *ngIf="curlNotSeen()">
-        You can now navigate to a custom URL!
-        <button mat-icon-button (click)="closeNewCurl()">
-            <mat-icon>close</mat-icon>
-        </button>
-    </div>
     <app-logo></app-logo>
 </mat-toolbar>

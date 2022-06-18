@@ -89,6 +89,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Streaming,
           },
           {
+            name: 'Paramount+',
+            url: 'https://www.paramountplus.com/',
+            color: '#0036c4',
+            logo: 'https://wwwimage-us.pplusstatic.com/base/files/cbs_page_attribute/pplus_logo_white.svg',
+            category: CategoryType.Streaming,
+          },
+          {
             name: 'Crackle',
             url: 'https://crackle.com/',
             color: '#121212',

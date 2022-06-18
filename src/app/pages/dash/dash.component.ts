@@ -423,7 +423,7 @@ export class DashComponent implements OnInit {
           },
           {
             name: 'Dark Sky',
-            url: 'https://maps.darksky.net/',
+            url: 'https://maps.darksky.net/@radar',
             color: '#121212',
             logo: 'https://darksky.net/images/darkskylogo.png',
             category: CategoryType.Utility,

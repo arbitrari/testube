@@ -303,7 +303,7 @@ export class DashComponent implements OnInit {
             name: 'Google Photos',
             url: 'https://photos.google.com/',
             color: '#c2c2c2',
-            logo: 'https://cdn.worldvectorlogo.com/logos/google-photos.svg',
+            logo: 'https://www.google.com/photos/static/2020/images/index/logo_photos_192px.svg',
             category: CategoryType.Personal,
           },
         ]

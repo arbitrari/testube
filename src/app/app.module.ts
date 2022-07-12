@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, ErrorHandler, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +23,9 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+
+import * as Sentry from "@sentry/angular";
+import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,25 @@ import { FormsModule } from '@angular/forms';
     MatTooltipModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: ErrorHandler,
+      useValue: Sentry.createErrorHandler({
+        showDialog: false,
+        logErrors: true,
+      }),
+    },
+    {
+      provide: Sentry.TraceService,
+      deps: [Router],
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: () => () => {},
+      deps: [Sentry.TraceService],
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -24,6 +24,8 @@
     "@angular/platform-browser": "^14.0.2",
     "@angular/platform-browser-dynamic": "^14.0.2",
     "@angular/router": "^14.0.2",
+    "@sentry/angular": "^7.6.0",
+    "@sentry/tracing": "^7.6.0",
     "git-describe": "^4.1.1",
     "ngx-device-detector": "^3.0.0",
     "rxjs": "~7.5.5",

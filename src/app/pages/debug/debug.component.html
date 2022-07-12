@@ -13,8 +13,8 @@
   <mat-form-field appearance="outline" style="width: 100%">
     <mat-label>UserAgent</mat-label>
     <input matInput [value]="userAgent" readonly>
-    <button mat-icon-button matSuffix (click)="copyUserAgent()"><mat-icon>content_copy</mat-icon></button>
   </mat-form-field>
+  <button mat-stroked-button *ngIf="!isTesla()" style="display: block; margin-bottom: 16px" (click)="reportDetectionIssue()">Report Tesla Detection Issue</button>
   <mat-form-field appearance="outline" *ngIf="isTesla()">
     <mat-label>Tesla Firmware</mat-label>
     <input matInput [value]="getTeslaFirmware()" readonly>

@@ -18,7 +18,7 @@ export class DebugComponent implements OnInit {
   zoom: number;
   maxZoom: number;
   minZoom: number;
-  teslaUserAgentRegEx = /Tesla\/(?:develop-)*(?:.*fsd.*)*([0-9]{4}.[0-9]{1,3}.?[0-9]{0,3}.?[0-9]{0,3}.?[0-9]{0,3})*-(.*)/g;
+  teslaUserAgentRegEx = /Tesla\/(?:develop-)*(?:feature-)*(?:.*fsd.*)*([0-9]{4}.[0-9]{1,3}.?[0-9]{0,3}.?[0-9]{0,3}.?[0-9]{0,3})*-(.*)/g;
 
   constructor(
     private clipboard: Clipboard

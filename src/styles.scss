@@ -71,7 +71,12 @@ html {
 
 .fullscreen-snack {
   white-space: pre;
-  margin-bottom: 70px !important;
+  position: absolute;
+  width: 344px;
+  margin: auto !important;
+  right: 0;
+  left: 0;
+  bottom: 57px;
 }
 
 

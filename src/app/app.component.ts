@@ -15,7 +15,6 @@ export class AppComponent {
 
   constructor(snack: MatSnackBar) {
     this.isFullscreen = false;
-    console.log('POOP', document.referrer);
     if (document.referrer.startsWith('https://www.youtube.com/') == false &&
         navigator.userAgent.match(this.teslaUserAgentRegEx)) {
 

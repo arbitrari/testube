@@ -32,7 +32,7 @@ export class DebugComponent implements OnInit {
       this.zoom = Number(document.documentElement.getAttribute('style').split(': ')[1]);
     } else
       this.zoom = 1;
-    console.log(this.isTesla(), this.userAgent, this.userAgent.match(this.teslaUserAgentRegEx))
+    // console.log(this.isTesla(), this.userAgent, this.userAgent.match(this.teslaUserAgentRegEx));
   }
 
   isTesla(): boolean {

@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AppComponent {
   title = 'testube';
-  teslaUserAgentRegEx = /Tesla\/(?:develop-)*(?:feature-)*(?:.*fsd.*)*([0-9]{4}.[0-9]{1,3}.?[0-9]{0,3}.?[0-9]{0,3}.?[0-9]{0,3})*-(.*)/g;
+  teslaUserAgentRegEx = /Tesla\/(?:develop-)*(?:feature-)*(?:.*fsd.*)*(?:factory-)*([0-9]{4}.[0-9]{1,3}.?[0-9]{0,3}.?[0-9]{0,3}.?[0-9]{0,3})*-(.*)/g;
   isFullscreen: boolean;
   theaterZoomLevel: number = 0.64; // make size 64% of original size to account for ViewPort oddness in Tesla Theater Mode.
 

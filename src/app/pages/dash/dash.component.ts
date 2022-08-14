@@ -232,6 +232,20 @@ export class DashComponent implements OnInit {
             category: CategoryType.Sports,
           },
           {
+            name: 'NFL Sunday Ticket',
+            url: 'https://www.nflsundayticket.tv',
+            color: '#121212',
+            logo: 'https://cdn.directv.com/content/dam/dtv/NFLST_OTT/2017/images/nflst_logo.png',
+            category: CategoryType.Sports,
+          },
+          {
+            name: 'NFL+',
+            url: 'https://www.nfl.com/plus/',
+            color: '#121212',
+            logo: 'https://static.www.nfl.com/league/apps/shared/svg/PrimaryDark.svg',
+            category: CategoryType.Sports,
+          },
+          {
             name: 'MLBtv',
             url: 'https://www.mlb.com/tv',
             color: '#041e42',

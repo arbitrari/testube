@@ -239,6 +239,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Sports,
           },
           {
+            name: 'NBA League Pass',
+            url: 'https://www.nba.com/watch/league-pass',
+            color: '#143b75',
+            logo: 'https://watch.att.com/atttv/nba-league-pass/sites/g/files/jueztd761/files/inline-images/NBA_League_Pass_horiz_onDkBkgd_0.png',
+            category: CategoryType.Sports,
+          },
+          {
             name: 'DAZN',
             url: 'https://www.dazn.com/',
             color: '#0c161c',

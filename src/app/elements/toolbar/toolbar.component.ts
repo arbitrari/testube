@@ -16,7 +16,8 @@ export class ToolbarComponent implements OnInit {
   }
 
   navigate() {
-    window.open(this.url);
+    if (this.url != 'https://')
+      window.open(this.url);
   }
 
 }

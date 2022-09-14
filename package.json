@@ -5,7 +5,6 @@
     "ng": "ng",
     "start": "node version.js && ng serve",
     "build": "node version.js && ng build --configuration production --build-optimizer --output-hashing=all",
-    "publish": "npm run build && ngh --repo=https://GH_TOKEN@github.com/arbitrarydot/testube.git --name=\"JaxonWright\" --email=jaxonhwright@gmail.com --no-silent",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

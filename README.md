@@ -37,7 +37,7 @@ For the betterment of the community, we would prefer you contribute directly to 
 <p align="center">
     <img src="https://avatars3.githubusercontent.com/u/39174758?s=400&u=9a2d33f5f3fbdde99fe5de2f5f127063282127cb&v=4" height="100" style="border-radius: 16px"><br>
     an&nbsp;&nbsp;<picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://ar.bitrary.dev/assets/arbitrary-light.png">
+        <source media="(prefers-color-scheme: dark)" srcset="https://ar.bitrary.dev/assets/arbitrary-white.png">
         <source media="(prefers-color-scheme: light)" srcset="https://ar.bitrary.dev/assets/arbitrary-dark.png">
         <img src="https://ar.bitrary.dev/assets/arbitrary-dark.png" height="18px">
     </picture>&nbsp;&nbsp;product

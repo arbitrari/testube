@@ -10,7 +10,6 @@ export class AppComponent {
   title = 'testube';
   teslaUserAgentRegEx = /Tesla\/(?:develop-)*(?:feature-)*(?:.*fsd.*)*(?:factory-)*([0-9]{4}.[0-9]{1,3}.?[0-9]{0,3}.?[0-9]{0,3}.?[0-9]{0,3})*-(.*)/g;
   isFullscreen: boolean;
-  theaterZoomLevel: number = 0.64; // make size 64% of original size to account for ViewPort oddness in Tesla Theater Mode.
 
 
   constructor(snack: MatSnackBar) {
@@ -26,8 +25,6 @@ export class AppComponent {
         })
     } else if (navigator.userAgent.match(this.teslaUserAgentRegEx)) {
       this.isFullscreen = true;
-      if (navigator.userAgent.includes('fsd-eap')) // zoom adjustment now only needs to be done on FSD builds
-        document.documentElement.setAttribute('style','zoom: '+ this.theaterZoomLevel);
     }
   }
 

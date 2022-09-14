@@ -51,10 +51,6 @@ export class DebugComponent implements OnInit {
     return document.documentElement.clientHeight.toString();
   }
 
-  updateZoom() {
-    document.documentElement.setAttribute('style', 'zoom: ' + this.zoom)
-  }
-
   reportDetectionIssue() {
     Sentry.captureException(new Error("Failed to Identify Tesla UserAgent"), {
       extra: {

@@ -382,13 +382,6 @@ export class DashComponent implements OnInit {
             category: CategoryType.Gaming,
           },
           {
-            name: 'Rainway',
-            url: 'https://play.rainway.com',
-            color: '#15121f',
-            logo: 'https://play.rainway.com/extra/rainway-logo.svg',
-            category: CategoryType.Gaming,
-          },
-          {
             name: 'GeForce Now',
             url: 'https://play.geforcenow.com/mall/',
             color: '#121212',

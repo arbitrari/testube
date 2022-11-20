@@ -99,7 +99,7 @@ export class DashComponent implements OnInit {
             name: 'Crackle',
             url: 'https://crackle.com/',
             color: '#121212',
-            logo: 'https://www.crackle.com/config/avod/images/logo1x.png',
+            logo: 'https://theme.zdassets.com/theme_assets/2245835/235983e17cb74a10434931c8ec05c9d9c1def3e6.png',
             category: CategoryType.Streaming,
           },
           {

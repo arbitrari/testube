@@ -12,7 +12,7 @@
 ## Preview
 Below is what the project looks like on a Model 3 or Model Y when in theater mode.
 <p align="center">
-    <img src="https://imgur.com/2bAy3kC.png" width="800">
+    <img src="https://imgur.com/P68s8gP.png" width="800">
 </p>
 
 ## Compatibility

@@ -117,6 +117,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Streaming,
           },
           {
+            name: 'Rakuten Viki',
+            url: 'https://viki.com/',
+            color: '#0C9BFF',
+            logo: 'https://m.media-amazon.com/images/I/31T4eMT29IL.png',
+            category: CategoryType.Streaming,
+          },
+          {
             name: 'VRV',
             url: 'https://vrv.co/',
             color: '#1b1a26',

@@ -296,7 +296,7 @@ export class DashComponent implements OnInit {
             name: 'Google Drive',
             url: 'https://drive.google.com/',
             color: '#c2c2c2',
-            logo: 'https://www.vectorlogo.zone/logos/google_drive/google_drive-ar21.svg',
+            logo: 'https://fonts.gstatic.com/s/i/productlogos/drive_2020q4/v8/web-64dp/logo_drive_2020q4_color_2x_web_64dp.png',
             category: CategoryType.Personal,
           },
           {

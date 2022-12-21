@@ -14,13 +14,19 @@ div.creation {
     right: 32px;
 
     img {
-        height: 25px;
+        margin-top: 16px;
+        height: 20px;
+        width: 40px;
         filter: grayscale(100%);
     }
 }
 
 a {
     color: silver;
+
+    svg {
+        margin-top: -5px;
+    }
 }
 
 .hash {

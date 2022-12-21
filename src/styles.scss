@@ -9,9 +9,9 @@
 //  If you specify typography styles for the components you use elsewhere, you should delete this line.
 //  If you don't need the default component typographies but still want the hierarchy styles,
 //  you can delete this line and instead use:
-//    `@include mat.legacy-typography-hierarchy(mat.define-legacy-typography-config());`
-@include mat.all-legacy-component-typographies();
-@include mat.legacy-core();
+//    `@include mat.legacy-typography-hierarchy(mat.define-typography-config());`
+@include mat.all-component-typographies();
+@include mat.core();
 
 $mat-black: (50: #000000,
             100: #000000,
@@ -29,10 +29,10 @@ $black-app-primary: mat.define-palette($mat-black, 50);
 $black-app-accent: mat.define-palette(mat.$green-palette, A400);
 $black-app-theme: mat.define-dark-theme($black-app-primary, $black-app-accent, $app-warn);
 
-@include mat.all-legacy-component-themes($black-app-theme);
+@include mat.all-component-themes($black-app-theme);
 
 .black-theme {
-  @include mat.all-legacy-component-themes($black-app-theme);
+  @include mat.all-component-themes($black-app-theme);
 }
 
 .mat-app-background,
@@ -41,13 +41,13 @@ $black-app-theme: mat.define-dark-theme($black-app-primary, $black-app-accent, $
   color: rgb(236, 236, 236)
 }
 
-.mat-card {
+.mat-mdc-card {
   background-color: #1a1a1a;
   color: rgb(236, 236, 236)
 }
 
 .light-theme {
-  @include mat.all-legacy-component-themes($light-app-theme);
+  @include mat.all-component-themes($light-app-theme);
 }
 
 body {

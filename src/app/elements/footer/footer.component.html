@@ -17,12 +17,11 @@
     <div *ngIf="device.isMobile() == false" class="nav">
       <a mat-button routerLink="about">about</a>
       <a mat-button href="https://github.com/arbitrarydot/testube/issues">report issue</a>
-      <a mat-button routerLink="donate">donate</a>
     </div>
     <a class="hash" routerLink="debug">{{hash}}</a>
     <div class="creation">
       <!-- <span style="opacity: 0.3;">{{ getReferrer() }}</span> -->
-      <a mat-icon-button href="https://jaxon.dev">
+      <a mat-button href="https://jaxon.dev">
         <img src="https://jaxonwright.com/assets/img/branding/white.png">
       </a>
     </div>

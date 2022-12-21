@@ -29,7 +29,7 @@ export class DashComponent implements OnInit {
             name: 'YouTube',
             url: 'https://youtube.com',
             color: '#c2c2c2',
-            logo: 'https://www.vectorlogo.zone/logos/youtube/youtube-ar21.svg',
+            logo: 'https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg',
             category: CategoryType.Streaming,
           },
           {

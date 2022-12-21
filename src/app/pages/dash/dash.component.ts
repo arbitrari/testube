@@ -282,7 +282,7 @@ export class DashComponent implements OnInit {
             name: 'Plex',
             url: 'https://app.plex.tv/desktop',
             color: '#1f2326',
-            logo: 'https://zhf1943ap1t4f26r11i05c7l-wpengine.netdna-ssl.com/wp-content/themes/plex/assets/img/plex-logo.svg',
+            logo: 'https://www.plex.tv/wp-content/themes/plex/assets/img/plex-logo.svg',
             category: CategoryType.Personal,
           },
           {

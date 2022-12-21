@@ -36,7 +36,7 @@ export class DashComponent implements OnInit {
             name: 'Netflix',
             url: 'https://netflix.com',
             color: '#121212',
-            logo: 'https://www.vectorlogo.zone/logos/netflix/netflix-ar21.svg',
+            logo: 'https://images.ctfassets.net/4cd45et68cgf/7LrExJ6PAj6MSIPkDyCO86/542b1dfabbf3959908f69be546879952/Netflix-Brand-Logo.png',
             category: CategoryType.Streaming,
           },
           {

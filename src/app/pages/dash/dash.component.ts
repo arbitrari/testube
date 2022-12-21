@@ -418,7 +418,7 @@ export class DashComponent implements OnInit {
             name: 'Google Maps',
             url: 'https://maps.google.com/',
             color: '#c2c2c2',
-            logo: 'https://www.logo.wine/a/logo/Google_Maps/Google_Maps-Logo.wine.svg',
+            logo: 'https://lh3.googleusercontent.com/9tLfTpdILdHDAvGrRm7GdbjWdpbWSMOa0csoQ8pUba9tLP8tq7M4Quks1xuMQAVnAxVfryiDXRzZ-KDnkPv8Sm4g_YFom1ltQHjQ6Q',
             category: CategoryType.Utility,
           },
           {

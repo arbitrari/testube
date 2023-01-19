@@ -188,7 +188,7 @@ export class DashComponent implements OnInit {
             name: 'fubotv',
             url: 'https://fubo.tv',
             color: '#1d175c',
-            logo: 'https://www.fubo.tv/stream/static/62a7ae9d4354826e2fa55e2fb2b58b04/63370/logo-fubotv-white.webp',
+            logo: 'https://www.ccmtc.com/wp-content/uploads/2021/08/light-1.png',
             category: CategoryType.Live,
           },
           {

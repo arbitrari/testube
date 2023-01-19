@@ -382,13 +382,6 @@ export class DashComponent implements OnInit {
             category: CategoryType.Gaming,
           },
           {
-            name: 'Stadia',
-            url: 'https://stadia.google.com/home',
-            color: '#121212',
-            logo: 'https://www.logo.wine/a/logo/Google_Stadia/Google_Stadia-Landscape-White-Logo.wine.svg',
-            category: CategoryType.Gaming,
-          },
-          {
             name: 'GeForce Now',
             url: 'https://play.geforcenow.com/mall/',
             color: '#121212',

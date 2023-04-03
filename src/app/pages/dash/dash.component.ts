@@ -441,14 +441,7 @@ export class DashComponent implements OnInit {
             color: '#e12026',
             logo: 'https://www.logo.wine/a/logo/Tesla%2C_Inc./Tesla%2C_Inc.-Logomark-White-Logo.wine.svg',
             category: CategoryType.Utility,
-          },
-          {
-            name: 'Dark Sky',
-            url: 'https://maps.darksky.net/@radar',
-            color: '#121212',
-            logo: 'https://darksky.net/images/darkskylogo.png',
-            category: CategoryType.Utility,
-          },
+          }
         ]
       }
     ]

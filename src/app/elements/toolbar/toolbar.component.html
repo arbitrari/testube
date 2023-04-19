@@ -1,9 +1,9 @@
 <mat-toolbar>
-    <button mat-button *ngIf="!urlBarOpen" (click)="urlBarOpen = true">
-        <mat-icon>link</mat-icon>
+    <button mat-stroked-button *ngIf="!urlBarOpen" (click)="urlBarOpen = true">
+        <mat-icon fontIcon="link"/>
         Custom URL
     </button>
-    <mat-form-field cdkFocusInitial #urlBar class="url-bar" appearance="fill" *ngIf="urlBarOpen" (keydown.enter)="navigate()">
+    <mat-form-field cdkFocusInitial #urlBar class="url-bar" appearance="outline" *ngIf="urlBarOpen" (keydown.enter)="navigate()">
         <input matInput autofocus [(ngModel)]="url">
         <mat-icon matSuffix (click)="navigate()">login</mat-icon>
     </mat-form-field>

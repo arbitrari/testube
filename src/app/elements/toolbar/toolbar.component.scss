@@ -6,9 +6,9 @@ mat-toolbar {
   justify-content: center;
 }
 
-button.mat-mdc-button {
+button.mat-mdc-outlined-button {
   position: absolute;
-  left: 16px;
+  left: 32px;
   top: 16px;
 }
 
@@ -38,8 +38,7 @@ button.mat-mdc-button {
 ::ng-deep .url-bar {
   position: absolute !important;
   left: 32px;
-  top: 16px;
-  // font-size: 12px;
+  top: 8px;
   width: 30%;
 
   mat-icon {

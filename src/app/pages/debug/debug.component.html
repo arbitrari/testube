@@ -1,7 +1,10 @@
 <div class="container">
-  <button mat-button routerLink="">&lt; Return to Dashboard</button>
+  <button mat-stroked-button routerLink="">
+    <mat-icon fontIcon="arrow_back"/>
+    Return to Dashboard
+  </button>
   <h1>Build Info</h1>
-  <mat-form-field appearance="outline" style="width: 215px">
+  <mat-form-field appearance="outline" style="width: 250px">
     <mat-label>Date</mat-label>
     <input matInput [value]="buildDate" readonly>
   </mat-form-field>

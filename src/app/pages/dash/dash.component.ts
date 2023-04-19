@@ -68,13 +68,6 @@ export class DashComponent implements OnInit {
             category: CategoryType.Streaming,
           },
           {
-            name: 'HBO Now',
-            url: 'https://play.hbonow.com',
-            color: '#121212',
-            logo: 'https://www.logolynx.com/images/logolynx/4c/4cbb96f6ec860f96ab3351a9a1612d5a.png',
-            category: CategoryType.Streaming,
-          },
-          {
             name: 'Apple TV+',
             url: 'https://tv.apple.com/',
             color: '#121212',

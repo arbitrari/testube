@@ -323,7 +323,7 @@ export class DashComponent implements OnInit {
           {
             name: 'Google Books',
             url: 'https://play.google.com/books',
-            color: '#61cbee',
+            color: '#c2c2c2',
             logo: 'https://cdn.worldvectorlogo.com/logos/google-play-books.svg',
             category: CategoryType.Personal,
           },

@@ -427,6 +427,13 @@ export class DashComponent implements OnInit {
             color: '#e12026',
             logo: 'https://www.logo.wine/a/logo/Tesla%2C_Inc./Tesla%2C_Inc.-Logomark-White-Logo.wine.svg',
             category: CategoryType.Utility,
+          },
+          {
+            name: 'Google Calendar',
+            url: 'https://calendar.google.com',
+            color: '#c2c2c2',
+            logo: `https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_${new Date().getDate()}_2x.png`,
+            category: CategoryType.Utility,
           }
         ]
       }

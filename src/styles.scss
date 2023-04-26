@@ -23,17 +23,27 @@ $app-warn: mat.define-palette(mat.$red-palette);
 
 $light-app-primary: mat.define-palette(mat.$grey-palette, 900);
 $light-app-accent: mat.define-palette(mat.$green-palette, A400);
-$light-app-theme: mat.define-light-theme($light-app-primary, $light-app-accent, $app-warn);
+$light-app-theme: mat.define-light-theme((
+  color: (
+    primary: $light-app-primary,
+    accent: $light-app-accent,
+    warn: $app-warn,
+  ),
+  density: 0
+));
 
 $black-app-primary: mat.define-palette($mat-black, 50);
 $black-app-accent: mat.define-palette(mat.$green-palette, A400);
-$black-app-theme: mat.define-dark-theme($black-app-primary, $black-app-accent, $app-warn);
+$black-app-theme: mat.define-dark-theme((
+  color: (
+    primary: $black-app-primary,
+    accent: $black-app-accent,
+    warn: $app-warn,
+  ),
+  density: 0
+));
 
 @include mat.all-component-themes($black-app-theme);
-
-.black-theme {
-  @include mat.all-component-themes($black-app-theme);
-}
 
 .mat-app-background,
 .mat-toolbar {
@@ -47,7 +57,7 @@ $black-app-theme: mat.define-dark-theme($black-app-primary, $black-app-accent, $
 }
 
 .light-theme {
-  @include mat.all-component-themes($light-app-theme);
+  @include mat.all-component-colors($light-app-theme);
 }
 
 body {

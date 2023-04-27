@@ -15,12 +15,11 @@ import { DebugComponent } from './pages/debug/debug.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatIconModule} from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 
 import * as Sentry from "@sentry/angular";
@@ -47,7 +46,6 @@ import { Router } from '@angular/router';
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSliderModule,
     FormsModule,
     MatTooltipModule,
     MatIconModule,

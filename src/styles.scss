@@ -43,7 +43,14 @@ $black-app-theme: mat.define-dark-theme((
   density: 0
 ));
 
-@include mat.all-component-themes($black-app-theme);
+@include mat.toolbar-theme($black-app-theme);
+@include mat.button-theme($black-app-theme);
+@include mat.card-theme($black-app-theme);
+@include mat.snack-bar-theme($black-app-theme);
+@include mat.form-field-theme($black-app-theme);
+@include mat.input-theme($black-app-theme);
+@include mat.tooltip-theme($black-app-theme);
+@include mat.icon-theme($black-app-theme);
 
 .mat-app-background,
 .mat-toolbar {
@@ -57,7 +64,14 @@ $black-app-theme: mat.define-dark-theme((
 }
 
 .light-theme {
-  @include mat.all-component-colors($light-app-theme);
+  @include mat.toolbar-color($light-app-theme);
+  @include mat.button-color($light-app-theme);
+  @include mat.card-color($light-app-theme);
+  @include mat.snack-bar-color($light-app-theme);
+  @include mat.form-field-color($light-app-theme);
+  @include mat.input-color($light-app-theme);
+  @include mat.tooltip-color($light-app-theme);
+  @include mat.icon-color($light-app-theme);
 }
 
 body {

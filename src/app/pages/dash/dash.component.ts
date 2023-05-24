@@ -61,10 +61,10 @@ export class DashComponent implements OnInit {
             category: CategoryType.Streaming,
           },
           {
-            name: 'HBO Max',
-            url: 'https://hbomax.com/',
-            color: '#0d062f',
-            logo: 'https://www.hbomax.com/img/hbo-max-h-w-l.svg',
+            name: 'Max',
+            url: 'https://max.com/',
+            color: '#000e46',
+            logo: 'https://images.cdn.prd.api.discomax.com/2023%2F4%2F13%2F6464c054-300e-4800-815f-84e63545ca8c.png?h=192&f=webp',
             category: CategoryType.Streaming,
           },
           {

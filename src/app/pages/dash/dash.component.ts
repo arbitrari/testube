@@ -340,6 +340,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Gaming,
           },
           {
+            name: 'Kick',
+            url: 'https://kick.com',
+            color: '#0c0e0f',
+            logo: 'https://i.imgur.com/BdexlQP.png',
+            category: CategoryType.Gaming,
+          },
+          {
             name: 'Facebook Gaming',
             url: 'https://fb.gg',
             color: '#005fec',

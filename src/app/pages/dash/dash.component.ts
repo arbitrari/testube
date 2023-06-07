@@ -89,6 +89,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Streaming,
           },
           {
+            name: 'Rumble',
+            url: 'https://rumble.com/',
+            color: '#10212F',
+            logo: 'https://corp.rumble.com/wp-content/uploads/2022/01/logo.png',
+            category: CategoryType.Streaming,
+          },
+          {
             name: 'Crackle',
             url: 'https://crackle.com/',
             color: '#121212',

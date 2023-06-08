@@ -1,8 +1,7 @@
 <mat-toolbar>
   <mat-toolbar-row *ngIf="device.isMobile()" style="justify-content: center;">
-    <a mat-icon-button routerLink="about">about</a>
+    <a mat-button routerLink="about">about</a>
     <a mat-button href="https://github.com/arbitrarydot/testube/issues">report issue</a>
-    <a mat-button routerLink="donate">donate</a>
   </mat-toolbar-row>
   <mat-toolbar-row>
     <a mat-icon-button href="https://ar.bitrary.dev" style=" margin-right: 16px">
@@ -11,7 +10,7 @@
       M845.31,728.32A24.65,24.65,0,0,0,821.7,704.7v-.05H797a24.67,24.67,0,0,0-24.64,23.67h-.05V754h.05A24.67,24.67,0,0,0,797,777.69h23.67A24.69,24.69,0,0,0,845.36,753V728.32Z" fill="#ffff"/>
       </svg>
     </a>
-    <div class="copy">
+    <div class="copy" *ngIf="device.isMobile() == false">
       &copy;{{today | date: 'yyyy'}} arbitrary
     </div>
     <div *ngIf="device.isMobile() == false" class="nav">
@@ -21,7 +20,7 @@
     <a class="hash" routerLink="debug">{{hash}}</a>
     <div class="creation">
       <!-- <span style="opacity: 0.3;">{{ getReferrer() }}</span> -->
-      <a mat-button href="https://jaxon.dev">
+      <a mat-icon-button href="https://jaxon.dev">
         <img src="https://jaxonwright.com/assets/img/branding/white.png">
       </a>
     </div>

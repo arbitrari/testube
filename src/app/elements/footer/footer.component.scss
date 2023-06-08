@@ -14,9 +14,9 @@ div.creation {
     right: 32px;
 
     img {
-        margin-top: 16px;
-        height: 20px;
-        width: 40px;
+        height: 18px;
+        margin-bottom: 4px;
+        width: auto;
         filter: grayscale(100%);
     }
 }
@@ -37,8 +37,4 @@ a {
     color: darkgrey;
     text-decoration: none;
     opacity: 0.3;
-}
-
-.copy {
-    padding-bottom: 2px;
 }

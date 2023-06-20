@@ -443,6 +443,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Utility,
           },
           {
+            name: 'Ventusky',
+            url: 'https://www.ventusky.com/?l=radar',
+            color: '#31537d',
+            logo: 'https://i.imgur.com/OOZBXGw.png',
+            category: CategoryType.Utility,
+          },
+          {
             name: 'Google Calendar',
             url: 'https://calendar.google.com',
             color: '#c2c2c2',

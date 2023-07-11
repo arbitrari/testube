@@ -5,7 +5,7 @@ import {
 import {
   VERSION
 } from '../../../environments/version';
-import * as Sentry from '@sentry/angular';
+import * as Sentry from '@sentry/angular-ivy';
 @Component({
   selector: 'app-debug',
   templateUrl: './debug.component.html',

@@ -124,13 +124,6 @@ export class DashComponent implements OnInit {
             category: CategoryType.Streaming,
           },
           {
-            name: 'VRV',
-            url: 'https://vrv.co/',
-            color: '#1b1a26',
-            logo: 'https://theme.zdassets.com/theme_assets/629753/f5aa6b8929112b4d87e9fd63ee2a074f0f93a4e7.png',
-            category: CategoryType.Streaming,
-          },
-          {
             name: 'Shudder',
             url: 'https://www.shudder.com',
             color: '#121212',
@@ -211,14 +204,7 @@ export class DashComponent implements OnInit {
             color: '#121212',
             logo: 'https://static-homepage-en.pluto.tv/hp-assets/images/pluto-tv-abbd637b3dc06fb0f0c5ee6eea402166.svg',
             category: CategoryType.Live,
-          },
-          {
-            name: 'locast',
-            url: 'https://locast.org/',
-            color: '#c2c2c2',
-            logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Locast_logo.svg',
-            category: CategoryType.Live,
-          },
+          }
         ]
       },
       {

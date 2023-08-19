@@ -8,14 +8,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AppComponent {
   title = 'testube';
-  teslaUserAgentRegEx = /Tesla\/(?:develop-)*(?:feature-)*(?:.*fsd.*)*(?:factory-)*(?:terminal-)*([0-9]{4}.[0-9]{1,3}.?[0-9]{0,3}.?[0-9]{0,3}.?[0-9]{0,3})*-(.*)/g;
+  // teslaUserAgentRegEx = /Tesla\/(?:develop-)*(?:feature-)*(?:.*fsd.*)*(?:factory-)*(?:terminal-)*([0-9]{4}.[0-9]{1,3}.?[0-9]{0,3}.?[0-9]{0,3}.?[0-9]{0,3})*-(.*)/g;
   isFullscreen: boolean;
 
 
   constructor(snack: MatSnackBar) {
     this.isFullscreen = false;
-    if (document.referrer.startsWith('https://www.youtube.com/') == false &&
-        navigator.userAgent.match(this.teslaUserAgentRegEx)) {
+    if (document.referrer.startsWith('https://www.youtube.com/') == false //&&
+        /* navigator.userAgent.match(this.teslaUserAgentRegEx) */) {
 
       snack.open(`Open in Fullscreen?\nClick "GO TO SITE" on next page`,'Yes',
         {panelClass: 'fullscreen-snack'})
@@ -23,7 +23,7 @@ export class AppComponent {
         .subscribe(()=>{
           location.href = 'https://www.youtube.com/redirect?q=https://testube.app';
         })
-    } else if (navigator.userAgent.match(this.teslaUserAgentRegEx)) {
+    } else /* if (navigator.userAgent.match(this.teslaUserAgentRegEx)) */ {
       this.isFullscreen = true;
     }
   }

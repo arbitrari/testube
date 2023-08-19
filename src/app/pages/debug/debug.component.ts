@@ -18,7 +18,7 @@ export class DebugComponent implements OnInit {
   zoom: number;
   maxZoom: number;
   minZoom: number;
-  teslaUserAgentRegEx = /Tesla\/(?:develop-)*(?:feature-)*(?:.*fsd.*)*(?:factory-)*(?:terminal-)*([0-9]{4}.[0-9]{1,3}.?[0-9]{0,3}.?[0-9]{0,3}.?[0-9]{0,3})*-(.*)/g;
+  // teslaUserAgentRegEx = /Tesla\/(?:develop-)*(?:feature-)*(?:.*fsd.*)*(?:factory-)*(?:terminal-)*([0-9]{4}.[0-9]{1,3}.?[0-9]{0,3}.?[0-9]{0,3}.?[0-9]{0,3})*-(.*)/g;
 
   constructor() {}
 
@@ -35,27 +35,27 @@ export class DebugComponent implements OnInit {
     // console.log(this.isTesla(), this.userAgent, this.userAgent.match(this.teslaUserAgentRegEx));
   }
 
-  isTesla(): boolean {
-    if (this.userAgent.match(this.teslaUserAgentRegEx)) return true;
-    return false;
-  }
+  // isTesla(): boolean {
+  //   if (this.userAgent.match(this.teslaUserAgentRegEx)) return true;
+  //   return false;
+  // }
 
-  getTeslaFirmware(): string {
-    if (this.userAgent.includes('fsd-eap')) return 'FSD Beta';
-    let exec = this.teslaUserAgentRegEx.exec(this.userAgent);
-    return exec[1] ? exec[1] : 'Unknown';
-  }
+  // getTeslaFirmware(): string {
+  //   if (this.userAgent.includes('fsd-eap')) return 'FSD Beta';
+  //   let exec = this.teslaUserAgentRegEx.exec(this.userAgent);
+  //   return exec[1] ? exec[1] : 'Unknown';
+  // }
 
   getViewport(width: boolean): string {
     if (width) return document.documentElement.clientWidth.toString();
     return document.documentElement.clientHeight.toString();
   }
 
-  reportDetectionIssue() {
-    Sentry.captureException(new Error("Failed to Identify Tesla UserAgent"), {
-      extra: {
-        'userAgent': this.userAgent
-      }
-    })
-  }
+  // reportDetectionIssue() {
+  //   Sentry.captureException(new Error("Failed to Identify Tesla UserAgent"), {
+  //     extra: {
+  //       'userAgent': this.userAgent
+  //     }
+  //   })
+  // }
 }

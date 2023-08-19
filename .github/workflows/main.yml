@@ -24,8 +24,8 @@ jobs:
         run: npm run build
       - name: Duplicate Index.html to 404.html 
         run: cp dist/index.html dist/404.html
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
-        with:
-          branch: gh-pages
-          folder: dist
+      # - name: Deploy to GitHub Pages
+      #   uses: JamesIves/github-pages-deploy-action@v4.3.3
+      #   with:
+      #     branch: gh-pages
+      #     folder: dist

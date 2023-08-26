@@ -54,6 +54,7 @@ $black-app-theme: mat.define-dark-theme((
 
 .mat-app-background,
 .mat-toolbar {
+  --mat-toolbar-container-background-color: #000000;
   background-color: #000000;
   color: rgb(236, 236, 236)
 }

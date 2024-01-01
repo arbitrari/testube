@@ -214,7 +214,7 @@ export class DashComponent implements OnInit {
             name: 'ESPN',
             url: 'https://www.espn.com/watch/',
             color: '#d00',
-            logo: 'https://secure.espncdn.com/redesign/assets/img/logos/logo-espn-82x20.png',
+            logo: 'https://www.freepnglogos.com/uploads/espn-png-logo/pn-white-png-logo-18.png',
             category: CategoryType.Sports,
           },
           {

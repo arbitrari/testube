@@ -242,7 +242,7 @@ export class DashComponent implements OnInit {
             name: 'NBA League Pass',
             url: 'https://www.nba.com/watch/league-pass',
             color: '#143b75',
-            logo: 'https://cdn.comcast.com/-/jssmedia/Images/www_xfinity_com/TV/Sports/NBA%20League%20Pass/NBA_League_Pass_horiz_wht.png?rev=5c91466f-7896-4f77-8553-5a05cea732af',
+            logo: 'https://cdn.nba.com/manage/2023/02/NBA_League_Pass_horiz_onDkBkgd-2.png',
             category: CategoryType.Sports,
           },
           {

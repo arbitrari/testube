@@ -2,14 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Cairo&display=swap');
 
 
-// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
-//  The following line adds:
-//    1. Default typography styles for all components
-//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
-//  If you specify typography styles for the components you use elsewhere, you should delete this line.
-//  If you don't need the default component typographies but still want the hierarchy styles,
-//  you can delete this line and instead use:
-//    `@include mat.legacy-typography-hierarchy(mat.define-typography-config());`
 @include mat.all-component-typographies();
 @include mat.core();
 
@@ -42,6 +34,19 @@ $black-app-theme: mat.define-dark-theme((
   ),
   density: 0
 ));
+
+// The following mixins include base theme styles that are only needed once per application. These
+// theme styles do not depend on the color, typography, or density settings in your theme. However,
+// these styles may differ depending on the theme's design system. Currently all themes use the
+// Material 2 design system, but in the future it may be possible to create theme based on other
+// design systems, such as Material 3.
+//
+// Please note: you do not need to include the 'base' mixins, if you include the corresponding
+// 'theme' mixin elsewhere in your Sass. The full 'theme' mixins already include the base styles.
+//
+// To learn more about "base" theme styles visit our theming guide:
+// https://material.angular.io/guide/theming#theming-dimensions
+@include mat.all-component-bases($black-app-theme);
 
 @include mat.toolbar-theme($black-app-theme);
 @include mat.button-theme($black-app-theme);

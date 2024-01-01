@@ -117,6 +117,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Streaming,
           },
           {
+            name: 'Bentkey',
+            url: 'https://www.bentkey.com/',
+            color: '#081722',
+            logo: 'https://www.bentkey.com/development/avatar/logo-final.png',
+            category: CategoryType.Streaming,
+          },
+          {
             name: 'Rakuten Viki',
             url: 'https://viki.com/',
             color: '#0C9BFF',

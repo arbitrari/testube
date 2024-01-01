@@ -70,18 +70,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "testube:build"
+            "buildTarget": "testube:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "testube:build:production"
+              "buildTarget": "testube:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "testube:build"
+            "buildTarget": "testube:build"
           }
         },
         "test": {

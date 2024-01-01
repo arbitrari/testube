@@ -131,13 +131,6 @@ export class DashComponent implements OnInit {
             category: CategoryType.Streaming,
           },
           {
-            name: 'hotstar',
-            url: 'https://hotstar.com',
-            color: '#c2c2c2',
-            logo: 'https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/hotstar-logo.svg',
-            category: CategoryType.Streaming,
-          },
-          {
             name: 'PBS Kids',
             url: 'https://pbskids.org/video/livetv',
             color: '#121212',

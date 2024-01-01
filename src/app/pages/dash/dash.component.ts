@@ -246,6 +246,13 @@ export class DashComponent implements OnInit {
             category: CategoryType.Sports,
           },
           {
+            name: 'F1TV',
+            url: 'https://f1tv.formula1.com/',
+            color: '#15151e',
+            logo: 'https://formula1.my.site.com/resource/1568115282000/F1LogoMicro',
+            category: CategoryType.Sports,
+          },
+          {
             name: 'DAZN',
             url: 'https://www.dazn.com/',
             color: '#0c161c',

@@ -383,7 +383,7 @@ export class DashComponent implements OnInit {
           },
           {
             name: 'Amazon Luna',
-            url: 'https://www.amazon.com/luna/',
+            url: 'https://luna.amazon.com',
             color: '#3c007d',
             logo: 'https://m.media-amazon.com/images/G/01/T/TC05316420/A07531864/brand/luna-logo.png',
             category: CategoryType.Gaming,

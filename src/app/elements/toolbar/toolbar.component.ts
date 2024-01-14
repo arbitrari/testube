@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { SettingsDialogComponent } from '../../dialogs/settings-dialog/settings-dialog.component';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,7 +11,7 @@ export class ToolbarComponent implements OnInit {
   urlBarOpen : boolean = false;
   url : string;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
     this.url = 'https://'
@@ -18,6 +20,10 @@ export class ToolbarComponent implements OnInit {
   navigate() {
     if (this.url != 'https://')
       window.open(this.url);
+  }
+
+  openSettingsDialog() {
+    const dialogRef = this.dialog.open(SettingsDialogComponent);
   }
 
 }

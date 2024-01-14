@@ -6,7 +6,7 @@ mat-toolbar {
   justify-content: center;
 }
 
-button.mat-mdc-outlined-button {
+button.mat-mdc-outlined-button.custom-url-button {
   position: absolute;
   left: 32px;
   top: 16px;
@@ -43,5 +43,16 @@ button.mat-mdc-outlined-button {
 
   mat-icon {
     cursor: pointer;
+  }
+}
+
+button.mat-mdc-outlined-button.settings-button {
+  position: absolute;
+  right: 32px;
+  top: 16px;
+
+  mat-icon {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }

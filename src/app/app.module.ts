@@ -11,6 +11,7 @@ import { FooterComponent } from './elements/footer/footer.component';
 import { LogoComponent } from './elements/logo/logo.component';
 import { CardComponent } from './elements/card/card.component';
 import { DebugComponent } from './pages/debug/debug.component';
+import { SettingsDialogComponent } from './dialogs/settings-dialog/settings-dialog.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -21,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import * as Sentry from "@sentry/angular-ivy";
 import { Router } from '@angular/router';
@@ -35,6 +37,7 @@ import { Router } from '@angular/router';
     LogoComponent,
     CardComponent,
     DebugComponent,
+    SettingsDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ import { Router } from '@angular/router';
     FormsModule,
     MatTooltipModule,
     MatIconModule,
+    MatDialogModule
   ],
   providers: [
     {

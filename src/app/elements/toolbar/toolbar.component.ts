@@ -15,13 +15,17 @@ export class ToolbarComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
-    this.url = 'https://';
+    this.url = '';
     this.showTip = localStorage.getItem('hide-settings-tip') != 'true';
   }
 
   navigate() {
-    if (this.url != 'https://')
-      window.open(this.url);
+    if (this.url.trim() != '') {
+      if (!this.url.startsWith('http'))
+        window.open(`http://${this.url.trim()}`, '_blank');
+      else 
+        window.open(this.url.trim(), '_blank');
+    }
   }
 
   hideTip() {

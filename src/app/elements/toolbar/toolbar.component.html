@@ -4,7 +4,7 @@
         Custom URL
     </button>
     <mat-form-field cdkFocusInitial #urlBar class="url-bar" appearance="outline" *ngIf="urlBarOpen" (keydown.enter)="navigate()">
-        <input matInput autofocus [(ngModel)]="url">
+        <input matInput autofocus [(ngModel)]="url" placeholder="Enter a URL">
         <mat-icon matSuffix (click)="navigate()">login</mat-icon>
     </mat-form-field>
     <app-logo></app-logo>

@@ -12,12 +12,16 @@ export class ToolbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.url = 'https://'
+    this.url = '';
   }
 
   navigate() {
-    if (this.url != 'https://')
-      window.open(this.url);
+    if (this.url.trim() != '') {
+      if (!this.url.startsWith('http'))
+        window.open(`http://${this.url.trim()}`, '_blank');
+      else 
+        window.open(this.url.trim(), '_blank');
+    }
   }
 
 }

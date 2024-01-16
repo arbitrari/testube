@@ -1,5 +1,5 @@
-<a mat-button [style.background]="provider.color" [href]="provider.url">
+<a mat-button [style.background]="source.colors.dark" [href]="source.url">
   <mat-card-content>
-    <img *ngIf="provider.logo" [src]="provider.logo" class="logo" [class.svg]="provider.logo.endsWith('.svg')">
+    <img *ngIf="source.logos.dark" [src]="source.logos.dark" class="logo" [class.svg]="source.logos.dark.endsWith('.svg')">
   </mat-card-content>
 </a>

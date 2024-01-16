@@ -13,6 +13,8 @@ import { CardComponent } from './elements/card/card.component';
 import { DebugComponent } from './pages/debug/debug.component';
 import { SettingsDialogComponent } from './dialogs/settings-dialog/settings-dialog.component';
 
+import { SourceManagerService } from './services/source-manager/source-manager.service';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -55,6 +57,7 @@ import { Router } from '@angular/router';
     MatDialogModule
   ],
   providers: [
+    SourceManagerService,
     {
       provide: ErrorHandler,
       useValue: Sentry.createErrorHandler({

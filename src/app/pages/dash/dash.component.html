@@ -3,7 +3,11 @@
         {{category.title}}
     </div>
     <div class="card-list">
-        <app-card *ngFor="let provider of category.providers" [provider]="provider"></app-card>
+        <app-card *ngFor="let source of category.sources" [source]="source"></app-card>
     </div>
 </div>
 <div class="overflow-fade"></div>
+
+<!-- <pre>
+  {{ this.sourceManager.data() | json }}
+</pre> -->

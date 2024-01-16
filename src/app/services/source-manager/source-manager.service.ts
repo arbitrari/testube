@@ -1,6 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { Source, Category, DEFAULT_SOURCES, CategoryType } from './types';
-import { Observable } from 'rxjs';
+import { Source, Category, DEFAULT_SOURCES } from './types';
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +9,6 @@ export class SourceManagerService {
   data = signal(this.catArray);
 
   constructor() { }
-
-  getLogo(source: Source): string {
-    return source.logos.dark;
-  }
-
-  getColor(source: Source): string {
-    return source.colors.dark;
-  }
 
   load() {
     this.catArray.push({title: 'Streaming', sources: []});
@@ -35,13 +26,15 @@ export class SourceManagerService {
         this.catArray[value.category].sources.push(value);
       }
     }
+
+    this.hideEmptyCategories();
+  }
+  
+  hideEmptyCategories() {
+    for (let i = this.catArray.length - 1; i >= 0; i--) {
+      if (this.catArray[i].sources.length == 0)
+        this.catArray.splice(i,1);
+    }
   }
 
-  update(newData: Category[]) {
-    this.catArray = newData;
-  }
-
-  hideSource(source: Source) {
-
-  }
 }

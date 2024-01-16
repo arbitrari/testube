@@ -10,11 +10,13 @@ import { SettingsDialogComponent } from '../../dialogs/settings-dialog/settings-
 export class ToolbarComponent implements OnInit {
   urlBarOpen : boolean = false;
   url : string;
+  showTip : boolean = false;
 
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
-    this.url = 'https://'
+    this.url = 'https://';
+    this.showTip = localStorage.getItem('hide-settings-tip') != 'true';
   }
 
   navigate() {
@@ -22,7 +24,13 @@ export class ToolbarComponent implements OnInit {
       window.open(this.url);
   }
 
+  hideTip() {
+    this.showTip = false;
+    localStorage.setItem('hide-settings-tip','true');
+  }
+
   openSettingsDialog() {
+    this.hideTip();
     const dialogRef = this.dialog.open(SettingsDialogComponent);
   }
 

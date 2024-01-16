@@ -56,3 +56,23 @@ button.mat-mdc-outlined-button.settings-button {
     margin-right: 0 !important;
   }
 }
+
+.settings-tip {
+  background: #203ea4;
+  padding: 16px;
+  position: fixed;
+  right: 120px;
+  top: 9px;
+  border-radius: 8px;
+
+  &::after {
+    content: "";
+    background: #203ea4;
+    right: 113px;
+    height: 14px;
+    width: 14px;
+    top: 27px;
+    position: fixed;
+    transform: rotate(45deg);
+  }
+}

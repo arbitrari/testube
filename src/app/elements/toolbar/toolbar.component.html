@@ -12,3 +12,7 @@
         <mat-icon fontIcon="tune"></mat-icon>
     </button>
 </mat-toolbar>
+
+<div *ngIf="showTip" class="settings-tip" (click)="hideTip()">
+    <b style="margin-right: 8px">NEW</b> Theme changing and source hiding is here
+</div>

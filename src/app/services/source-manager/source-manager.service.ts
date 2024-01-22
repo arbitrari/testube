@@ -18,13 +18,9 @@ export class SourceManagerService {
     this.catArray.push({title: 'Gaming', sources: []});
     this.catArray.push({title: 'Utility', sources: []});
     
-    if (localStorage.getItem('hidden-sources')) {
-
-    } else {
-
-      for (let [key, value] of DEFAULT_SOURCES) {
+    for (let [key, value] of DEFAULT_SOURCES) {
+      if (!this.hiddenSources.has(key))
         this.catArray[value.category].sources.push(value);
-      }
     }
 
     this.hideEmptyCategories();

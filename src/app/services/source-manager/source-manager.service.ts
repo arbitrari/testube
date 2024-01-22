@@ -1,16 +1,21 @@
 import { Injectable, signal } from '@angular/core';
-import { Source, Category, DEFAULT_SOURCES } from './types';
+import { Category, DEFAULT_SOURCES } from './types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SourceManagerService {
   catArray : Category[] = [];
+  hiddenSources : Map<String, String> = new Map([]);
   data = signal(this.catArray);
+  hiddenData = signal(this.hiddenSources);
 
-  constructor() { }
+  constructor() { 
+  }
 
   load() {
+    this.catArray = [];
+
     this.catArray.push({title: 'Streaming', sources: []});
     this.catArray.push({title: 'Live Television', sources: []});
     this.catArray.push({title: 'Sports', sources: []});
@@ -24,6 +29,8 @@ export class SourceManagerService {
     }
 
     this.hideEmptyCategories();
+
+    this.data.set(this.catArray);
   }
   
   hideEmptyCategories() {

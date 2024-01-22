@@ -1,0 +1,10 @@
+.source-container {
+  height: 450px;
+  overflow: auto;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+
+  --mdc-checkbox-unselected-icon-color: currentColor;
+  --mdc-checkbox-selected-icon-color: currentColor;
+  --mdc-checkbox-selected-checkmark-color: black;
+}

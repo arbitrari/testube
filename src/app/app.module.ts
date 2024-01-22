@@ -25,6 +25,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatListModule } from '@angular/material/list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 import * as Sentry from "@sentry/angular-ivy";
 import { Router } from '@angular/router';
@@ -54,7 +57,9 @@ import { Router } from '@angular/router';
     FormsModule,
     MatTooltipModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule,
+    MatCheckboxModule
   ],
   providers: [
     SourceManagerService,

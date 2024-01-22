@@ -737,7 +737,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
   [
     'twitch',
     {
-      name: 'DAZN',
+      name: 'Twitch',
       category: CategoryType.Gaming,
       url: 'https://twitch.tv',
       colors: {

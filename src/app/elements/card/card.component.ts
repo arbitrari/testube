@@ -9,10 +9,22 @@ import { Source } from 'src/app/services/source-manager/types';
 })
 export class CardComponent implements OnInit {
   @Input() source : Source;
+  logo: string;
+  color: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.setLogo();
+    this.setColor();
+  }
+
+  setLogo() {
+    this.logo = this.source.logos.dark;
+  }
+
+  setColor() {
+    this.color = this.source.colors.dark;
   }
 
 }

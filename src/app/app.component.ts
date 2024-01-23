@@ -17,7 +17,7 @@ export class AppComponent {
     if (document.referrer.startsWith('https://www.youtube.com/') == false //&&
         /* navigator.userAgent.match(this.teslaUserAgentRegEx) */) {
 
-      snack.open(`Open in Fullscreen?\nClick "GO TO SITE" on next page`,'Yes',
+      snack.open(`Open in Fullscreen?\n Click "GO TO SITE" on next page`,'Yes',
         {panelClass: 'fullscreen-snack'})
         .onAction()
         .subscribe(()=>{

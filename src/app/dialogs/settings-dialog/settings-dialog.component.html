@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Application Settings</h2>
+<mat-dialog-content>
+    <h3>Source Visibility</h3>
+    <p>Hide sources that are not relevant to you</p>
+    <button mat-stroked-button *ngIf="sourceList?.selectedOptions?.selected?.length < sourceList?.options?.length" class="reset-button" (click)="sourceList.selectAll()">Reset</button>
+    <div class="source-container">
+      <mat-selection-list #sourceList [multiple]="true">
+        @for (pair of DEFAULT_SOURCES; track pair[0]) {
+          <mat-list-option [value]="pair[0]" [selected]="sourceManager.hiddenData().has(pair[0]) == false">{{pair[1].name}}</mat-list-option>
+        }
+      </mat-selection-list>
+    </div>  
+    <div class="coming-soon-container">
+        <mat-icon fontIcon="construction"></mat-icon>
+        More options coming soon!
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="true" (click)="onSave()">Save</button>
+    <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

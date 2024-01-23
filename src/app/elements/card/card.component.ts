@@ -1,21 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Source } from 'src/app/services/source-manager/types';
 
-export enum CategoryType {
-  Live = 1,
-  Streaming,
-  Personal,
-  Gaming,
-  Sports,
-  Utility,
-}
-
-export interface CardProvider {
-  url : string;
-  name : string;
-  category : CategoryType;
-  color : string;
-  logo : string;
-}
 
 @Component({
   selector: 'app-card',
@@ -23,11 +8,23 @@ export interface CardProvider {
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  @Input() provider : CardProvider
+  @Input() source : Source;
+  logo: string;
+  color: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.setLogo();
+    this.setColor();
+  }
+
+  setLogo() {
+    this.logo = this.source.logos.dark;
+  }
+
+  setColor() {
+    this.color = this.source.colors.dark;
   }
 
 }

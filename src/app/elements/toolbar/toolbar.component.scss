@@ -6,7 +6,7 @@ mat-toolbar {
   justify-content: center;
 }
 
-button.mat-mdc-outlined-button {
+button.mat-mdc-outlined-button.custom-url-button {
   position: absolute;
   left: 32px;
   top: 16px;
@@ -43,5 +43,37 @@ button.mat-mdc-outlined-button {
 
   mat-icon {
     cursor: pointer;
+  }
+}
+
+button.mat-mdc-outlined-button.settings-button {
+  position: absolute;
+  right: 32px;
+  top: 16px;
+
+  mat-icon {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+.settings-tip {
+  background: rgb(236, 236, 236);
+  color: #000;
+  padding: 16px;
+  position: fixed;
+  right: 120px;
+  top: 9px;
+  border-radius: 8px;
+
+  &::after {
+    content: "";
+    background: rgb(236, 236, 236);
+    right: 113px;
+    height: 14px;
+    width: 14px;
+    top: 27px;
+    position: fixed;
+    transform: rotate(45deg);
   }
 }

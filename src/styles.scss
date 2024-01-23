@@ -57,16 +57,32 @@ $black-app-theme: mat.define-dark-theme((
 @include mat.tooltip-theme($black-app-theme);
 @include mat.icon-theme($black-app-theme);
 
+:root {
+  --mdc-dialog-container-color: #000000;
+  --mdc-dialog-subhead-color: #FFFFFF;
+  --mdc-dialog-supporting-text-color: #FFFFFF;
+}
+
+.cdk-overlay-dark-backdrop {
+  background: rgb(0 0 0 / 90%);
+}
+
+.mat-mdc-dialog-container {
+  min-width: 500px !important;
+  min-height: 700px !important;
+  max-height: 100vh;
+}
+
 .mat-app-background,
 .mat-toolbar {
   --mat-toolbar-container-background-color: #000000;
   background-color: #000000;
-  color: rgb(236, 236, 236)
+  color: rgb(236, 236, 236);
 }
 
 .mat-mdc-card {
   background-color: #1a1a1a;
-  color: rgb(236, 236, 236)
+  color: rgb(236, 236, 236);
 }
 
 .light-theme {

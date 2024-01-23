@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { SettingsDialogComponent } from '../../dialogs/settings-dialog/settings-dialog.component';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,11 +10,13 @@ import { Component, OnInit } from '@angular/core';
 export class ToolbarComponent implements OnInit {
   urlBarOpen : boolean = false;
   url : string;
+  showTip : boolean = false;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
     this.url = '';
+    this.showTip = localStorage.getItem('hide-settings-tip') != 'true';
   }
 
   navigate() {
@@ -22,6 +26,16 @@ export class ToolbarComponent implements OnInit {
       else 
         window.open(this.url.trim(), '_blank');
     }
+  }
+
+  hideTip() {
+    this.showTip = false;
+    localStorage.setItem('hide-settings-tip','true');
+  }
+
+  openSettingsDialog() {
+    this.hideTip();
+    const dialogRef = this.dialog.open(SettingsDialogComponent, { autoFocus: false });
   }
 
 }

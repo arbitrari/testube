@@ -7,4 +7,9 @@
   --mdc-checkbox-unselected-icon-color: currentColor;
   --mdc-checkbox-selected-icon-color: currentColor;
   --mdc-checkbox-selected-checkmark-color: black;
+
+  .mat-mdc-list-item-interactive:not(:last-child)::before {
+    border-bottom: 1px solid currentColor;
+    opacity: 0.10;
+  }
 }

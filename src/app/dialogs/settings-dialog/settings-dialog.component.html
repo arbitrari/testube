@@ -1,7 +1,7 @@
-<h2 mat-dialog-title>Settings</h2>
+<h2 mat-dialog-title>Application Settings</h2>
 <mat-dialog-content>
-    <h3>Theme</h3>   
     <h3>Source Visibility</h3>
+    <p>Hide sources that are not relevant to you</p>
     <div class="source-container">
       <mat-selection-list #sourceList [multiple]="true">
         @for (pair of DEFAULT_SOURCES; track pair[0]) {
@@ -9,9 +9,12 @@
         }
       </mat-selection-list>
     </div>  
+    <div class="coming-soon-container">
+        <mat-icon fontIcon="construction"></mat-icon>
+        More options coming soon!
+    </div>
 </mat-dialog-content>
 <mat-dialog-actions>
     <button mat-button [mat-dialog-close]="true" (click)="onSave()">Save</button>
     <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button>Reset</button>
 </mat-dialog-actions>

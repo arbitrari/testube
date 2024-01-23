@@ -1,3 +1,12 @@
+h3 {
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
 .source-container {
   height: 450px;
   overflow: auto;
@@ -7,9 +16,19 @@
   --mdc-checkbox-unselected-icon-color: currentColor;
   --mdc-checkbox-selected-icon-color: currentColor;
   --mdc-checkbox-selected-checkmark-color: black;
+  --mdc-list-list-item-one-line-container-height: 50px;
 
   .mat-mdc-list-item-interactive:not(:last-child)::before {
     border-bottom: 1px solid currentColor;
     opacity: 0.10;
   }
+}
+
+.coming-soon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 72px;
+  opacity: 0.25;
 }

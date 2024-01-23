@@ -11,6 +11,15 @@ export class SourceManagerService {
   hiddenData = signal(this.hiddenSources);
 
   constructor() { 
+    this.loadFromStorage();
+  }
+
+  loadFromStorage() {
+    let hiddenFromStorage = JSON.parse(localStorage.getItem('hiddenSources'));
+    console.log(hiddenFromStorage);
+    if (hiddenFromStorage) {
+      this.hiddenSources = new Map(Object.entries(hiddenFromStorage));
+    }
   }
 
   load() {
@@ -31,6 +40,9 @@ export class SourceManagerService {
     this.hideEmptyCategories();
 
     this.data.set(this.catArray);
+    this.hiddenData.set(this.hiddenSources);
+
+    localStorage.setItem('hiddenSources',JSON.stringify(Object.fromEntries(Array.from(this.hiddenSources))));
   }
   
   hideEmptyCategories() {

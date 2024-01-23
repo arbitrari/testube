@@ -35,7 +35,7 @@ export class ToolbarComponent implements OnInit {
 
   openSettingsDialog() {
     this.hideTip();
-    const dialogRef = this.dialog.open(SettingsDialogComponent);
+    const dialogRef = this.dialog.open(SettingsDialogComponent, { autoFocus: false });
   }
 
 }

@@ -2,6 +2,7 @@
 <mat-dialog-content>
     <h3>Source Visibility</h3>
     <p>Hide sources that are not relevant to you</p>
+    <button mat-stroked-button *ngIf="sourceList?.selectedOptions?.selected?.length < sourceList?.options?.length" class="reset-button" (click)="sourceList.selectAll()">Reset</button>
     <div class="source-container">
       <mat-selection-list #sourceList [multiple]="true">
         @for (pair of DEFAULT_SOURCES; track pair[0]) {

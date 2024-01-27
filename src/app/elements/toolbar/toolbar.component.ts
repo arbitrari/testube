@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SettingsDialogComponent } from '../../dialogs/settings-dialog/settings-dialog.component';
+import { SourceManagerService } from 'src/app/services/source-manager/source-manager.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -12,7 +13,8 @@ export class ToolbarComponent implements OnInit {
   url : string;
   showTip : boolean = false;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,
+              public sourceManager: SourceManagerService) { }
 
   ngOnInit() {
     this.url = '';

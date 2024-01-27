@@ -55,6 +55,13 @@ button.mat-mdc-outlined-button.settings-button {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
+  
+  .hidden-container {
+    border-left: 1px solid var(--mdc-outlined-button-outline-color);
+    margin-left: 12px;
+    font-size: 12px;
+    padding-left: 16px;
+  }
 }
 
 .settings-tip {

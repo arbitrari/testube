@@ -10,6 +10,11 @@
     <app-logo></app-logo>
     <button mat-stroked-button class="settings-button" (click)="openSettingsDialog()">
         <mat-icon fontIcon="tune"></mat-icon>
+        @if (sourceManager.hiddenData().size > 0) {
+          <div class="hidden-container">
+            {{sourceManager.hiddenData().size}} Hidden
+          </div>
+        }
     </button>
 </mat-toolbar>
 

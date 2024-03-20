@@ -34,10 +34,10 @@ For the betterment of the community, we would prefer you contribute directly to 
 
 <p align="center">___</p>
 <p align="center">
-    <img src="https://avatars3.githubusercontent.com/u/39174758?s=400&u=9a2d33f5f3fbdde99fe5de2f5f127063282127cb&v=4" height="100" style="border-radius: 16px"><br>
+    <img src="https://avatars.githubusercontent.com/u/148131180?s=200&v=4" height="100" style="border-radius: 16px"><br>
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://ar.bitrary.dev/assets/arbitrary-white.png">
-        <source media="(prefers-color-scheme: light)" srcset="https://ar.bitrary.dev/assets/arbitrary-dark.png">
-        <img src="https://ar.bitrary.dev/assets/arbitrary-dark.png" height="16px" style="margin-top: 16px">
+        <source media="(prefers-color-scheme: dark)" srcset="https://arbitrari.dev/assets/arbitrari-white.png">
+        <source media="(prefers-color-scheme: light)" srcset="https://arbitrari.dev/assets/arbitrari-black.png">
+        <img src="https://arbitrari.dev/assets/arbitrari-black.png" height="16px" style="margin-top: 16px">
     </picture>
 </p>

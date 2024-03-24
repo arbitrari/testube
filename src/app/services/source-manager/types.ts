@@ -187,6 +187,40 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     }
   ],
   [
+    'videoland',
+    {
+      name: 'Videoland',
+      category: CategoryType.Streaming,
+      url: 'https://videoland.com',
+      colors: {
+        dark: '#ff3d4d',
+        light: '#ff3d4d'
+      },
+      logos: {
+        dark: 'https://cadeau.videoland.com/Images/logo.png',
+        light: 'https://cadeau.videoland.com/Images/logo.png'
+      },
+      visible: true
+    }
+  ],
+  [
+    'skyshowtime',
+    {
+      name: 'Sky Showtime',
+      category: CategoryType.Streaming,
+      url: 'https://www.skyshowtime.com/',
+      colors: {
+        dark: '#121212',
+        light: '#121212'
+      },
+      logos: {
+        dark: 'https://i.imgur.com/WqykoY6.png',
+        light: 'https://i.imgur.com/WqykoY6.png'
+      },
+      visible: true
+    }
+  ],
+  [
     'rumble',
     {
       name: 'Rumble',
@@ -322,7 +356,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       visible: true
     }
   ],
-// LIVE TELEVISION
+  // LIVE TELEVISION
   [
     'youtubetv',
     {
@@ -459,6 +493,23 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       visible: true
     }
   ],
+  [
+    'ziggo',
+    {
+      name: 'ZiggoTV',
+      category: CategoryType.Live,
+      url: 'https://ziggogo.tv/',
+      colors: {
+        dark: '#c2c2c2',
+        light: '#c2c2c2'
+      },
+      logos: {
+        dark: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Ziggo.svg',
+        light: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Ziggo.svg'
+      },
+      visible: true
+    }
+  ],
   // SPORTS
   [
     'espn',
@@ -558,6 +609,23 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       logos: {
         dark: 'https://formula1.my.site.com/resource/1568115282000/F1LogoMicro',
         light: 'https://formula1.my.site.com/resource/1568115282000/F1LogoMicro'
+      },
+      visible: true
+    }
+  ],
+  [
+    'viaplay',
+    {
+      name: 'Viaplay',
+      category: CategoryType.Sports,
+      url: 'https://viaplay.com/',
+      colors: {
+        dark: '#1b1b24',
+        light: '#1b1b24'
+      },
+      logos: {
+        dark: 'https://frontend-assets.viaplay.com/sanity/header_logo_196x48.png',
+        light: 'https://frontend-assets.viaplay.com/sanity/header_logo_196x48.png'
       },
       visible: true
     }
@@ -835,7 +903,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       },
       visible: true
     }
-  ],  [
+  ], [
     'parsec',
     {
       name: 'Parsec',

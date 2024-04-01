@@ -54,7 +54,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     'canalplus',
     {
       name: 'Canal+ online',
-      category: CategoryType.Streaming,
+      category: CategoryType.Live,
       url: 'https://canalplus.com/',
       colors: {
         dark: "#000000",

@@ -50,6 +50,23 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       visible: true
     }
   ],
+    [
+    'canalplus',
+    {
+      name: 'Canal+ online',
+      category: CategoryType.Streaming,
+      url: 'https://canalplus.com/',
+      colors: {
+        dark: "#000000",
+        light: "#000000"
+      },
+      logos: {
+        dark: "https://i.imgur.com/Zj8cNLw.png",
+        light: "https://i.imgur.com/Zj8cNLw.png"
+      },
+      visible: true
+    }
+  ],
   [
     'netflix',
     {

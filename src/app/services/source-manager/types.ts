@@ -322,6 +322,23 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       visible: true
     }
   ],
+  [
+    'purefilx',
+    {
+      name: 'Pure Flix',
+      category: CategoryType.Streaming,
+      url: "https://app.pureflix.com/",
+      colors: {
+        light: "#2a4be1",
+        dark: '#2a4be1'
+      },
+      logos: {
+        light: 'https://www.pureflix.com/hs-fs/hubfs/Marketing%20Ops/Logos/logo-GAPF-no-flare-static-350x127.png',
+        dark: 'https://www.pureflix.com/hs-fs/hubfs/Marketing%20Ops/Logos/logo-GAPF-no-flare-static-350x127.png',
+      },
+      visible: true
+    }
+  ],
 // LIVE TELEVISION
   [
     'youtubetv',
@@ -340,6 +357,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       visible: true
     }
   ],
+
   [
     'sling',
     {

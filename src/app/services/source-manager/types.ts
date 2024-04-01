@@ -50,23 +50,6 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       visible: true
     }
   ],
-    [
-    'canalplus',
-    {
-      name: 'Canal+ online',
-      category: CategoryType.Live,
-      url: 'https://canalplus.com/',
-      colors: {
-        dark: "#000000",
-        light: "#000000"
-      },
-      logos: {
-        dark: "https://i.imgur.com/Zj8cNLw.png",
-        light: "https://i.imgur.com/Zj8cNLw.png"
-      },
-      visible: true
-    }
-  ],
   [
     'netflix',
     {
@@ -472,6 +455,23 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       logos: {
         dark: 'https://static-homepage-en.pluto.tv/hp-assets/images/pluto-tv-abbd637b3dc06fb0f0c5ee6eea402166.svg',
         light: 'https://static-homepage-en.pluto.tv/hp-assets/images/pluto-tv-abbd637b3dc06fb0f0c5ee6eea402166.svg'
+      },
+      visible: true
+    }
+  ],
+  [
+    'canalplus',
+    {
+      name: 'Canal+ online',
+      category: CategoryType.Live,
+      url: 'https://canalplus.com/',
+      colors: {
+        dark: "#000000",
+        light: "#000000"
+      },
+      logos: {
+        dark: "https://i.imgur.com/Zj8cNLw.png",
+        light: "https://i.imgur.com/Zj8cNLw.png"
       },
       visible: true
     }

@@ -106,7 +106,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Prime Video',
       category: CategoryType.Streaming,
-      url: 'https://www.amazon.com/Amazon-Video/b/?ie=UTF8&node=285877801',
+      url: 'https://www.primevideo.com',
       colors: {
         dark: '#232f3e',
         light: '#232f3e'

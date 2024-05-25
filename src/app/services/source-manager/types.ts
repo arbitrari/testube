@@ -763,8 +763,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#8d45f8'
       },
       logos: {
-        dark: 'https://brand.twitch.tv/assets/logos/svg/wordmark-extruded/black.svg',
-        light: 'https://brand.twitch.tv/assets/logos/svg/wordmark-extruded/black.svg',
+        dark: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Twitch_logo_2019_black.svg',
+        light: 'https://upload.wikimedia.org/wikipedia/commons/8/8c/Twitch_logo_2019_black.svg',
       },
       visible: true
     }

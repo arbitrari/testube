@@ -643,8 +643,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#212121'
       },
       logos: {
-        dark: 'https://raw.githubusercontent.com/Stremio/stremio-brand/master/logos/PNG/stremio-logotype-dark-theme.png',
-        light: 'https://raw.githubusercontent.com/Stremio/stremio-brand/master/logos/PNG/stremio-logotype-light-theme.png',
+        dark: 'https://github.com/Stremio/stremio-brand/raw/master/logos/PNG/stremio-logotype-dark-theme.png',
+        light: 'https://github.com/Stremio/stremio-brand/raw/master/logos/PNG/stremio-logotype-light-theme.png',
       },
       visible: true
     }

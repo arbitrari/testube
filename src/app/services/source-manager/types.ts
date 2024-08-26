@@ -633,6 +633,23 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     }
   ],
   [
+    'stremio',
+    {
+      name: 'Stremio',
+      category: CategoryType.Personal,
+      url: 'https://web.stremio.com/',
+      colors: {
+        dark: '#212121',
+        light: '#212121'
+      },
+      logos: {
+        dark: 'https://raw.githubusercontent.com/Stremio/stremio-brand/master/logos/PNG/stremio-logotype-dark-theme.png',
+        light: 'https://raw.githubusercontent.com/Stremio/stremio-brand/master/logos/PNG/stremio-logotype-light-theme.png',
+      },
+      visible: true
+    }
+  ],
+  [
     'googledrive',
     {
       name: 'Google Drive',

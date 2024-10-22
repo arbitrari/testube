@@ -848,8 +848,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#107c10'
       },
       logos: {
-        dark: 'https://cdn.freebiesupply.com/logos/large/2x/xbox-9-logo-black-and-white.png',
-        light: 'https://cdn.freebiesupply.com/logos/large/2x/xbox-9-logo-black-and-white.png',
+        dark: 'https://freepnglogo.com/images/all_img/1716828776xbox-logo-white-png.png',
+        light: 'https://freepnglogo.com/images/all_img/1716828776xbox-logo-white-png.png',
       },
       visible: true
     }

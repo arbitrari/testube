@@ -707,12 +707,12 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       category: CategoryType.Personal,
       url: 'https://onedrive.live.com/?id=root',
       colors: {
-        dark: '#0078d4',
-        light: '#0078d4'
+        dark: '#c2c2c2',
+        light: '#c2c2c2'
       },
       logos: {
-        dark: 'https://cdn.freebiesupply.com/logos/large/2x/onedrive-logo-black-and-white.png',
-        light: 'https://cdn.freebiesupply.com/logos/large/2x/onedrive-logo-black-and-white.png',
+        dark: 'https://logos-world.net/wp-content/uploads/2022/04/OneDrive-Symbol.png',
+        light: 'https://logos-world.net/wp-content/uploads/2022/04/OneDrive-Symbol.png',
       },
       visible: true
     }

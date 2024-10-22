@@ -416,12 +416,12 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       category: CategoryType.Live,
       url: 'https://fubo.tv',
       colors: {
-        dark: '#1d175c',
-        light: '#1d175c'
+        dark: '#f44616',
+        light: '#f44616'
       },
       logos: {
-        dark: 'https://www.ccmtc.com/wp-content/uploads/2021/08/light-1.png',
-        light: 'https://www.ccmtc.com/wp-content/uploads/2021/08/light-1.png'
+        dark: 'https://s21.q4cdn.com/819998841/files/design/logo/Fubo-89x30-White.svg',
+        light: 'https://s21.q4cdn.com/819998841/files/design/logo/Fubo-89x30-White.svg'
       },
       visible: true
     }

@@ -11,11 +11,11 @@ $mat-black: (50: #000000,
             700: #000000,
   contrast: (50: white, 100: white, 500: white, 700: white));
 
-$app-warn: mat.define-palette(mat.$red-palette);
+$app-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-$light-app-primary: mat.define-palette(mat.$grey-palette, 900);
-$light-app-accent: mat.define-palette(mat.$green-palette, A400);
-$light-app-theme: mat.define-light-theme((
+$light-app-primary: mat.m2-define-palette(mat.$m2-grey-palette, 900);
+$light-app-accent: mat.m2-define-palette(mat.$m2-green-palette, A400);
+$light-app-theme: mat.m2-define-light-theme((
   color: (
     primary: $light-app-primary,
     accent: $light-app-accent,
@@ -24,9 +24,9 @@ $light-app-theme: mat.define-light-theme((
   density: 0
 ));
 
-$black-app-primary: mat.define-palette($mat-black, 50);
-$black-app-accent: mat.define-palette(mat.$green-palette, A400);
-$black-app-theme: mat.define-dark-theme((
+$black-app-primary: mat.m2-define-palette($mat-black, 50);
+$black-app-accent: mat.m2-define-palette(mat.$m2-green-palette, A400);
+$black-app-theme: mat.m2-define-dark-theme((
   color: (
     primary: $black-app-primary,
     accent: $black-app-accent,

@@ -29,7 +29,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
-import * as Sentry from "@sentry/angular-ivy";
+import { TraceService, createErrorHandler } from "@sentry/angular";
 import { Router } from '@angular/router';
 
 @NgModule({
@@ -65,19 +65,19 @@ import { Router } from '@angular/router';
     SourceManagerService,
     {
       provide: ErrorHandler,
-      useValue: Sentry.createErrorHandler({
+      useValue: createErrorHandler({
         showDialog: false,
         logErrors: true,
       }),
     },
     {
-      provide: Sentry.TraceService,
+      provide: TraceService,
       deps: [Router],
     },
     {
       provide: APP_INITIALIZER,
       useFactory: () => () => {},
-      deps: [Sentry.TraceService],
+      deps: [TraceService],
       multi: true,
     },
   ],

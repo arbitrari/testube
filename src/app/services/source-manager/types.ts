@@ -433,12 +433,12 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       category: CategoryType.Live,
       url: 'https://philo.com',
       colors: {
-        dark: '#066fd0',
-        light: '#066fd0'
+        dark: '#0f0e0e',
+        light: '#0f0e0e'
       },
       logos: {
-        dark: 'https://static-us-east-2-fastly-a.www.philo.com/storage/images/philo-logo-white.png',
-        light: 'https://static-us-east-2-fastly-a.www.philo.com/storage/images/philo-logo-white.png'
+        dark: 'https://static-us-east-2-fastly-a.www.philo.com/storage/images/maestro/philo-logo-light.png',
+        light: 'https://static-us-east-2-fastly-a.www.philo.com/storage/images/maestro/philo-logo-light.png'
       },
       visible: true
     }

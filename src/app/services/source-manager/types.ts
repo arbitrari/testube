@@ -838,23 +838,6 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     }
   ],
   [
-    'caffeine',
-    {
-      name: 'Caffeine',
-      category: CategoryType.Gaming,
-      url: 'https://caffeine.tv',
-      colors: {
-        dark: '#0000ff',
-        light: '#0000ff'
-      },
-      logos: {
-        dark: 'https://cdn.apk-cloud.com/detail/screenshot/uIs50DZc_Wun-tXMjGT8TR9HlNM17NyGpzpJ_jKp2LDi2WmfvtQlELjZhyHP_Py0Mw=h900.webp?vr',
-        light: 'https://cdn.apk-cloud.com/detail/screenshot/uIs50DZc_Wun-tXMjGT8TR9HlNM17NyGpzpJ_jKp2LDi2WmfvtQlELjZhyHP_Py0Mw=h900.webp?vr',
-      },
-      visible: true
-    }
-  ],
-  [
     'xbox',
     {
       name: 'XBOX',

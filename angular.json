@@ -18,7 +18,8 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "dist"
+              "base": "dist",
+              "browser": ""
             },
             "index": "src/index.html",
             "polyfills": [
@@ -115,5 +116,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

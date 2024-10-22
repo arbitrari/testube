@@ -450,12 +450,12 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       category: CategoryType.Live,
       url: 'https://tubitv.com',
       colors: {
-        dark: '#fa382f',
-        light: '#fa382f'
+        dark: '#140080',
+        light: '#140080'
       },
       logos: {
-        dark: 'https://www.logo.wine/a/logo/Tubi/Tubi-White-Logo.wine.svg',
-        light: 'https://www.logo.wine/a/logo/Tubi/Tubi-White-Logo.wine.svg'
+        dark: 'https://logos-world.net/wp-content/uploads/2024/06/Tubi-Logo.png',
+        light: 'https://logos-world.net/wp-content/uploads/2024/06/Tubi-Logo.png'
       },
       visible: true
     }

@@ -12,7 +12,7 @@
 ## Preview
 Below is what the project looks like on a Tesla with a landscape screen when in theater mode.
 <p align="center">
-    <img src="https://i.imgur.com/7ljolNG.png" width="800">
+    <img src="https://i.imgur.com/5t9nh29.png" width="800">
 </p>
 
 ## Compatibility

@@ -5,57 +5,31 @@
 @include mat.all-component-typographies();
 @include mat.core();
 
-$mat-black: (50: #000000,
-            100: #000000,
-            500: #000000,
-            700: #000000,
-  contrast: (50: white, 100: white, 500: white, 700: white));
-
-$app-warn: mat.m2-define-palette(mat.$m2-red-palette);
-
-$light-app-primary: mat.m2-define-palette(mat.$m2-grey-palette, 900);
-$light-app-accent: mat.m2-define-palette(mat.$m2-green-palette, A400);
-$light-app-theme: mat.m2-define-light-theme((
+$light-app-theme: mat.define-theme((
   color: (
-    primary: $light-app-primary,
-    accent: $light-app-accent,
-    warn: $app-warn,
-  ),
-  density: 0
+    theme-type: light,
+    primary: mat.$green-palette,
+  )
 ));
 
-$black-app-primary: mat.m2-define-palette($mat-black, 50);
-$black-app-accent: mat.m2-define-palette(mat.$m2-green-palette, A400);
-$black-app-theme: mat.m2-define-dark-theme((
+$black-app-theme: mat.define-theme((
   color: (
-    primary: $black-app-primary,
-    accent: $black-app-accent,
-    warn: $app-warn,
-  ),
-  density: 0
+    theme-type: dark,
+    primary: mat.$blue-palette,
+  )
 ));
 
-// The following mixins include base theme styles that are only needed once per application. These
-// theme styles do not depend on the color, typography, or density settings in your theme. However,
-// these styles may differ depending on the theme's design system. Currently all themes use the
-// Material 2 design system, but in the future it may be possible to create theme based on other
-// design systems, such as Material 3.
-//
-// Please note: you do not need to include the 'base' mixins, if you include the corresponding
-// 'theme' mixin elsewhere in your Sass. The full 'theme' mixins already include the base styles.
-//
-// To learn more about "base" theme styles visit our theming guide:
-// https://material.angular.io/guide/theming#theming-dimensions
-@include mat.all-component-bases($black-app-theme);
-
-@include mat.toolbar-theme($black-app-theme);
-@include mat.button-theme($black-app-theme);
-@include mat.card-theme($black-app-theme);
-@include mat.snack-bar-theme($black-app-theme);
-@include mat.form-field-theme($black-app-theme);
-@include mat.input-theme($black-app-theme);
-@include mat.tooltip-theme($black-app-theme);
-@include mat.icon-theme($black-app-theme);
+html {
+  @include mat.core-theme($black-app-theme);
+  @include mat.toolbar-theme($black-app-theme);
+  @include mat.button-theme($black-app-theme);
+  @include mat.card-theme($black-app-theme);
+  @include mat.snack-bar-theme($black-app-theme);
+  @include mat.form-field-theme($black-app-theme);
+  @include mat.input-theme($black-app-theme);
+  @include mat.tooltip-theme($black-app-theme);
+  @include mat.icon-theme($black-app-theme);
+}
 
 :root {
   --mdc-dialog-container-color: #000000;
@@ -87,6 +61,7 @@ $black-app-theme: mat.m2-define-dark-theme((
 }
 
 .light-theme {
+  @include mat.core-theme($light-app-theme);
   @include mat.toolbar-color($light-app-theme);
   @include mat.button-color($light-app-theme);
   @include mat.card-color($light-app-theme);

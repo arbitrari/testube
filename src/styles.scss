@@ -3,7 +3,8 @@
 
 
 @include mat.all-component-typographies();
-@include mat.core();
+@include mat.elevation-classes();
+@include mat.app-background();
 
 $light-app-theme: mat.define-theme((
   color: (
@@ -20,7 +21,8 @@ $black-app-theme: mat.define-theme((
 ));
 
 html {
-  @include mat.core-theme($black-app-theme);
+  @include mat.elevation-classes();
+  @include mat.app-background();
   @include mat.toolbar-theme($black-app-theme);
   @include mat.button-theme($black-app-theme);
   @include mat.card-theme($black-app-theme);
@@ -61,7 +63,8 @@ html {
 }
 
 .light-theme {
-  @include mat.core-theme($light-app-theme);
+  @include mat.elevation-classes();
+  @include mat.app-background();
   @include mat.toolbar-color($light-app-theme);
   @include mat.button-color($light-app-theme);
   @include mat.card-color($light-app-theme);

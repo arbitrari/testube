@@ -8,8 +8,8 @@ describe('DashComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashComponent ]
-    })
+    imports: [DashComponent]
+})
     .compileComponents();
   }));
 

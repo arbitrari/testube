@@ -33,54 +33,52 @@ import { TraceService, createErrorHandler } from "@sentry/angular";
 import { Router } from '@angular/router';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DashComponent,
-    AboutComponent,
-    ToolbarComponent,
-    FooterComponent,
-    LogoComponent,
-    CardComponent,
-    DebugComponent,
-    SettingsDialogComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatCardModule,
-    MatSnackBarModule,
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    MatTooltipModule,
-    MatIconModule,
-    MatDialogModule,
-    MatListModule,
-    MatCheckboxModule
-  ],
-  providers: [
-    SourceManagerService,
-    {
-      provide: ErrorHandler,
-      useValue: createErrorHandler({
-        showDialog: false,
-        logErrors: true,
-      }),
-    },
-    {
-      provide: TraceService,
-      deps: [Router],
-    },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: () => () => {},
-      deps: [TraceService],
-      multi: true,
-    },
-  ],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatCardModule,
+        MatSnackBarModule,
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule,
+        MatTooltipModule,
+        MatIconModule,
+        MatDialogModule,
+        MatListModule,
+        MatCheckboxModule,
+        DashComponent,
+        AboutComponent,
+        ToolbarComponent,
+        FooterComponent,
+        LogoComponent,
+        CardComponent,
+        DebugComponent,
+        SettingsDialogComponent
+    ],
+    providers: [
+        SourceManagerService,
+        {
+            provide: ErrorHandler,
+            useValue: createErrorHandler({
+                showDialog: false,
+                logErrors: true,
+            }),
+        },
+        {
+            provide: TraceService,
+            deps: [Router],
+        },
+        {
+            provide: APP_INITIALIZER,
+            useFactory: () => () => { },
+            deps: [TraceService],
+            multi: true,
+        },
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

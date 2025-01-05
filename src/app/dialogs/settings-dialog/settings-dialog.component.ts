@@ -1,12 +1,17 @@
 import { Component, ViewChild } from '@angular/core';
-import { MatSelectionList } from '@angular/material/list';
+import { MatSelectionList, MatListOption } from '@angular/material/list';
 import { SourceManagerService } from 'src/app/services/source-manager/source-manager.service';
 import { DEFAULT_SOURCES } from 'src/app/services/source-manager/types';
+import { MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
+import { CdkScrollable } from '@angular/cdk/scrolling';
+import { NgIf } from '@angular/common';
+import { MatButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 @Component({
     selector: 'app-settings-dialog',
     templateUrl: './settings-dialog.component.html',
     styleUrl: './settings-dialog.component.scss',
-    standalone: false
+    imports: [MatDialogTitle, CdkScrollable, MatDialogContent, NgIf, MatButton, MatSelectionList, MatListOption, MatIcon, MatDialogActions, MatDialogClose]
 })
 export class SettingsDialogComponent {
   DEFAULT_SOURCES = DEFAULT_SOURCES;

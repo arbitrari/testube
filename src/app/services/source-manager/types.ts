@@ -316,8 +316,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#121212'
       },
       logos: {
-        dark: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/76/PBS_Kids_Logo.svg/150px-PBS_Kids_Logo.svg.png',
-        light: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/76/PBS_Kids_Logo.svg/150px-PBS_Kids_Logo.svg.png'
+        dark: 'https://cms-tc.pbskids.org/globalresources/resources/img/pbs-kids-logo.svg',
+        light: 'https://cms-tc.pbskids.org/globalresources/resources/img/pbs-kids-logo.svg'
       },
       visible: true
     }

@@ -7,9 +7,10 @@ import {
 } from '../../../environments/version';
 import * as Sentry from '@sentry/angular';
 @Component({
-  selector: 'app-debug',
-  templateUrl: './debug.component.html',
-  styleUrls: ['./debug.component.scss']
+    selector: 'app-debug',
+    templateUrl: './debug.component.html',
+    styleUrls: ['./debug.component.scss'],
+    standalone: false
 })
 export class DebugComponent implements OnInit {
   buildDate: string;

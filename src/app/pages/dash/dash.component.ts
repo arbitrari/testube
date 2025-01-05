@@ -3,9 +3,10 @@ import { SourceManagerService } from 'src/app/services/source-manager/source-man
 import { Category } from 'src/app/services/source-manager/types';
 
 @Component({
-  selector: 'app-dash',
-  templateUrl: './dash.component.html',
-  styleUrls: ['./dash.component.scss']
+    selector: 'app-dash',
+    templateUrl: './dash.component.html',
+    styleUrls: ['./dash.component.scss'],
+    standalone: false
 })
 export class DashComponent implements OnInit {
   categories : Category[];

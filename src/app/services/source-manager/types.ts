@@ -112,8 +112,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#232f3e'
       },
       logos: {
-        dark: 'https://1000logos.net/wp-content/uploads/2023/11/Amazon-Prime-Video-Logo.png',
-        light: 'https://1000logos.net/wp-content/uploads/2023/11/Amazon-Prime-Video-Logo.png'
+        dark: 'https://m.media-amazon.com/images/G/01/digital/video/web/logo-min-remaster.png',
+        light: 'https://m.media-amazon.com/images/G/01/digital/video/web/logo-min-remaster.png'
       },
       visible: true
     }

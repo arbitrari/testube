@@ -214,8 +214,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#121212'
       },
       logos: {
-        dark: 'https://theme.zdassets.com/theme_assets/2245835/235983e17cb74a10434931c8ec05c9d9c1def3e6.png',
-        light: 'https://theme.zdassets.com/theme_assets/2245835/235983e17cb74a10434931c8ec05c9d9c1def3e6.png'
+        dark: 'https://logos-world.net/wp-content/uploads/2022/04/Crackle-Symbol-700x394.png',
+        light: 'https://logos-world.net/wp-content/uploads/2022/04/Crackle-Symbol-700x394.png'
       },
       visible: true
     }

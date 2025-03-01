@@ -1,12 +1,18 @@
-<div class="category" *ngFor="let category of this.sourceManager.data()">
-    <div class="category-title">
-        {{category.title}}
+
+@for (category of sourceManager.data(); track $index) {
+    <div class="category">
+        <div class="category-title">
+            {{category.title}}
+        </div>
+        <div class="card-list">
+            @for (source of category.sources; track $index) {
+                <app-card [source]="source"></app-card>
+            }
+        </div>
     </div>
-    <div class="card-list">
-        <app-card *ngFor="let source of category.sources" [source]="source"></app-card>
-    </div>
-</div>
-<div class="overflow-fade"></div>
+    <div class="overflow-fade"></div>
+}
+
 
 <!-- <pre>
   {{ this.sourceManager.data() | json }}

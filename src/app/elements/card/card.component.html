@@ -1,5 +1,9 @@
 <a mat-button [style.background]="color" [href]="source.url">
   <mat-card-content>
-    <img *ngIf="logo" [src]="logo" class="logo" [class.svg]="logo.endsWith('.svg')">
+    @if (logo) {
+      <img [src]="logo" class="logo" [class.svg]="logo.endsWith('.svg')" (error)="logo = ''">
+    } @else {
+      <h2 class="fallback-title">{{source.name}}</h2>
+    }
   </mat-card-content>
 </a>

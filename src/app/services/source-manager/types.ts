@@ -48,6 +48,24 @@ export interface UserSettings {
 
 export const DEFAULT_SOURCES: Map<string, Source> = new Map([
   [
+    'bbciplayer',
+    {
+      name: 'BBC iPlayer',
+      category: CategoryType.Streaming,
+      region: RegionType.UK,
+      url: 'https://www.bbc.co.uk/iplayer',
+      colors: {
+        dark: '#c2c2c2',
+        light: '#c2c2c2'
+      },
+      logos: {
+        dark: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/BBC_iPlayer_2021_%28Alt%29.svg/330px-BBC_iPlayer_2021_%28Alt%29.svg.png',
+        light: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/BBC_iPlayer_2021_%28Alt%29.svg/330px-BBC_iPlayer_2021_%28Alt%29.svg.png'
+      },
+      visible: true
+    }
+  ],
+  [
     'youtube',
     {
       name: 'YouTube',
@@ -120,11 +138,11 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     }
   ],
   [
-    'prime',
+    'prime-us',
     {
-      name: 'Prime Video',
+      name: 'Prime Video US',
       category: CategoryType.Streaming,
-      region: RegionType.Worldwide,
+      region: RegionType.US,
       url: 'https://www.primevideo.com',
       colors: {
         dark: '#232f3e',
@@ -138,6 +156,23 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     }
   ],
   [
+    'prime-uk',
+    {
+      name: 'Prime Video UK',
+      category: CategoryType.Streaming,
+      region: RegionType.UK,
+      url: 'https://www.amazon.co.uk/gp/video/storefront',
+      colors: {
+        dark: '#0578ff',
+        light: '#0578ff'
+      },
+      logos: {
+        dark: 'https://m.media-amazon.com/images/I/31W9hs7w0JL.png',
+        light: 'https://m.media-amazon.com/images/I/31W9hs7w0JL.png'
+      },
+      visible: true
+    }
+  ],  [
     'max',
     {
       name: 'Max',
@@ -163,12 +198,12 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       region: RegionType.Worldwide,
       url: 'https://tv.apple.com',
       colors: {
-        dark: '#121212',
-        light: '#121212'
+        dark: '#ffffff',
+        light: '#ffffff'
       },
       logos: {
-        dark: 'https://tv.apple.com/assets/brands/Apple_TV_Plus_logo_white-fa7126f2bf5269837b484153a88493f8.png',
-        light: 'https://tv.apple.com/assets/brands/Apple_TV_Plus_logo_white-fa7126f2bf5269837b484153a88493f8.png'
+        dark: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Apple_TV_Plus_Logo.svg/330px-Apple_TV_Plus_Logo.svg.png',
+        light: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Apple_TV_Plus_Logo.svg/330px-Apple_TV_Plus_Logo.svg.png'
       },
       visible: true
     }
@@ -367,6 +402,131 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       logos: {
         light: 'https://www.pureflix.com/hs-fs/hubfs/Marketing%20Ops/Logos/logo-GAPF-no-flare-static-350x127.png',
         dark: 'https://www.pureflix.com/hs-fs/hubfs/Marketing%20Ops/Logos/logo-GAPF-no-flare-static-350x127.png',
+      },
+      visible: true
+    }
+  ],
+  [
+    'britbox',
+    {
+      name: 'BritBox',
+      category: CategoryType.Streaming,
+      region: RegionType.US,
+      url: 'https://www.britbox.com',
+      colors: {
+        dark: '#121212',
+        light: '#121212'
+      },
+      logos: {
+        dark: 'https://www.britbox.com/Content/img/Logo_Britbox_color_V7.svg',
+        light: 'https://www.britbox.com/Content/img/Logo_Britbox_color_V7.svg'
+      },
+      visible: true
+    }
+  ],
+  [
+    'discoveryplus',
+    {
+      name: 'Discovery+',
+      category: CategoryType.Streaming,
+      region: RegionType.Worldwide,
+      url: 'https://www.discoveryplus.com',
+      colors: {
+        dark: '#0c5dcc',
+        light: '#0c5dcc'
+      },
+      logos: {
+        dark: 'https://m.media-amazon.com/images/I/51mlSTFEy2L.png',
+        light: 'https://m.media-amazon.com/images/I/51mlSTFEy2L.png'
+      },
+      visible: true
+    }
+  ],
+  [
+    'nowtv',
+    {
+      name: 'NOW',
+      category: CategoryType.Streaming,
+      region: RegionType.UK,
+      url: 'https://www.nowtv.com',
+      colors: {
+        dark: '#6c39c4',
+        light: '#6c39c4'
+      },
+      logos: {
+        dark: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Now_logo.svg/330px-Now_logo.svg.png',
+        light: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Now_logo.svg/330px-Now_logo.svg.png'
+      },
+      visible: true
+    }
+  ],
+  [
+    'itvplayer',
+    {
+      name: 'ITV Player',
+      category: CategoryType.Streaming,
+      region: RegionType.UK,
+      url: 'https://www.itv.com',
+      colors: {
+        dark: '#ffd400',
+        light: '#ffd400'
+      },
+      logos: {
+        dark: 'https://www.itv.com/presscentre/presscentre/sites/default/files/styles/half_width/public/itv_logo_blk.jpg?itok=cZvRseaJ',
+        light: 'https://www.itv.com/presscentre/presscentre/sites/default/files/styles/half_width/public/itv_logo_blk.jpg?itok=cZvRseaJ'
+      },
+      visible: true
+    }
+  ],
+  [
+    'channel5od',
+    {
+      name: '5',
+      category: CategoryType.Streaming,
+      region: RegionType.UK,
+      url: 'https://www.channel5.com',
+      colors: {
+        dark: '#12253f',
+        light: '#12253f'
+      },
+      logos: {
+        dark: 'https://help.channel5.com/hc/theming_assets/01JMWFRMG6MGKQ2V4C84TR4YHX',
+        light: 'https://help.channel5.com/hc/theming_assets/01JMWFRMG6MGKQ2V4C84TR4YHX'
+      },
+      visible: true
+    }
+  ],  [
+    'channel4od',
+    {
+      name: '4 on demand',
+      category: CategoryType.Streaming,
+      region: RegionType.UK,
+      url: 'https://www.channel4.com',
+      colors: {
+        dark: '#302c2dff',
+        light: '#302c2dff'
+      },
+      logos: {
+        dark: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Channel_4_%28On_Demand%29_2023.svg/250px-Channel_4_%28On_Demand%29_2023.svg.png',
+        light: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Channel_4_%28On_Demand%29_2023.svg/250px-Channel_4_%28On_Demand%29_2023.svg.png'
+      },
+      visible: true
+    }
+  ],
+  [
+    'stvplayer',
+    {
+      name: 'STV Player',
+      category: CategoryType.Streaming,
+      region: RegionType.UK,
+      url: 'https://player.stv.tv',
+      colors: {
+        dark: '#ffffff',
+        light: '#ffffff'
+      },
+      logos: {
+        dark: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/STV_Player_2019.svg/330px-STV_Player_2019.svg.png',
+        light: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/STV_Player_2019.svg/330px-STV_Player_2019.svg.png'
       },
       visible: true
     }
@@ -954,7 +1114,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
   [
     'amazonluna',
     {
-      name: 'Amazon Luna',
+      name: 'Luna',
       category: CategoryType.Gaming,
       region: RegionType.Worldwide,
       url: 'https://luna.amazon.com',
@@ -1036,8 +1196,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#2196f3'
       },
       logos: {
-        dark: 'https://new.abetterrouteplanner.com/abrp_banner.png',
-        light: 'https://new.abetterrouteplanner.com/abrp_banner.png',
+        dark: 'https://abetterrouteplanner.com/assets/assets/abrp-logo/abrp_icon_round.b9349217ad89b95556a1da931fd2b91b.png',
+        light: 'https://abetterrouteplanner.com/assets/assets/abrp-logo/abrp_icon_round.b9349217ad89b95556a1da931fd2b91b.png',
       },
       visible: true
     }

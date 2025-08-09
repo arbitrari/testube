@@ -1,5 +1,15 @@
 <h2 mat-dialog-title>Application Settings</h2>
 <mat-dialog-content>
+    <h3>Layout Settings</h3>
+    <div class="layout-settings">
+        <mat-checkbox [(ngModel)]="horizontalScrolling" color="primary">
+            Horizontal Scrolling
+        </mat-checkbox>
+        <p class="setting-description">
+            When enabled, services scroll horizontally. When disabled, services wrap to new lines.
+        </p>
+    </div>
+
     <h3>Region Selection</h3>
     <p>Choose your region to filter available services</p>
     <mat-form-field appearance="outline">

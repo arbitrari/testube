@@ -4,13 +4,13 @@
         <div class="category-title">
             {{category.title}}
         </div>
-        <div class="card-list">
+        <div class="card-list" [class.horizontal-scroll]="horizontalScrolling" [class.wrap-layout]="!horizontalScrolling">
             @for (source of category.sources; track source.key || source.name) {
                 <app-card [source]="source"></app-card>
             }
         </div>
     </div>
-    <div class="overflow-fade"></div>
+    <div class="overflow-fade" [style.display]="horizontalScrolling ? 'block' : 'none'"></div>
 }
 
 

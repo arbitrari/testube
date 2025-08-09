@@ -12,6 +12,7 @@ import { CardComponent } from '../../elements/card/card.component';
 export class DashComponent implements OnInit {
   categories : Category[];
   loading: boolean = true;
+  horizontalScrolling: boolean = true;
 
   constructor(
     public sourceManager: SourceManagerService
@@ -20,6 +21,12 @@ export class DashComponent implements OnInit {
     effect(() => {
       this.categories = this.sourceManager.data();
       this.loading = false;
+    });
+
+    // Subscribe to user settings changes
+    effect(() => {
+      const settings = this.sourceManager.userSettings();
+      this.horizontalScrolling = settings.horizontalScrolling;
     });
   }
 

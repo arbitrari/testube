@@ -25,6 +25,18 @@
     flex-direction: row;
     margin-bottom: 8px;
     padding-bottom: 8px;
-    overflow-x: auto;
     max-width: 100%;
+
+    // Default horizontal scrolling behavior
+    &.horizontal-scroll {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    // Wrapping layout behavior
+    &.wrap-layout {
+        overflow-x: visible;
+        flex-wrap: wrap;
+        gap: 8px; // Add gap between wrapped items
+    }
 }

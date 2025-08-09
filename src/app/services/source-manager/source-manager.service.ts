@@ -8,9 +8,10 @@ export class SourceManagerService {
   catArray : Category[] = [];
   hiddenSources : Map<string, string> = new Map([]);
   selectedRegion: RegionType = RegionType.Worldwide;
+  horizontalScrolling: boolean = true; // Default to horizontal scrolling enabled
   data = signal(this.catArray);
   hiddenData = signal(this.hiddenSources);
-  userSettings = signal<UserSettings>({ selectedRegion: RegionType.Worldwide, hiddenSources: new Map() });
+  userSettings = signal<UserSettings>({ selectedRegion: RegionType.Worldwide, hiddenSources: new Map(), horizontalScrolling: true });
 
   constructor() { 
     this.loadFromStorage();
@@ -20,10 +21,12 @@ export class SourceManagerService {
   loadFromStorage() {
     const hiddenFromStorage = localStorage.getItem('hiddenSources');
     const regionFromStorage = localStorage.getItem('selectedRegion') as RegionType;
+    const horizontalScrollingFromStorage = localStorage.getItem('horizontalScrolling');
     
     console.log('Loading from storage:');
     console.log('Hidden sources:', hiddenFromStorage);
     console.log('Region:', regionFromStorage);
+    console.log('Horizontal scrolling:', horizontalScrollingFromStorage);
     
     if (hiddenFromStorage) {
       try {
@@ -45,6 +48,14 @@ export class SourceManagerService {
       this.selectedRegion = RegionType.Worldwide;
       localStorage.setItem('selectedRegion', RegionType.Worldwide);
     }
+
+    // Load horizontal scrolling setting, default to true if not set
+    if (horizontalScrollingFromStorage !== null) {
+      this.horizontalScrolling = horizontalScrollingFromStorage === 'true';
+    } else {
+      this.horizontalScrolling = true;
+      localStorage.setItem('horizontalScrolling', 'true');
+    }
   }
 
   setRegion(region: RegionType) {
@@ -55,6 +66,20 @@ export class SourceManagerService {
 
   getRegion(): RegionType {
     return this.selectedRegion;
+  }
+
+  setHorizontalScrolling(enabled: boolean) {
+    this.horizontalScrolling = enabled;
+    localStorage.setItem('horizontalScrolling', enabled.toString());
+    this.userSettings.set({ 
+      selectedRegion: this.selectedRegion, 
+      hiddenSources: new Map(this.hiddenSources),
+      horizontalScrolling: this.horizontalScrolling
+    });
+  }
+
+  getHorizontalScrolling(): boolean {
+    return this.horizontalScrolling;
   }
 
   load() {
@@ -98,7 +123,8 @@ export class SourceManagerService {
     this.hiddenData.set(new Map(this.hiddenSources));
     this.userSettings.set({ 
       selectedRegion: this.selectedRegion, 
-      hiddenSources: new Map(this.hiddenSources)
+      hiddenSources: new Map(this.hiddenSources),
+      horizontalScrolling: this.horizontalScrolling
     });
 
     localStorage.setItem('hiddenSources',JSON.stringify(Object.fromEntries(Array.from(this.hiddenSources))));

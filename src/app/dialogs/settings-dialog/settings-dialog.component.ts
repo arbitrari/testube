@@ -1,5 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSelectionList, MatListOption } from '@angular/material/list';
+import { MatCheckbox } from '@angular/material/checkbox';
 import { SourceManagerService } from '../../services/source-manager/source-manager.service';
 import { DEFAULT_SOURCES, RegionType, CategoryType } from '../../services/source-manager/types';
 import { MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
         MatSelect,
         MatOption,
         MatSelectTrigger,
+        MatCheckbox,
         FormsModule
     ]
 })
@@ -39,12 +41,16 @@ export class SettingsDialogComponent {
   selectedRegion: RegionType;
   originalRegion: RegionType; // Store original region to restore if cancelled
   localHiddenSources: Map<string, string>; // Track selections locally
+  horizontalScrolling: boolean;
+  originalHorizontalScrolling: boolean; // Store original value to restore if cancelled
 
   @ViewChild('sourceList') sourceList : MatSelectionList;
 
   constructor(public sourceManager: SourceManagerService) {
     this.selectedRegion = this.sourceManager.getRegion();
     this.originalRegion = this.selectedRegion; // Store original value
+    this.horizontalScrolling = this.sourceManager.getHorizontalScrolling();
+    this.originalHorizontalScrolling = this.horizontalScrolling; // Store original value
     // Create a local copy of hidden sources to work with
     this.localHiddenSources = new Map(this.sourceManager.hiddenSources);
   }
@@ -168,6 +174,11 @@ export class SettingsDialogComponent {
       this.sourceManager.hiddenSources.set(key, value);
     }
     
+    // Apply horizontal scrolling setting if it was changed
+    if (this.horizontalScrolling !== this.originalHorizontalScrolling) {
+      this.sourceManager.setHorizontalScrolling(this.horizontalScrolling);
+    }
+    
     // Apply region change if it was modified
     if (this.selectedRegion !== this.originalRegion) {
       this.sourceManager.setRegion(this.selectedRegion);
@@ -180,6 +191,8 @@ export class SettingsDialogComponent {
   onCancel() {
     // Restore original region if it was changed
     this.selectedRegion = this.originalRegion;
+    // Restore original horizontal scrolling setting
+    this.horizontalScrolling = this.originalHorizontalScrolling;
     // Restore original hidden sources
     this.localHiddenSources = new Map(this.sourceManager.hiddenSources);
   }

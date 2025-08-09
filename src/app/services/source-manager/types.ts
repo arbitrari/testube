@@ -43,6 +43,7 @@ export interface Category {
 export interface UserSettings {
   selectedRegion: RegionType;
   hiddenSources: Map<string, string>;
+  horizontalScrolling: boolean;
 }
 
 

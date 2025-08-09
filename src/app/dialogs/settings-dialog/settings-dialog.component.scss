@@ -28,6 +28,23 @@ mat-form-field {
   }
 }
 
+.layout-settings {
+  margin-bottom: 24px;
+  
+  mat-checkbox {
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .setting-description {
+    margin-top: 4px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+  }
+}
+
 .region-controls {
   display: flex;
   gap: 12px;

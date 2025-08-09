@@ -1,21 +1,46 @@
 <h2 mat-dialog-title>Application Settings</h2>
 <mat-dialog-content>
+    <h3>Region Selection</h3>
+    <p>Choose your region to filter available services</p>
+    <mat-form-field appearance="outline">
+        <mat-label>Select Region</mat-label>
+        <mat-select [value]="selectedRegion" (selectionChange)="onRegionChange($event.value)" disableOptionCentering>
+            <mat-select-trigger>
+                <span *ngIf="selectedRegion === RegionType.Worldwide">🌎 Worldwide</span>
+                <span *ngIf="selectedRegion === RegionType.US"><img class="flag-icon" src="https://flagcdn.com/16x12/us.png" alt="US"> United States</span>
+                <span *ngIf="selectedRegion === RegionType.UK"><img class="flag-icon" src="https://flagcdn.com/16x12/gb.png" alt="GB"> United Kingdom</span>
+                <span *ngIf="selectedRegion === RegionType.Unfiltered">🚫 Unfiltered (all regions)</span>
+            </mat-select-trigger>
+            <mat-option [value]="RegionType.Worldwide">🌎 Worldwide</mat-option>
+            <mat-option [value]="RegionType.US"><img class="flag-icon" src="https://flagcdn.com/16x12/us.png" alt="US"> United States</mat-option>
+            <mat-option [value]="RegionType.UK"><img class="flag-icon" src="https://flagcdn.com/16x12/gb.png" alt="GB"> United Kingdom</mat-option>
+            <mat-option [value]="RegionType.Unfiltered">🚫 Unfiltered (all regions)</mat-option>
+        </mat-select>
+    </mat-form-field>
+
     <h3>Source Visibility</h3>
     <p>Hide sources that are not relevant to you</p>
-    <button mat-stroked-button *ngIf="sourceList?.selectedOptions?.selected?.length < sourceList?.options?.length" class="reset-button" (click)="sourceList.selectAll()">Reset</button>
+    <div class="region-controls">
+        <button mat-stroked-button (click)="selectAllForRegion()">Select All</button>
+        <button mat-stroked-button (click)="selectNoneForRegion()">Select None</button>
+    </div>
     <div class="source-container">
       <mat-selection-list #sourceList [multiple]="true">
-        @for (pair of DEFAULT_SOURCES; track pair[0]) {
-          <mat-list-option [value]="pair[0]" [selected]="sourceManager.hiddenData().has(pair[0]) == false">{{pair[1].name}}</mat-list-option>
+        @for (category of getCategories(); track category) {
+          <div class="category-section">
+            <h4 class="category-header">{{getCategoryName(category)}}</h4>
+            @for (pair of getSourcesByCategory(category); track pair[0]) {
+              <mat-list-option [value]="pair[0]" [selected]="!localHiddenSources.has(pair[0])" class="category-item">
+                {{pair[1].name}}
+                <small style="opacity: 0.7; margin-left: 8px;">({{pair[1].region}})</small>
+              </mat-list-option>
+            }
+          </div>
         }
       </mat-selection-list>
     </div>  
-    <div class="coming-soon-container">
-        <mat-icon fontIcon="construction"></mat-icon>
-        More options coming soon!
-    </div>
 </mat-dialog-content>
 <mat-dialog-actions>
     <button mat-button [mat-dialog-close]="true" (click)="onSave()">Save</button>
-    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button mat-dialog-close (click)="onCancel()">Cancel</button>
 </mat-dialog-actions>

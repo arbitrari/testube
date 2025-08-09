@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 
 
 import { TraceService, createErrorHandler } from "@sentry/angular";
@@ -50,6 +51,7 @@ import { Router } from '@angular/router';
         MatDialogModule,
         MatListModule,
         MatCheckboxModule,
+        MatSelectModule,
         DashComponent,
         AboutComponent,
         ToolbarComponent,

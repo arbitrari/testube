@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { SourceManagerService } from 'src/app/services/source-manager/source-manager.service';
-import { Category } from 'src/app/services/source-manager/types';
+import { Component, OnInit, effect } from '@angular/core';
+import { SourceManagerService } from '../../services/source-manager/source-manager.service';
+import { Category } from '../../services/source-manager/types';
 import { CardComponent } from '../../elements/card/card.component';
 
 @Component({
@@ -16,11 +16,14 @@ export class DashComponent implements OnInit {
   constructor(
     public sourceManager: SourceManagerService
   ) { 
-
+    // Subscribe to data changes using effect
+    effect(() => {
+      this.categories = this.sourceManager.data();
+      this.loading = false;
+    });
   }
 
   ngOnInit() {
     this.sourceManager.load();
-    this.categories = this.sourceManager.data();
   }
 }

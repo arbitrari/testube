@@ -46,9 +46,35 @@ html {
 }
 
 .mat-mdc-dialog-container {
-  min-width: 500px !important;
+  min-width: 600px !important;
   min-height: 700px !important;
   max-height: 100vh;
+  border-radius: 8px !important;
+  position: relative !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  z-index: 1000 !important;
+}
+
+.mat-mdc-dialog-container::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 8px !important;
+  pointer-events: none !important;
+  z-index: 1001 !important;
+}
+
+.mat-mdc-dialog-actions {
+  background-color: #2a2a2a !important;
+  border-top: 1px solid #333 !important;
+  padding: 16px 24px !important;
+  margin: 0 !important;
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
 }
 
 .mat-app-background,
@@ -119,29 +145,78 @@ html {
  * Scrollbar 
  ***/
 
-/* width */
-
+/* Default scrollbar for main page - thinner */
 ::-webkit-scrollbar {
   width: 4px !important;
   height: 4px !important;
 }
 
+/* Thicker scrollbar for settings dialog */
+.mat-mdc-dialog-container ::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
 /* Track */
 
 ::-webkit-scrollbar-track {
-  background: transparent !important;
+  background: rgba(149, 149, 149, 0.1) !important;
   border-radius: 8px !important;
 }
 
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(149, 149, 149) !important;
+  background: rgba(149, 149, 149, 0.6) !important;
   border-radius: 8px !important;
 }
 
 /* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(206, 206, 206) !important;
+  background: rgba(206, 206, 206, 0.8) !important;
+}
+
+/***
+ * Material Select Dropdown Fix for Dialogs
+ ***/
+
+/* Ensure select panels appear above dialogs */
+.cdk-overlay-container {
+  z-index: 10000 !important;
+}
+
+/* Material Select panel styling for dark theme */
+.mat-mdc-select-panel {
+  z-index: 10001 !important;
+  background-color: #1a1a1a !important;
+  color: rgb(236, 236, 236) !important;
+  border: 1px solid #333 !important;
+  border-radius: 4px !important;
+  max-height: 256px !important;
+}
+
+.mat-mdc-option {
+  color: rgb(236, 236, 236) !important;
+}
+
+.mat-mdc-option:hover {
+  background-color: #333 !important;
+}
+
+.mat-mdc-option.mdc-list-item--selected {
+  background-color: #444 !important;
+}
+
+/* Fix for select arrow and outline */
+.mat-mdc-select .mat-mdc-select-arrow svg {
+  fill: rgb(236, 236, 236) !important;
+}
+
+.mat-mdc-form-field.mat-form-field-appearance-outline .mat-mdc-form-field-outline {
+  color: rgba(236, 236, 236, 0.4) !important;
+}
+
+.mat-mdc-form-field.mat-form-field-appearance-outline.mat-focused .mat-mdc-form-field-outline-thick {
+  color: rgb(236, 236, 236) !important;
 }

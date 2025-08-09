@@ -1,11 +1,11 @@
 
-@for (category of sourceManager.data(); track $index) {
+@for (category of sourceManager.data(); track category.title) {
     <div class="category">
         <div class="category-title">
             {{category.title}}
         </div>
         <div class="card-list">
-            @for (source of category.sources; track $index) {
+            @for (source of category.sources; track source.key || source.name) {
                 <app-card [source]="source"></app-card>
             }
         </div>

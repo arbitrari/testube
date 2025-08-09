@@ -1,3 +1,15 @@
+// Dialog height override
+::ng-deep .mat-mdc-dialog-container {
+  height: 95vh !important;
+  max-height: 95vh !important;
+}
+
+::ng-deep .mat-mdc-dialog-content {
+  max-height: none !important;
+  height: calc(95vh - 120px) !important; // Account for header and footer space
+  overflow-y: auto;
+}
+
 h3 {
   font-weight: 500;
   margin-bottom: 0;
@@ -7,34 +19,124 @@ p {
   margin-top: 0;
 }
 
-.reset-button {
-  position: absolute;
-  right: 24px;
-  top: 64px;
+mat-form-field {
+  width: 100%;
+  margin-bottom: 8px; // Reduced from 24px to tighten spacing
+  
+  .mat-mdc-select-panel {
+    z-index: 9999 !important;
+  }
+}
+
+.region-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  
+  button {
+    flex: 1;
+    font-size: 14px;
+  }
+}
+
+// Ensure the overlay appears above the dialog
+::ng-deep .cdk-overlay-container {
+  z-index: 10000 !important;
+}
+
+::ng-deep .mat-mdc-select-panel {
+  z-index: 10001 !important;
+  max-height: 200px !important;
+}
+
+// Make sure the backdrop doesn't interfere
+::ng-deep .cdk-overlay-backdrop {
+  background: transparent !important;
 }
 
 .source-container {
-  height: 450px;
-  overflow: auto;
+  height: calc(95vh - 300px); // Increased height to utilize more available space
+  overflow-y: auto;
+  overflow-x: hidden; // Prevent horizontal scrolling
   border: 1px solid currentColor;
   border-radius: 8px;
+  margin-bottom: 16px; // Add space after the source container box
 
   --mat-checkbox-unselected-icon-color: currentColor;
   --mat-checkbox-selected-icon-color: currentColor;
   --mat-checkbox-selected-checkmark-color: black;
   --mat-list-list-item-one-line-container-height: 50px;
 
+  mat-selection-list {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
   .mat-mdc-list-item-interactive:not(:last-child)::before {
     border-bottom: 1px solid currentColor;
     opacity: 0.10;
   }
+  
+  .category-section {
+    margin-bottom: 16px;
+    
+    &:last-child {
+      margin-bottom: 0; // Remove bottom margin from last category to keep spacing outside the box
+    }
+  }
+  
+  .category-header {
+    font-size: 14px;
+    font-weight: 600;
+    color: currentColor;
+    opacity: 0.8;
+    margin: 12px 16px 8px 16px;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap; // Prevent text wrapping
+    overflow: hidden; // Hide overflow
+    text-overflow: ellipsis; // Add ellipsis for long text
+    
+    &:first-child {
+      margin-top: 8px;
+    }
+  }
+  
+  .category-item {
+    margin-left: 12px;
+    width: calc(100% - 12px); // Ensure item doesn't exceed container width
+    
+    .mat-mdc-list-item-interactive::before {
+      border-bottom: 1px solid currentColor;
+      opacity: 0.05;
+    }
+    
+    // Prevent horizontal scrolling for list items
+    .mdc-list-item__content {
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    .mdc-list-item__primary-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: calc(100% - 80px); // Account for checkbox and region text width
+    }
+  }
 }
 
-.coming-soon-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 72px;
-  opacity: 0.25;
+// Flag icon styling for image flags
+.flag-icon {
+  width: 16px;
+  height: 12px;
+  margin-right: 8px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 2px;
+  object-fit: cover;
 }

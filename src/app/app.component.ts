@@ -39,7 +39,12 @@ export class AppComponent {
           noButton.style.color = 'inherit';
           noButton.style.fontWeight = '500';
           noButton.style.fontSize = '14px';
-          noButton.style.textTransform = 'uppercase';
+          noButton.style.textTransform = 'none'; // Keep original case - don't uppercase
+          noButton.style.border = 'none';
+          noButton.style.outline = 'none';
+          noButton.style.boxShadow = 'none';
+          noButton.style.backgroundColor = 'transparent'; // Remove any background color
+          noButton.style.background = 'none'; // Ensure no background
           noButton.onclick = () => {
             snackBarRef.dismiss();
           };

@@ -3,7 +3,7 @@ import { MatSelectionList, MatListOption } from '@angular/material/list';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { SourceManagerService } from '../../services/source-manager/source-manager.service';
 import { DEFAULT_SOURCES, RegionType, CategoryType } from '../../services/source-manager/types';
-import { MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
+import { MatDialogTitle, MatDialogContent, MatDialogClose } from '@angular/material/dialog';
 import { CdkScrollable } from '@angular/cdk/scrolling';
 import { NgIf } from '@angular/common';
 import { MatButton } from '@angular/material/button';
@@ -26,7 +26,6 @@ import { FormsModule } from '@angular/forms';
         MatButton, 
         MatSelectionList, 
         MatListOption, 
-        MatDialogActions, 
         MatDialogClose,
         MatFormField,
         MatLabel,

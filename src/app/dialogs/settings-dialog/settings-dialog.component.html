@@ -1,8 +1,14 @@
-<h2 mat-dialog-title>Application Settings</h2>
+<div class="dialog-header">
+    <h2 mat-dialog-title>Application Settings</h2>
+    <div class="header-actions">
+        <button mat-button [mat-dialog-close]="true" (click)="onSave()">Save</button>
+        <button mat-button mat-dialog-close (click)="onCancel()">Cancel</button>
+    </div>
+</div>
 <mat-dialog-content>
     <mat-tab-group>
         <mat-tab label="Services">
-            <div class="tab-content">
+            <div class="tab-content services-tab-content">
                 <h3>Region Selection</h3>
                 <p>Choose your region to filter available services</p>
                 <mat-form-field appearance="outline">
@@ -57,7 +63,7 @@
                     </p>
                 </div>
 
-                <h3>Fullscreen Settings</h3>
+                <h3 class="fullscreen-heading">Fullscreen Settings</h3>
                 <div class="fullscreen-settings">
                     <mat-form-field appearance="outline">
                         <mat-label>URL</mat-label>
@@ -71,7 +77,3 @@
         </mat-tab>
     </mat-tab-group>
 </mat-dialog-content>
-<mat-dialog-actions>
-    <button mat-button [mat-dialog-close]="true" (click)="onSave()">Save</button>
-    <button mat-button mat-dialog-close (click)="onCancel()">Cancel</button>
-</mat-dialog-actions>

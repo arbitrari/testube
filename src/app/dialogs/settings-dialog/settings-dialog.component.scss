@@ -1,8 +1,52 @@
+// Hide default dialog title since we have custom header
+::ng-deep .mat-mdc-dialog-title {
+  display: none;
+}
+
+// Dialog header with buttons
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline; // Changed from center to baseline for text alignment
+  padding: 20px 24px 8px 24px; // Reduced bottom padding from 0 to 8px, then tabs will have less padding
+  
+  h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2; // Ensure consistent line height
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 8px;
+    align-items: baseline; // Align buttons to text baseline
+    
+    button {
+      min-width: 64px;
+      line-height: 1.2; // Match heading line height
+    }
+  }
+}
+
 // Tab layout styling
 .tab-content {
   padding: 16px 0;
-  height: calc(95vh - 220px); // Account for dialog header, tab header, and actions
-  overflow-y: auto;
+}
+
+// Reduce space between header and tabs
+::ng-deep .mat-mdc-tab-group {
+  margin-top: -8px; // Pull tabs closer to header
+}
+
+::ng-deep .mat-mdc-tab-header {
+  padding-top: 0; // Remove any top padding from tab header
+}
+
+// Remove services tab scrolling - let only source container handle it
+.services-tab-content {
+  height: calc(95vh - 180px); // More space now that we removed bottom actions
+  overflow-y: auto; // RESTORE scrolling within the tab content
 }
 
 // Dialog height override
@@ -13,8 +57,9 @@
 
 ::ng-deep .mat-mdc-dialog-content {
   max-height: none !important;
-  height: calc(95vh - 120px) !important; // Account for header and footer space
-  overflow-y: auto;
+  height: calc(95vh - 80px) !important; // Only account for header space, no footer
+  overflow: hidden !important; // REMOVE the outermost scrollbar - this is the one you wanted gone
+  padding: 0 !important; // Remove default padding since we handle it in header
 }
 
 h3 {
@@ -52,12 +97,20 @@ mat-form-field {
   }
 }
 
+.fullscreen-heading {
+  margin-bottom: 32px !important; // Force significant space below heading
+}
+
 .fullscreen-settings {
   margin-bottom: 24px;
   
+  h3 {
+    margin-bottom: 20px; // Increased from 12px for more space
+  }
+  
   mat-form-field {
     width: 100%;
-    margin-bottom: 8px;
+    margin-bottom: 4px; // Reduce space between input and description
   }
   
   .setting-description {
@@ -96,8 +149,9 @@ mat-form-field {
 }
 
 .source-container {
-  height: calc(95vh - 400px); // Adjusted for tab layout - more space needed for tab headers
-  overflow-y: auto;
+  height: auto; // Let it size naturally - tab content handles main scrolling
+  max-height: none; // Remove max height restriction
+  overflow-y: auto; // Keep internal scrolling for the source list
   overflow-x: hidden; // Prevent horizontal scrolling
   border: 1px solid currentColor;
   border-radius: 8px;
@@ -111,7 +165,7 @@ mat-form-field {
   mat-selection-list {
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
+    overflow: visible; // Allow natural content flow
   }
 
   .mat-mdc-list-item-interactive:not(:last-child)::before {

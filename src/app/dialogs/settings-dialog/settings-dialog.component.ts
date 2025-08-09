@@ -8,7 +8,9 @@ import { CdkScrollable } from '@angular/cdk/scrolling';
 import { NgIf } from '@angular/common';
 import { MatButton } from '@angular/material/button';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
 import { MatSelect, MatOption, MatSelectTrigger } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -28,10 +30,12 @@ import { FormsModule } from '@angular/forms';
         MatDialogClose,
         MatFormField,
         MatLabel,
+        MatInput,
         MatSelect,
         MatOption,
         MatSelectTrigger,
         MatCheckbox,
+        MatTabsModule,
         FormsModule
     ]
 })
@@ -43,6 +47,8 @@ export class SettingsDialogComponent {
   localHiddenSources: Map<string, string>; // Track selections locally
   horizontalScrolling: boolean;
   originalHorizontalScrolling: boolean; // Store original value to restore if cancelled
+  fullscreenUrl: string;
+  originalFullscreenUrl: string; // Store original value to restore if cancelled
 
   @ViewChild('sourceList') sourceList : MatSelectionList;
 
@@ -51,6 +57,8 @@ export class SettingsDialogComponent {
     this.originalRegion = this.selectedRegion; // Store original value
     this.horizontalScrolling = this.sourceManager.getHorizontalScrolling();
     this.originalHorizontalScrolling = this.horizontalScrolling; // Store original value
+    this.fullscreenUrl = this.sourceManager.getFullscreenUrl();
+    this.originalFullscreenUrl = this.fullscreenUrl; // Store original value
     // Create a local copy of hidden sources to work with
     this.localHiddenSources = new Map(this.sourceManager.hiddenSources);
   }
@@ -179,6 +187,11 @@ export class SettingsDialogComponent {
       this.sourceManager.setHorizontalScrolling(this.horizontalScrolling);
     }
     
+    // Apply fullscreen URL setting if it was changed
+    if (this.fullscreenUrl !== this.originalFullscreenUrl) {
+      this.sourceManager.setFullscreenUrl(this.fullscreenUrl);
+    }
+    
     // Apply region change if it was modified
     if (this.selectedRegion !== this.originalRegion) {
       this.sourceManager.setRegion(this.selectedRegion);
@@ -193,6 +206,8 @@ export class SettingsDialogComponent {
     this.selectedRegion = this.originalRegion;
     // Restore original horizontal scrolling setting
     this.horizontalScrolling = this.originalHorizontalScrolling;
+    // Restore original fullscreen URL
+    this.fullscreenUrl = this.originalFullscreenUrl;
     // Restore original hidden sources
     this.localHiddenSources = new Map(this.sourceManager.hiddenSources);
   }

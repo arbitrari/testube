@@ -44,6 +44,7 @@ export interface UserSettings {
   selectedRegion: RegionType;
   hiddenSources: Map<string, string>;
   horizontalScrolling: boolean;
+  fullscreenUrl: string;
 }
 
 

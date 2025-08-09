@@ -1,3 +1,10 @@
+// Tab layout styling
+.tab-content {
+  padding: 16px 0;
+  height: calc(95vh - 220px); // Account for dialog header, tab header, and actions
+  overflow-y: auto;
+}
+
 // Dialog height override
 ::ng-deep .mat-mdc-dialog-container {
   height: 95vh !important;
@@ -45,6 +52,23 @@ mat-form-field {
   }
 }
 
+.fullscreen-settings {
+  margin-bottom: 24px;
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .setting-description {
+    margin-top: 4px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+  }
+}
+
 .region-controls {
   display: flex;
   gap: 12px;
@@ -72,7 +96,7 @@ mat-form-field {
 }
 
 .source-container {
-  height: calc(95vh - 300px); // Increased height to utilize more available space
+  height: calc(95vh - 400px); // Adjusted for tab layout - more space needed for tab headers
   overflow-y: auto;
   overflow-x: hidden; // Prevent horizontal scrolling
   border: 1px solid currentColor;

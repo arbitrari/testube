@@ -9,9 +9,10 @@ export class SourceManagerService {
   hiddenSources : Map<string, string> = new Map([]);
   selectedRegion: RegionType = RegionType.Worldwide;
   horizontalScrolling: boolean = true; // Default to horizontal scrolling enabled
+  fullscreenUrl: string = 'https://testube.app'; // Default fullscreen URL
   data = signal(this.catArray);
   hiddenData = signal(this.hiddenSources);
-  userSettings = signal<UserSettings>({ selectedRegion: RegionType.Worldwide, hiddenSources: new Map(), horizontalScrolling: true });
+  userSettings = signal<UserSettings>({ selectedRegion: RegionType.Worldwide, hiddenSources: new Map(), horizontalScrolling: true, fullscreenUrl: 'https://testube.app' });
 
   constructor() { 
     this.loadFromStorage();
@@ -22,11 +23,13 @@ export class SourceManagerService {
     const hiddenFromStorage = localStorage.getItem('hiddenSources');
     const regionFromStorage = localStorage.getItem('selectedRegion') as RegionType;
     const horizontalScrollingFromStorage = localStorage.getItem('horizontalScrolling');
+    const fullscreenUrlFromStorage = localStorage.getItem('fullscreenUrl');
     
     console.log('Loading from storage:');
     console.log('Hidden sources:', hiddenFromStorage);
     console.log('Region:', regionFromStorage);
     console.log('Horizontal scrolling:', horizontalScrollingFromStorage);
+    console.log('Fullscreen URL:', fullscreenUrlFromStorage);
     
     if (hiddenFromStorage) {
       try {
@@ -56,6 +59,14 @@ export class SourceManagerService {
       this.horizontalScrolling = true;
       localStorage.setItem('horizontalScrolling', 'true');
     }
+
+    // Load fullscreen URL setting, default to https://testube.app if not set
+    if (fullscreenUrlFromStorage) {
+      this.fullscreenUrl = fullscreenUrlFromStorage;
+    } else {
+      this.fullscreenUrl = 'https://testube.app';
+      localStorage.setItem('fullscreenUrl', 'https://testube.app');
+    }
   }
 
   setRegion(region: RegionType) {
@@ -74,12 +85,28 @@ export class SourceManagerService {
     this.userSettings.set({ 
       selectedRegion: this.selectedRegion, 
       hiddenSources: new Map(this.hiddenSources),
-      horizontalScrolling: this.horizontalScrolling
+      horizontalScrolling: this.horizontalScrolling,
+      fullscreenUrl: this.fullscreenUrl
     });
   }
 
   getHorizontalScrolling(): boolean {
     return this.horizontalScrolling;
+  }
+
+  setFullscreenUrl(url: string) {
+    this.fullscreenUrl = url;
+    localStorage.setItem('fullscreenUrl', url);
+    this.userSettings.set({ 
+      selectedRegion: this.selectedRegion, 
+      hiddenSources: new Map(this.hiddenSources),
+      horizontalScrolling: this.horizontalScrolling,
+      fullscreenUrl: this.fullscreenUrl
+    });
+  }
+
+  getFullscreenUrl(): string {
+    return this.fullscreenUrl;
   }
 
   load() {
@@ -124,7 +151,8 @@ export class SourceManagerService {
     this.userSettings.set({ 
       selectedRegion: this.selectedRegion, 
       hiddenSources: new Map(this.hiddenSources),
-      horizontalScrolling: this.horizontalScrolling
+      horizontalScrolling: this.horizontalScrolling,
+      fullscreenUrl: this.fullscreenUrl
     });
 
     localStorage.setItem('hiddenSources',JSON.stringify(Object.fromEntries(Array.from(this.hiddenSources))));

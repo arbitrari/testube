@@ -416,12 +416,12 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       region: RegionType.US,
       url: 'https://www.britbox.com',
       colors: {
-        dark: '#121212',
-        light: '#121212'
+        dark: '#00212b',
+        light: '#00212b'
       },
       logos: {
-        dark: 'https://www.britbox.com/Content/img/Logo_Britbox_color_V7.svg',
-        light: 'https://www.britbox.com/Content/img/Logo_Britbox_color_V7.svg'
+        dark: 'https://play-lh.googleusercontent.com/G1MdVYlzLe0p-MqDoHFCQBDWw2CFYVe9C_cVT2mdR-mNpV0eMpgQgYb3rCXuZp9t1xyq',
+        light: 'https://play-lh.googleusercontent.com/G1MdVYlzLe0p-MqDoHFCQBDWw2CFYVe9C_cVT2mdR-mNpV0eMpgQgYb3rCXuZp9t1xyq'
       },
       visible: true
     }

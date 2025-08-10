@@ -222,6 +222,13 @@ mat-form-field {
       text-overflow: ellipsis;
       max-width: calc(100% - 80px); // Account for checkbox and region text width
     }
+
+    // Fix for mobile: make checkbox behave like the rest of the line
+    @media (hover: none) and (pointer: coarse) {
+      .mdc-checkbox {
+        pointer-events: none;
+      }
+    }
   }
 }
 

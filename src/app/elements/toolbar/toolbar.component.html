@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar [class.search-active]="searchBarOpen">
     <button mat-stroked-button class="custom-url-button" *ngIf="!urlBarOpen" (click)="urlBarOpen = true">
         <mat-icon fontIcon="link"/>
         Custom URL
@@ -8,6 +8,25 @@
         <mat-icon matSuffix (click)="navigate()">login</mat-icon>
     </mat-form-field>
     <app-logo></app-logo>
+    <div class="search-container" *ngIf="!searchBarOpen">
+        <button mat-stroked-button class="search-button" (click)="searchBarOpen = true">
+            <mat-icon fontIcon="search"/>
+            Search
+        </button>
+    </div>
+    <div class="search-bar-container" *ngIf="searchBarOpen">
+        <mat-form-field class="search-bar" appearance="outline">
+            <input matInput [(ngModel)]="searchQuery" (ngModelChange)="onSearchChange()" placeholder="Search services..." autofocus>
+            <mat-icon matSuffix (click)="clearSearch()">clear</mat-icon>
+        </mat-form-field>
+        <div class="include-hidden-checkbox">
+            <mat-checkbox [(ngModel)]="includeHidden" (ngModelChange)="onSearchChange()"></mat-checkbox>
+            <div class="checkbox-label">
+                <span>Include</span>
+                <span>hidden</span>
+            </div>
+        </div>
+    </div>
     <button mat-stroked-button class="settings-button" (click)="openSettingsDialog()">
         <mat-icon fontIcon="tune"></mat-icon>
         @if (sourceManager.hiddenData().size > 0) {

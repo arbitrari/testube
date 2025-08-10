@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { Category, DEFAULT_SOURCES, RegionType, UserSettings } from './types';
+import { Category, DEFAULT_SOURCES, RegionType, UserSettings, Source } from './types';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,8 @@ export class SourceManagerService {
   selectedRegion: RegionType = RegionType.Worldwide;
   horizontalScrolling: boolean = true; // Default to horizontal scrolling enabled
   fullscreenUrl: string = 'https://testube.app'; // Default fullscreen URL
+  searchQuery: string = '';
+  includeHiddenInSearch: boolean = false;
   data = signal(this.catArray);
   hiddenData = signal(this.hiddenSources);
   userSettings = signal<UserSettings>({ selectedRegion: RegionType.Worldwide, hiddenSources: new Map(), horizontalScrolling: true, fullscreenUrl: 'https://testube.app' });
@@ -109,6 +111,23 @@ export class SourceManagerService {
     return this.fullscreenUrl;
   }
 
+  setSearchFilter(query: string, includeHidden: boolean) {
+    this.searchQuery = query.toLowerCase().trim();
+    this.includeHiddenInSearch = includeHidden;
+    this.load();
+  }
+
+  clearSearchFilter() {
+    this.searchQuery = '';
+    this.includeHiddenInSearch = false;
+    this.load();
+  }
+
+  private matchesSearch(source: Source): boolean {
+    if (!this.searchQuery) return true;
+    return source.name.toLowerCase().includes(this.searchQuery);
+  }
+
   load() {
     // Completely reset the array
     this.catArray = [];
@@ -123,8 +142,24 @@ export class SourceManagerService {
     
     // Add sources to their respective categories
     for (let [key, value] of DEFAULT_SOURCES) {
-      // Dashboard shows ALL services that are not hidden, regardless of region
-      if (!this.hiddenSources.has(key)) {
+      // Determine if source should be included based on search and visibility
+      let shouldInclude = false;
+      
+      if (this.searchQuery) {
+        // When searching, include based on search query and hidden checkbox
+        if (this.matchesSearch(value)) {
+          if (this.includeHiddenInSearch) {
+            shouldInclude = true; // Include all matching sources regardless of hidden status
+          } else {
+            shouldInclude = !this.hiddenSources.has(key); // Include only non-hidden matching sources
+          }
+        }
+      } else {
+        // When not searching, show all non-hidden services
+        shouldInclude = !this.hiddenSources.has(key);
+      }
+      
+      if (shouldInclude) {
         // Ensure the category index is valid
         if (value.category >= 0 && value.category < this.catArray.length) {
           // Create a fresh copy of the source object and add the unique key

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
+import { SourceManagerService } from './services/source-manager/source-manager.service';
 
 @Component({
     selector: 'app-root',
@@ -13,17 +14,47 @@ export class AppComponent {
   isFullscreen: boolean;
 
 
-  constructor(snack: MatSnackBar) {
+  constructor(private snack: MatSnackBar, private sourceManager: SourceManagerService) {
     this.isFullscreen = false;
     if (document.referrer.startsWith('https://www.youtube.com/') == false //&&
         /* navigator.userAgent.match(this.teslaUserAgentRegEx) */) {
 
-      snack.open(`Open in Fullscreen?\n Click "GO TO SITE" on next page`,'Yes',
-        {panelClass: 'fullscreen-snack'})
-        .onAction()
-        .subscribe(()=>{
-          location.href = 'https://www.youtube.com/redirect?q=https://testube.app';
-        })
+      const snackBarRef: MatSnackBarRef<any> = this.snack.open(`Open in Fullscreen?\n Click "GO TO SITE" on next page`,'Yes',
+        {panelClass: 'fullscreen-snack'});
+      
+      // Handle Yes action
+      snackBarRef.onAction().subscribe(()=>{
+        const fullscreenUrl = this.sourceManager.getFullscreenUrl();
+        location.href = `https://www.youtube.com/redirect?q=${encodeURIComponent(fullscreenUrl)}`;
+      });
+
+      // Add No option by creating a custom action
+      snackBarRef.afterOpened().subscribe(() => {
+        const snackBarElement = document.querySelector('.fullscreen-snack');
+        if (snackBarElement) {
+          const noButton = document.createElement('button');
+          noButton.textContent = 'No';
+          noButton.className = 'mat-mdc-snack-bar-action mat-mdc-button-base mat-mdc-button mat-unthemed mat-mdc-button-base';
+          noButton.style.marginLeft = '8px';
+          noButton.style.color = 'inherit';
+          noButton.style.fontWeight = '500';
+          noButton.style.fontSize = '14px';
+          noButton.style.textTransform = 'none'; // Keep original case - don't uppercase
+          noButton.style.border = 'none';
+          noButton.style.outline = 'none';
+          noButton.style.boxShadow = 'none';
+          noButton.style.backgroundColor = 'transparent'; // Remove any background color
+          noButton.style.background = 'none'; // Ensure no background
+          noButton.onclick = () => {
+            snackBarRef.dismiss();
+          };
+          
+          const actionContainer = snackBarElement.querySelector('.mat-mdc-snack-bar-actions');
+          if (actionContainer) {
+            actionContainer.appendChild(noButton);
+          }
+        }
+      });
     } else /* if (navigator.userAgent.match(this.teslaUserAgentRegEx)) */ {
       this.isFullscreen = true;
     }

@@ -1,9 +1,22 @@
 app-logo {
   font-size: larger;
+  transition: transform 0.3s ease;
 }
 
 mat-toolbar {
   justify-content: center;
+  
+  &.search-active {
+    app-logo {
+      transform: translateX(150px);
+    }
+  }
+  
+  &.url-active {
+    app-logo {
+      transform: translateX(150px);
+    }
+  }
 }
 
 button.mat-mdc-outlined-button.custom-url-button {
@@ -39,10 +52,74 @@ button.mat-mdc-outlined-button.custom-url-button {
   position: absolute !important;
   left: 32px;
   top: 8px;
-  width: 30%;
+  width: 35%;
 
   mat-icon {
     cursor: pointer;
+  }
+}
+
+.search-container {
+  position: absolute;
+  left: 200px;
+  top: 16px;
+  transition: left 0.3s ease;
+  
+  &.url-open {
+    left: calc(32px + 35% + 24px);
+  }
+}
+
+button.mat-mdc-outlined-button.search-button {
+  mat-icon {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+.search-bar-container {
+  position: absolute;
+  left: 200px;
+  top: 8px;
+  display: flex;
+  align-items: flex-start; /* Changed back to flex-start for search input alignment */
+  gap: 16px;
+  height: 56px; /* Keep height for checkbox alignment */
+  transition: left 0.3s ease;
+  
+  &.url-open {
+    left: calc(32px + 35% + 24px);
+  }
+}
+
+::ng-deep .search-bar {
+  width: 280px;
+  margin-top: 0; /* Ensure search field stays at top */
+
+  mat-icon {
+    cursor: pointer;
+  }
+}
+
+.include-hidden-checkbox {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 56px; /* Match the container height */
+  align-self: center; /* Center the entire checkbox container */
+  
+  ::ng-deep .mat-mdc-checkbox {
+    align-self: center;
+  }
+  
+  .checkbox-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+    text-align: center;
+    align-self: center;
   }
 }
 
@@ -57,7 +134,7 @@ button.mat-mdc-outlined-button.settings-button {
   }
   
   .hidden-container {
-    border-left: 1px solid var(--mdc-outlined-button-outline-color);
+    border-left: 1px solid var(--mat-button-outlined-outline-color);
     margin-left: 12px;
     font-size: 12px;
     padding-left: 16px;

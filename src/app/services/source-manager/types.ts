@@ -7,6 +7,13 @@ export enum CategoryType {
   Utility,
 }
 
+export enum RegionType {
+  US = 'US',
+  UK = 'UK',
+  Worldwide = 'Worldwide',
+  Unfiltered = 'Unfiltered'
+}
+
 export interface Colors {
   dark: string,
   light: string
@@ -20,10 +27,12 @@ export interface Logos {
 export interface Source {
   name: string,
   category: CategoryType,
+  region: RegionType,
   url: string,
   colors: Colors,
   logos: Logos,
-  visible: boolean
+  visible: boolean,
+  key?: string // Optional unique identifier
 }
 
 export interface Category {
@@ -31,13 +40,122 @@ export interface Category {
   sources: Source[];
 }
 
+export interface UserSettings {
+  selectedRegion: RegionType;
+  hiddenSources: Map<string, string>;
+  horizontalScrolling: boolean;
+  fullscreenUrl: string;
+  sortByPopularity: boolean;
+}
+
+// Service popularity order (based on usage statistics)
+export const POPULARITY_ORDER: string[] = [
+  // Streaming (by popularity)
+  'youtube',
+  'netflix', 
+  'disneyplus',
+  'hulu',
+  'prime-us', 'prime-uk', // Prime Video variants
+  'max',
+  'appletv',
+  'peacock',
+  'paramountplus',
+  'rumble',
+  'crackle',
+  'curiositystream',
+  'crunchyroll',
+  'bentkey',
+  'viki',
+  'shudder',
+  'pbskids',
+  'purefilx',
+  'britbox',
+  'discoveryplus',
+  'nowtv',
+  'itvplayer',
+  'channel5od',
+  'channel4od',
+  'stvplayer',
+  'bbciplayer',
+  
+  // Live TV (by popularity)
+  'youtubetv',
+  'sling',
+  'directv',
+  'xfinity',
+  'fubotv',
+  'philo',
+  'tubi',
+  'plutotv',
+  
+  // Sports (by popularity)
+  'espn',
+  'foxsports',
+  'nflplus',
+  'mlbtv',
+  'nbaleaguepass',
+  'f1tv',
+  'dazn',
+  
+  // Gaming (by popularity)
+  'twitch',
+  'kick',
+  'facebookgaming',
+  'dlive',
+  'xbox',
+  'parsec',
+  'geforcenow',
+  'amazonluna',
+  'doom',
+  
+  // Personal (by popularity)
+  'plex',
+  'emby',
+  'stremio',
+  'googledrive',
+  'dropbox',
+  'icloud',
+  'onedrive',
+  'box',
+  'googlephotos',
+  'googlebooks',
+  
+  // Utility (by popularity)
+  'googlemaps',
+  'waze',
+  'abetterrouteplanner',
+  'plugshare',
+  'tesla',
+  'ventusky',
+  'googlecalendar'
+];
+
 
 export const DEFAULT_SOURCES: Map<string, Source> = new Map([
+  [
+    'bbciplayer',
+    {
+      name: 'BBC iPlayer',
+      category: CategoryType.Streaming,
+      region: RegionType.UK,
+      url: 'https://www.bbc.co.uk/iplayer',
+      colors: {
+        dark: '#c2c2c2',
+        light: '#c2c2c2'
+      },
+      logos: {
+        dark: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/BBC_iPlayer_2021_%28Alt%29.svg/330px-BBC_iPlayer_2021_%28Alt%29.svg.png',
+        light: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/BBC_iPlayer_2021_%28Alt%29.svg/330px-BBC_iPlayer_2021_%28Alt%29.svg.png'
+      },
+      visible: true
+    }
+  ],
   [
     'youtube',
     {
       name: 'YouTube',
       category: CategoryType.Streaming,
+      region: RegionType.Worldwide,
       url: 'https://youtube.com',
       colors: {
         dark: '#c2c2c2',
@@ -55,6 +173,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Netflix',
       category: CategoryType.Streaming,
+      region: RegionType.Worldwide,
       url: 'https://netflix.com',
       colors: {
         dark: '#121212',
@@ -72,6 +191,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Disney+',
       category: CategoryType.Streaming,
+      region: RegionType.Worldwide,
       url: 'https://disneyplus.com',
       colors: {
         dark: '#040814',
@@ -89,6 +209,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Hulu',
       category: CategoryType.Streaming,
+      region: RegionType.US,
       url: 'https://hulu.com',
       colors: {
         dark: '#121212',
@@ -102,10 +223,11 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     }
   ],
   [
-    'prime',
+    'prime-us',
     {
-      name: 'Prime Video',
+      name: 'Prime Video US',
       category: CategoryType.Streaming,
+      region: RegionType.US,
       url: 'https://www.primevideo.com',
       colors: {
         dark: '#232f3e',
@@ -119,10 +241,28 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     }
   ],
   [
+    'prime-uk',
+    {
+      name: 'Prime Video UK',
+      category: CategoryType.Streaming,
+      region: RegionType.UK,
+      url: 'https://www.amazon.co.uk/gp/video/storefront',
+      colors: {
+        dark: '#0578ff',
+        light: '#0578ff'
+      },
+      logos: {
+        dark: 'https://m.media-amazon.com/images/I/31W9hs7w0JL.png',
+        light: 'https://m.media-amazon.com/images/I/31W9hs7w0JL.png'
+      },
+      visible: true
+    }
+  ],  [
     'max',
     {
       name: 'Max',
       category: CategoryType.Streaming,
+      region: RegionType.US,
       url: 'https://max.com',
       colors: {
         dark: '#000e46',
@@ -140,14 +280,15 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Apple TV+',
       category: CategoryType.Streaming,
+      region: RegionType.Worldwide,
       url: 'https://tv.apple.com',
       colors: {
-        dark: '#121212',
-        light: '#121212'
+        dark: '#ffffff',
+        light: '#ffffff'
       },
       logos: {
-        dark: 'https://tv.apple.com/assets/brands/Apple_TV_Plus_logo_white-fa7126f2bf5269837b484153a88493f8.png',
-        light: 'https://tv.apple.com/assets/brands/Apple_TV_Plus_logo_white-fa7126f2bf5269837b484153a88493f8.png'
+        dark: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Apple_TV_Plus_Logo.svg/330px-Apple_TV_Plus_Logo.svg.png',
+        light: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Apple_TV_Plus_Logo.svg/330px-Apple_TV_Plus_Logo.svg.png'
       },
       visible: true
     }
@@ -157,6 +298,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Peacock',
       category: CategoryType.Streaming,
+      region: RegionType.US,
       url: 'https://www.peacocktv.com/watch/home',
       colors: {
         dark: '#121212',
@@ -174,6 +316,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Paramount+',
       category: CategoryType.Streaming,
+      region: RegionType.Worldwide,
       url: 'https://www.paramountplus.com/',
       colors: {
         dark: '#0036c4',
@@ -191,6 +334,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Rumble',
       category: CategoryType.Streaming,
+      region: RegionType.Worldwide,
       url: 'https://rumble.com',
       colors: {
         dark: '#10212F',
@@ -208,6 +352,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Crackle',
       category: CategoryType.Streaming,
+      region: RegionType.US,
       url: 'https://crackle.com',
       colors: {
         dark: '#121212',
@@ -225,6 +370,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Curiosity Stream',
       category: CategoryType.Streaming,
+      region: RegionType.Worldwide,
       url: 'https://curiositystream.com',
       colors: {
         dark: '#161e37',
@@ -242,6 +388,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Crunchyroll',
       category: CategoryType.Streaming,
+      region: RegionType.Worldwide,
       url: 'https://crunchyroll.com',
       colors: {
         dark: '#c2c2c2',
@@ -259,6 +406,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Bentkey',
       category: CategoryType.Streaming,
+      region: RegionType.US,
       url: 'https://bentkey.com',
       colors: {
         dark: '#081722',
@@ -276,6 +424,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Rakuten Viki',
       category: CategoryType.Streaming,
+      region: RegionType.Worldwide,
       url: 'https://viki.com',
       colors: {
         dark: '#0C9BFF',
@@ -293,6 +442,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Shudder',
       category: CategoryType.Streaming,
+      region: RegionType.Worldwide,
       url: 'https://shudder.com',
       colors: {
         dark: '#121212',
@@ -310,6 +460,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'PBS Kids',
       category: CategoryType.Streaming,
+      region: RegionType.US,
       url: 'https://pbskids.org/video/livetv',
       colors: {
         dark: '#121212',
@@ -327,6 +478,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Pure Flix',
       category: CategoryType.Streaming,
+      region: RegionType.US,
       url: "https://app.pureflix.com/",
       colors: {
         light: "#2a4be1",
@@ -339,12 +491,138 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
       visible: true
     }
   ],
+  [
+    'britbox',
+    {
+      name: 'BritBox',
+      category: CategoryType.Streaming,
+      region: RegionType.US,
+      url: 'https://www.britbox.com',
+      colors: {
+        dark: '#00212b',
+        light: '#00212b'
+      },
+      logos: {
+        dark: 'https://play-lh.googleusercontent.com/G1MdVYlzLe0p-MqDoHFCQBDWw2CFYVe9C_cVT2mdR-mNpV0eMpgQgYb3rCXuZp9t1xyq',
+        light: 'https://play-lh.googleusercontent.com/G1MdVYlzLe0p-MqDoHFCQBDWw2CFYVe9C_cVT2mdR-mNpV0eMpgQgYb3rCXuZp9t1xyq'
+      },
+      visible: true
+    }
+  ],
+  [
+    'discoveryplus',
+    {
+      name: 'Discovery+',
+      category: CategoryType.Streaming,
+      region: RegionType.Worldwide,
+      url: 'https://www.discoveryplus.com',
+      colors: {
+        dark: '#0c5dcc',
+        light: '#0c5dcc'
+      },
+      logos: {
+        dark: 'https://m.media-amazon.com/images/I/51mlSTFEy2L.png',
+        light: 'https://m.media-amazon.com/images/I/51mlSTFEy2L.png'
+      },
+      visible: true
+    }
+  ],
+  [
+    'nowtv',
+    {
+      name: 'NOW',
+      category: CategoryType.Streaming,
+      region: RegionType.UK,
+      url: 'https://www.nowtv.com',
+      colors: {
+        dark: '#6c39c4',
+        light: '#6c39c4'
+      },
+      logos: {
+        dark: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Now_logo.svg/330px-Now_logo.svg.png',
+        light: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Now_logo.svg/330px-Now_logo.svg.png'
+      },
+      visible: true
+    }
+  ],
+  [
+    'itvplayer',
+    {
+      name: 'ITV Player',
+      category: CategoryType.Streaming,
+      region: RegionType.UK,
+      url: 'https://www.itv.com',
+      colors: {
+        dark: '#ffd400',
+        light: '#ffd400'
+      },
+      logos: {
+        dark: 'https://www.itv.com/presscentre/presscentre/sites/default/files/styles/half_width/public/itv_logo_blk.jpg?itok=cZvRseaJ',
+        light: 'https://www.itv.com/presscentre/presscentre/sites/default/files/styles/half_width/public/itv_logo_blk.jpg?itok=cZvRseaJ'
+      },
+      visible: true
+    }
+  ],
+  [
+    'channel5od',
+    {
+      name: '5',
+      category: CategoryType.Streaming,
+      region: RegionType.UK,
+      url: 'https://www.channel5.com',
+      colors: {
+        dark: '#12253f',
+        light: '#12253f'
+      },
+      logos: {
+        dark: 'https://help.channel5.com/hc/theming_assets/01JMWFRMG6MGKQ2V4C84TR4YHX',
+        light: 'https://help.channel5.com/hc/theming_assets/01JMWFRMG6MGKQ2V4C84TR4YHX'
+      },
+      visible: true
+    }
+  ],  [
+    'channel4od',
+    {
+      name: '4 on demand',
+      category: CategoryType.Streaming,
+      region: RegionType.UK,
+      url: 'https://www.channel4.com',
+      colors: {
+        dark: '#302c2dff',
+        light: '#302c2dff'
+      },
+      logos: {
+        dark: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Channel_4_%28On_Demand%29_2023.svg/250px-Channel_4_%28On_Demand%29_2023.svg.png',
+        light: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Channel_4_%28On_Demand%29_2023.svg/250px-Channel_4_%28On_Demand%29_2023.svg.png'
+      },
+      visible: true
+    }
+  ],
+  [
+    'stvplayer',
+    {
+      name: 'STV Player',
+      category: CategoryType.Streaming,
+      region: RegionType.UK,
+      url: 'https://player.stv.tv',
+      colors: {
+        dark: '#ffffff',
+        light: '#ffffff'
+      },
+      logos: {
+        dark: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/STV_Player_2019.svg/330px-STV_Player_2019.svg.png',
+        light: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/STV_Player_2019.svg/330px-STV_Player_2019.svg.png'
+      },
+      visible: true
+    }
+  ],
 // LIVE TELEVISION
   [
     'youtubetv',
     {
       name: 'YouTube TV',
       category: CategoryType.Live,
+      region: RegionType.US,
       url: 'https://tv.youtube.com',
       colors: {
         dark: '#c2c2c2',
@@ -363,6 +641,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Sling',
       category: CategoryType.Live,
+      region: RegionType.US,
       url: 'https://watch.sling.com',
       colors: {
         dark: '#02223b',
@@ -380,6 +659,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'DIRECTV Stream',
       category: CategoryType.Live,
+      region: RegionType.US,
       url: 'https://stream.directv.com',
       colors: {
         dark: '#c2c2c2',
@@ -397,6 +677,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Xfinity Stream',
       category: CategoryType.Live,
+      region: RegionType.US,
       url: 'https://xfinity.com/stream',
       colors: {
         dark: '#121212',
@@ -414,6 +695,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'FuboTV',
       category: CategoryType.Live,
+      region: RegionType.US,
       url: 'https://fubo.tv',
       colors: {
         dark: '#f44616',
@@ -431,6 +713,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Philo',
       category: CategoryType.Live,
+      region: RegionType.US,
       url: 'https://philo.com',
       colors: {
         dark: '#0f0e0e',
@@ -448,6 +731,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Tubi',
       category: CategoryType.Live,
+      region: RegionType.US,
       url: 'https://tubitv.com',
       colors: {
         dark: '#140080',
@@ -465,6 +749,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Pluto TV',
       category: CategoryType.Live,
+      region: RegionType.US,
       url: 'https://pluto.tv',
       colors: {
         dark: '#121212',
@@ -483,6 +768,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'ESPN',
       category: CategoryType.Sports,
+      region: RegionType.US,
       url: 'https://www.espn.com/watch/',
       colors: {
         dark: '#d00',
@@ -500,6 +786,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'FOX Sports',
       category: CategoryType.Sports,
+      region: RegionType.US,
       url: 'https://www.foxsports.com/live',
       colors: {
         dark: '#c2c2c2',
@@ -517,6 +804,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'NFL+',
       category: CategoryType.Sports,
+      region: RegionType.US,
       url: 'https://www.nfl.com/plus/',
       colors: {
         dark: '#121212',
@@ -534,6 +822,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'MLBtv',
       category: CategoryType.Sports,
+      region: RegionType.US,
       url: 'https://www.mlb.com/tv',
       colors: {
         dark: '#041e42',
@@ -551,6 +840,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'NBA League Pass',
       category: CategoryType.Sports,
+      region: RegionType.US,
       url: 'https://www.nba.com/watch/league-pass',
       colors: {
         dark: '#143b75',
@@ -568,6 +858,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'F1TV',
       category: CategoryType.Sports,
+      region: RegionType.US,
       url: 'https://f1tv.formula1.com',
       colors: {
         dark: '#15151e',
@@ -585,6 +876,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'DAZN',
       category: CategoryType.Sports,
+      region: RegionType.US,
       url: 'https://dazn.com',
       colors: {
         dark: '#0c161c',
@@ -603,6 +895,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Plex',
       category: CategoryType.Personal,
+      region: RegionType.Worldwide,
       url: 'https://app.plex.tv/desktop',
       colors: {
         dark: '#1f2326',
@@ -620,6 +913,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Emby',
       category: CategoryType.Personal,
+      region: RegionType.Worldwide,
       url: 'http://app.emby.media/',
       colors: {
         dark: '#212121',
@@ -637,6 +931,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Stremio',
       category: CategoryType.Personal,
+      region: RegionType.Worldwide,
       url: 'https://web.stremio.com/',
       colors: {
         dark: '#212121',
@@ -654,6 +949,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Google Drive',
       category: CategoryType.Personal,
+      region: RegionType.Worldwide,
       url: 'https://drive.google.com',
       colors: {
         dark: '#c2c2c2',
@@ -671,6 +967,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Dropbox',
       category: CategoryType.Personal,
+      region: RegionType.Worldwide,
       url: 'https://dropbox.com',
       colors: {
         dark: '#0d2f81',
@@ -688,6 +985,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'iCloud',
       category: CategoryType.Personal,
+      region: RegionType.Worldwide,
       url: 'https://icloud.com/iclouddrive',
       colors: {
         dark: '#c2c2c2',
@@ -705,6 +1003,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'OneDrive',
       category: CategoryType.Personal,
+      region: RegionType.Worldwide,
       url: 'https://onedrive.live.com/?id=root',
       colors: {
         dark: '#c2c2c2',
@@ -722,6 +1021,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Box',
       category: CategoryType.Personal,
+      region: RegionType.Worldwide,
       url: 'https://box.com',
       colors: {
         dark: '#0061d5',
@@ -739,6 +1039,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Google Photos',
       category: CategoryType.Personal,
+      region: RegionType.Worldwide,
       url: 'https://photos.google.com',
       colors: {
         dark: '#c2c2c2',
@@ -756,6 +1057,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Google Books',
       category: CategoryType.Personal,
+      region: RegionType.Worldwide,
       url: 'https://play.google.com/books',
       colors: {
         dark: '#c2c2c2',
@@ -774,6 +1076,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Twitch',
       category: CategoryType.Gaming,
+      region: RegionType.Worldwide,
       url: 'https://twitch.tv',
       colors: {
         dark: '#8d45f8',
@@ -791,6 +1094,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'KICK',
       category: CategoryType.Gaming,
+      region: RegionType.Worldwide,
       url: 'https://kick.com',
       colors: {
         dark: '#0c0e0f',
@@ -808,6 +1112,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Facebook Gaming',
       category: CategoryType.Gaming,
+      region: RegionType.Worldwide,
       url: 'https://fb.gg',
       colors: {
         dark: '#005fec',
@@ -825,6 +1130,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'DLive',
       category: CategoryType.Gaming,
+      region: RegionType.Worldwide,
       url: 'https://dlive.tv',
       colors: {
         dark: '#121212',
@@ -842,6 +1148,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'XBOX',
       category: CategoryType.Gaming,
+      region: RegionType.Worldwide,
       url: 'https://www.xbox.com/play',
       colors: {
         dark: '#107c10',
@@ -858,6 +1165,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Parsec',
       category: CategoryType.Gaming,
+      region: RegionType.Worldwide,
       url: 'https://web.parsec.app/',
       colors: {
         dark: '#0c0c0c',
@@ -875,6 +1183,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'GeForce Now',
       category: CategoryType.Gaming,
+      region: RegionType.Worldwide,
       url: 'https://play.geforcenow.com/mall/',
       colors: {
         dark: '#121212',
@@ -890,8 +1199,9 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
   [
     'amazonluna',
     {
-      name: 'Amazon Luna',
+      name: 'Luna',
       category: CategoryType.Gaming,
+      region: RegionType.Worldwide,
       url: 'https://luna.amazon.com',
       colors: {
         dark: '#3c007d',
@@ -909,6 +1219,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'DOOM',
       category: CategoryType.Gaming,
+      region: RegionType.Worldwide,
       url: 'https://uacorp.space',
       colors: {
         dark: '#121212',
@@ -927,6 +1238,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Google Maps',
       category: CategoryType.Utility,
+      region: RegionType.Worldwide,
       url: 'https://maps.google.com',
       colors: {
         dark: '#c2c2c2',
@@ -944,6 +1256,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Waze',
       category: CategoryType.Utility,
+      region: RegionType.Worldwide,
       url: 'https://waze.com/livemap',
       colors: {
         dark: '#47cfee',
@@ -961,14 +1274,15 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'ABetterRoutePlanner',
       category: CategoryType.Utility,
+      region: RegionType.Worldwide,
       url: 'https://abetterrouteplanner.com',
       colors: {
         dark: '#2196f3',
         light: '#2196f3'
       },
       logos: {
-        dark: 'https://new.abetterrouteplanner.com/abrp_banner.png',
-        light: 'https://new.abetterrouteplanner.com/abrp_banner.png',
+        dark: 'https://abetterrouteplanner.com/assets/assets/abrp-logo/abrp_icon_round.b9349217ad89b95556a1da931fd2b91b.png',
+        light: 'https://abetterrouteplanner.com/assets/assets/abrp-logo/abrp_icon_round.b9349217ad89b95556a1da931fd2b91b.png',
       },
       visible: true
     }
@@ -978,6 +1292,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'PlugShare',
       category: CategoryType.Utility,
+      region: RegionType.Worldwide,
       url: 'https://plugshare.com',
       colors: {
         dark: '#003ca6',
@@ -995,6 +1310,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Tesla Account',
       category: CategoryType.Utility,
+      region: RegionType.Worldwide,
       url: 'https://tesla.com/teslaaccount',
       colors: {
         dark: '#e12026',
@@ -1012,6 +1328,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Ventusky',
       category: CategoryType.Utility,
+      region: RegionType.Worldwide,
       url: 'https://www.ventusky.com/?l=radar',
       colors: {
         dark: '#31537d',
@@ -1029,6 +1346,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Google Calendar',
       category: CategoryType.Utility,
+      region: RegionType.Worldwide,
       url: 'https://calendar.google.com',
       colors: {
         dark: '#c2c2c2',

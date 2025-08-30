@@ -9,14 +9,16 @@ export class SourceManagerService {
   hiddenSources : Map<string, string> = new Map([]);
   selectedRegion: RegionType = RegionType.Worldwide;
   horizontalScrolling: boolean = true; // Default to horizontal scrolling enabled
-  fullscreenUrl: string = 'https://testube.app'; // Default fullscreen URL
+  fullscreenUrl: string = ''; // Will be set dynamically in constructor
   searchQuery: string = '';
   includeHiddenInSearch: boolean = false;
   data = signal(this.catArray);
   hiddenData = signal(this.hiddenSources);
-  userSettings = signal<UserSettings>({ selectedRegion: RegionType.Worldwide, hiddenSources: new Map(), horizontalScrolling: true, fullscreenUrl: 'https://testube.app' });
+  userSettings = signal<UserSettings>({ selectedRegion: RegionType.Worldwide, hiddenSources: new Map(), horizontalScrolling: true, fullscreenUrl: '' });
 
   constructor() { 
+    // Set dynamic fullscreen URL based on current site
+    this.fullscreenUrl = window.location.origin;
     this.loadFromStorage();
     this.load();
   }
@@ -62,14 +64,14 @@ export class SourceManagerService {
       localStorage.setItem('horizontalScrolling', 'true');
     }
 
-    // Load fullscreen URL setting, default to https://testube.app if not set
+    // Load fullscreen URL setting, default to current site origin if not set
     if (fullscreenUrlFromStorage) {
       this.fullscreenUrl = fullscreenUrlFromStorage;
       console.log('Loaded fullscreen URL from storage:', this.fullscreenUrl);
     } else {
-      this.fullscreenUrl = 'https://testube.app';
-      localStorage.setItem('fullscreenUrl', 'https://testube.app');
-      console.log('No fullscreen URL in storage, using default:', this.fullscreenUrl);
+      // If no stored URL, keep the dynamic URL set in constructor
+      localStorage.setItem('fullscreenUrl', this.fullscreenUrl);
+      console.log('No fullscreen URL in storage, using current site origin:', this.fullscreenUrl);
     }
   }
 

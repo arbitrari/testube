@@ -31,7 +31,7 @@
 
 // Tab layout styling
 .tab-content {
-  padding: 16px 0;
+  padding: 16px 24px; // Add consistent padding to all tabs
 }
 
 // Reduce space between header and tabs
@@ -45,20 +45,23 @@
 
 // Remove services tab scrolling - let only source container handle it
 .services-tab-content {
-  height: calc(95vh - 180px); // More space now that we removed bottom actions
-  overflow-y: auto; // RESTORE scrolling within the tab content
+  padding: 16px 24px; // Add horizontal padding
+  height: auto; // Let it size naturally
+  overflow: visible; // Allow natural content flow
 }
 
-// Dialog height override
+// Dialog height override - make it size to content
 ::ng-deep .mat-mdc-dialog-container {
-  height: 95vh !important;
-  max-height: 95vh !important;
+  height: auto !important;
+  max-height: 85vh !important;
+  width: 600px !important;
+  max-width: 90vw !important;
 }
 
 ::ng-deep .mat-mdc-dialog-content {
+  height: auto !important;
   max-height: none !important;
-  height: calc(95vh - 80px) !important; // Only account for header space, no footer
-  overflow: hidden !important; // REMOVE the outermost scrollbar - this is the one you wanted gone
+  overflow: visible !important;
   padding: 0 !important; // Remove default padding since we handle it in header
 }
 
@@ -149,8 +152,7 @@ mat-form-field {
 }
 
 .source-container {
-  height: auto; // Let it size naturally - tab content handles main scrolling
-  max-height: none; // Remove max height restriction
+  height: 400px; // Fixed height for consistency
   overflow-y: auto; // Keep internal scrolling for the source list
   overflow-x: hidden; // Prevent horizontal scrolling
   border: 1px solid currentColor;
@@ -241,4 +243,25 @@ mat-form-field {
   vertical-align: middle;
   border-radius: 2px;
   object-fit: cover;
+}
+
+// Responsive styles for smaller screens
+@media (max-height: 600px) {
+  .source-container {
+    height: 300px; // Smaller fixed height for small screens
+  }
+  
+  ::ng-deep .mat-mdc-dialog-container {
+    max-height: 90vh !important;
+  }
+}
+
+@media (max-height: 500px) {
+  .source-container {
+    height: 250px; // Even smaller for very small screens
+  }
+  
+  ::ng-deep .mat-mdc-dialog-container {
+    max-height: 95vh !important;
+  }
 }

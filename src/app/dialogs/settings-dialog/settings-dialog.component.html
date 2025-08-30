@@ -61,6 +61,13 @@
                     <p class="setting-description">
                         When enabled, services scroll horizontally. When disabled, services wrap to new lines.
                     </p>
+                    
+                    <mat-checkbox [(ngModel)]="sortByPopularity" color="primary">
+                        Sort by Popularity
+                    </mat-checkbox>
+                    <p class="setting-description">
+                        When enabled, services are ordered by popularity. When disabled, services are sorted alphabetically.
+                    </p>
                 </div>
 
                 <h3 class="fullscreen-heading">Fullscreen Settings</h3>

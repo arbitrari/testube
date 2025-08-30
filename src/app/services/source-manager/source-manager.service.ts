@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { Category, DEFAULT_SOURCES, RegionType, UserSettings, Source } from './types';
+import { Category, DEFAULT_SOURCES, RegionType, UserSettings, Source, POPULARITY_ORDER } from './types';
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +9,13 @@ export class SourceManagerService {
   hiddenSources : Map<string, string> = new Map([]);
   selectedRegion: RegionType = RegionType.Worldwide;
   horizontalScrolling: boolean = true; // Default to horizontal scrolling enabled
+  sortByPopularity: boolean = true; // Default to popularity sorting
   fullscreenUrl: string = ''; // Will be set dynamically in constructor
   searchQuery: string = '';
   includeHiddenInSearch: boolean = false;
   data = signal(this.catArray);
   hiddenData = signal(this.hiddenSources);
-  userSettings = signal<UserSettings>({ selectedRegion: RegionType.Worldwide, hiddenSources: new Map(), horizontalScrolling: true, fullscreenUrl: '' });
+  userSettings = signal<UserSettings>({ selectedRegion: RegionType.Worldwide, hiddenSources: new Map(), horizontalScrolling: true, fullscreenUrl: '', sortByPopularity: true });
 
   constructor() { 
     // Set dynamic fullscreen URL based on current site
@@ -28,12 +29,14 @@ export class SourceManagerService {
     const regionFromStorage = localStorage.getItem('selectedRegion') as RegionType;
     const horizontalScrollingFromStorage = localStorage.getItem('horizontalScrolling');
     const fullscreenUrlFromStorage = localStorage.getItem('fullscreenUrl');
+    const sortByPopularityFromStorage = localStorage.getItem('sortByPopularity');
     
     console.log('Loading from storage:');
     console.log('Hidden sources:', hiddenFromStorage);
     console.log('Region:', regionFromStorage);
     console.log('Horizontal scrolling:', horizontalScrollingFromStorage);
     console.log('Fullscreen URL:', fullscreenUrlFromStorage);
+    console.log('Sort by popularity:', sortByPopularityFromStorage);
     
     if (hiddenFromStorage) {
       try {
@@ -64,6 +67,14 @@ export class SourceManagerService {
       localStorage.setItem('horizontalScrolling', 'true');
     }
 
+    // Load sort by popularity setting, default to true (popularity) if not set
+    if (sortByPopularityFromStorage !== null) {
+      this.sortByPopularity = sortByPopularityFromStorage === 'true';
+    } else {
+      this.sortByPopularity = true;
+      localStorage.setItem('sortByPopularity', 'true');
+    }
+
     // Load fullscreen URL setting, default to current site origin if not set
     if (fullscreenUrlFromStorage) {
       this.fullscreenUrl = fullscreenUrlFromStorage;
@@ -92,12 +103,23 @@ export class SourceManagerService {
       selectedRegion: this.selectedRegion, 
       hiddenSources: new Map(this.hiddenSources),
       horizontalScrolling: this.horizontalScrolling,
-      fullscreenUrl: this.fullscreenUrl
+      fullscreenUrl: this.fullscreenUrl,
+      sortByPopularity: this.sortByPopularity
     });
   }
 
   getHorizontalScrolling(): boolean {
     return this.horizontalScrolling;
+  }
+
+  setSortByPopularity(enabled: boolean) {
+    this.sortByPopularity = enabled;
+    localStorage.setItem('sortByPopularity', enabled.toString());
+    this.load(); // Reload data with new sorting
+  }
+
+  getSortByPopularity(): boolean {
+    return this.sortByPopularity;
   }
 
   setFullscreenUrl(url: string) {
@@ -109,7 +131,8 @@ export class SourceManagerService {
       selectedRegion: this.selectedRegion, 
       hiddenSources: new Map(this.hiddenSources),
       horizontalScrolling: this.horizontalScrolling,
-      fullscreenUrl: this.fullscreenUrl
+      fullscreenUrl: this.fullscreenUrl,
+      sortByPopularity: this.sortByPopularity
     });
   }
 
@@ -178,9 +201,28 @@ export class SourceManagerService {
 
     this.hideEmptyCategories();
 
-    // Sort sources alphabetically within each category
+    // Sort sources within each category
     for (let category of this.catArray) {
-      category.sources.sort((a, b) => a.name.localeCompare(b.name));
+      if (this.sortByPopularity) {
+        // Sort by popularity order
+        category.sources.sort((a, b) => {
+          const aIndex = POPULARITY_ORDER.indexOf(a.key || '');
+          const bIndex = POPULARITY_ORDER.indexOf(b.key || '');
+          
+          // If both are in the popularity list, sort by their order
+          if (aIndex !== -1 && bIndex !== -1) {
+            return aIndex - bIndex;
+          }
+          // If only one is in the list, prioritize it
+          if (aIndex !== -1) return -1;
+          if (bIndex !== -1) return 1;
+          // If neither is in the list, fallback to alphabetical
+          return a.name.localeCompare(b.name);
+        });
+      } else {
+        // Sort alphabetically
+        category.sources.sort((a, b) => a.name.localeCompare(b.name));
+      }
     }
 
     // Force update signals with completely new references
@@ -193,7 +235,8 @@ export class SourceManagerService {
       selectedRegion: this.selectedRegion, 
       hiddenSources: new Map(this.hiddenSources),
       horizontalScrolling: this.horizontalScrolling,
-      fullscreenUrl: this.fullscreenUrl
+      fullscreenUrl: this.fullscreenUrl,
+      sortByPopularity: this.sortByPopularity
     });
 
     localStorage.setItem('hiddenSources',JSON.stringify(Object.fromEntries(Array.from(this.hiddenSources))));

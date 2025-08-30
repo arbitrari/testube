@@ -46,6 +46,8 @@ export class SettingsDialogComponent {
   localHiddenSources: Map<string, string>; // Track selections locally
   horizontalScrolling: boolean;
   originalHorizontalScrolling: boolean; // Store original value to restore if cancelled
+  sortByPopularity: boolean;
+  originalSortByPopularity: boolean; // Store original value to restore if cancelled
   fullscreenUrl: string;
   originalFullscreenUrl: string; // Store original value to restore if cancelled
 
@@ -56,6 +58,8 @@ export class SettingsDialogComponent {
     this.originalRegion = this.selectedRegion; // Store original value
     this.horizontalScrolling = this.sourceManager.getHorizontalScrolling();
     this.originalHorizontalScrolling = this.horizontalScrolling; // Store original value
+    this.sortByPopularity = this.sourceManager.getSortByPopularity();
+    this.originalSortByPopularity = this.sortByPopularity; // Store original value
     this.fullscreenUrl = this.sourceManager.getFullscreenUrl();
     this.originalFullscreenUrl = this.fullscreenUrl; // Store original value
     // Create a local copy of hidden sources to work with
@@ -186,6 +190,11 @@ export class SettingsDialogComponent {
       this.sourceManager.setHorizontalScrolling(this.horizontalScrolling);
     }
     
+    // Apply sort by popularity setting if it was changed
+    if (this.sortByPopularity !== this.originalSortByPopularity) {
+      this.sourceManager.setSortByPopularity(this.sortByPopularity);
+    }
+    
     // Always save fullscreen URL to ensure it's persisted
     // (even if it appears unchanged, there might be timing issues)
     this.sourceManager.setFullscreenUrl(this.fullscreenUrl);
@@ -204,6 +213,8 @@ export class SettingsDialogComponent {
     this.selectedRegion = this.originalRegion;
     // Restore original horizontal scrolling setting
     this.horizontalScrolling = this.originalHorizontalScrolling;
+    // Restore original sort by popularity setting
+    this.sortByPopularity = this.originalSortByPopularity;
     // Restore original fullscreen URL
     this.fullscreenUrl = this.originalFullscreenUrl;
     // Restore original hidden sources

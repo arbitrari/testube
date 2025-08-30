@@ -45,7 +45,90 @@ export interface UserSettings {
   hiddenSources: Map<string, string>;
   horizontalScrolling: boolean;
   fullscreenUrl: string;
+  sortByPopularity: boolean;
 }
+
+// Service popularity order (based on usage statistics)
+export const POPULARITY_ORDER: string[] = [
+  // Streaming (by popularity)
+  'youtube',
+  'netflix', 
+  'disneyplus',
+  'hulu',
+  'prime-us', 'prime-uk', // Prime Video variants
+  'max',
+  'appletv',
+  'peacock',
+  'paramountplus',
+  'rumble',
+  'crackle',
+  'curiositystream',
+  'crunchyroll',
+  'bentkey',
+  'viki',
+  'shudder',
+  'pbskids',
+  'purefilx',
+  'britbox',
+  'discoveryplus',
+  'nowtv',
+  'itvplayer',
+  'channel5od',
+  'channel4od',
+  'stvplayer',
+  'bbciplayer',
+  
+  // Live TV (by popularity)
+  'youtubetv',
+  'sling',
+  'directv',
+  'xfinity',
+  'fubotv',
+  'philo',
+  'tubi',
+  'plutotv',
+  
+  // Sports (by popularity)
+  'espn',
+  'foxsports',
+  'nflplus',
+  'mlbtv',
+  'nbaleaguepass',
+  'f1tv',
+  'dazn',
+  
+  // Gaming (by popularity)
+  'twitch',
+  'kick',
+  'facebookgaming',
+  'dlive',
+  'xbox',
+  'parsec',
+  'geforcenow',
+  'amazonluna',
+  'doom',
+  
+  // Personal (by popularity)
+  'plex',
+  'emby',
+  'stremio',
+  'googledrive',
+  'dropbox',
+  'icloud',
+  'onedrive',
+  'box',
+  'googlephotos',
+  'googlebooks',
+  
+  // Utility (by popularity)
+  'googlemaps',
+  'waze',
+  'abetterrouteplanner',
+  'plugshare',
+  'tesla',
+  'ventusky',
+  'googlecalendar'
+];
 
 
 export const DEFAULT_SOURCES: Map<string, Source> = new Map([

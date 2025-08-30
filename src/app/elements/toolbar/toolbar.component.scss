@@ -66,7 +66,7 @@ button.mat-mdc-outlined-button.custom-url-button {
   transition: left 0.3s ease;
   
   &.url-open {
-    left: 500px;
+    left: calc(32px + 35% + 24px);
   }
 }
 
@@ -88,7 +88,7 @@ button.mat-mdc-outlined-button.search-button {
   transition: left 0.3s ease;
   
   &.url-open {
-    left: 500px;
+    left: calc(32px + 35% + 24px);
   }
 }
 

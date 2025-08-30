@@ -8,7 +8,13 @@ mat-toolbar {
   
   &.search-active {
     app-logo {
-      transform: translateX(-150px);
+      transform: translateX(150px);
+    }
+  }
+  
+  &.url-active {
+    app-logo {
+      transform: translateX(150px);
     }
   }
 }
@@ -46,7 +52,7 @@ button.mat-mdc-outlined-button.custom-url-button {
   position: absolute !important;
   left: 32px;
   top: 8px;
-  width: 30%;
+  width: 35%;
 
   mat-icon {
     cursor: pointer;
@@ -55,8 +61,13 @@ button.mat-mdc-outlined-button.custom-url-button {
 
 .search-container {
   position: absolute;
-  right: 220px;
+  left: 200px;
   top: 16px;
+  transition: left 0.3s ease;
+  
+  &.url-open {
+    left: 500px;
+  }
 }
 
 button.mat-mdc-outlined-button.search-button {
@@ -68,12 +79,17 @@ button.mat-mdc-outlined-button.search-button {
 
 .search-bar-container {
   position: absolute;
-  right: 220px;
+  left: 200px;
   top: 8px;
   display: flex;
   align-items: flex-start; /* Changed back to flex-start for search input alignment */
   gap: 16px;
   height: 56px; /* Keep height for checkbox alignment */
+  transition: left 0.3s ease;
+  
+  &.url-open {
+    left: 500px;
+  }
 }
 
 ::ng-deep .search-bar {

@@ -1,4 +1,4 @@
-<mat-toolbar [class.search-active]="searchBarOpen">
+<mat-toolbar [class.search-active]="searchBarOpen" [class.url-active]="urlBarOpen">
     <button mat-stroked-button class="custom-url-button" *ngIf="!urlBarOpen" (click)="urlBarOpen = true">
         <mat-icon fontIcon="link"/>
         Custom URL
@@ -6,15 +6,16 @@
     <mat-form-field cdkFocusInitial #urlBar class="url-bar" appearance="outline" *ngIf="urlBarOpen" (keydown.enter)="navigate()">
         <input matInput autofocus [(ngModel)]="url" placeholder="Enter a URL">
         <mat-icon matSuffix (click)="navigate()">login</mat-icon>
+        <mat-icon matSuffix (click)="urlBarOpen = false">close</mat-icon>
     </mat-form-field>
     <app-logo></app-logo>
-    <div class="search-container" *ngIf="!searchBarOpen">
+    <div class="search-container" [class.url-open]="urlBarOpen" *ngIf="!searchBarOpen">
         <button mat-stroked-button class="search-button" (click)="searchBarOpen = true">
             <mat-icon fontIcon="search"/>
             Search
         </button>
     </div>
-    <div class="search-bar-container" *ngIf="searchBarOpen">
+    <div class="search-bar-container" [class.url-open]="urlBarOpen" *ngIf="searchBarOpen">
         <mat-form-field class="search-bar" appearance="outline">
             <input matInput [(ngModel)]="searchQuery" (ngModelChange)="onSearchChange()" placeholder="Search services..." autofocus>
             <mat-icon matSuffix (click)="clearSearch()">clear</mat-icon>

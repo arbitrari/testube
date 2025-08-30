@@ -186,10 +186,9 @@ export class SettingsDialogComponent {
       this.sourceManager.setHorizontalScrolling(this.horizontalScrolling);
     }
     
-    // Apply fullscreen URL setting if it was changed
-    if (this.fullscreenUrl !== this.originalFullscreenUrl) {
-      this.sourceManager.setFullscreenUrl(this.fullscreenUrl);
-    }
+    // Always save fullscreen URL to ensure it's persisted
+    // (even if it appears unchanged, there might be timing issues)
+    this.sourceManager.setFullscreenUrl(this.fullscreenUrl);
     
     // Apply region change if it was modified
     if (this.selectedRegion !== this.originalRegion) {

@@ -65,9 +65,11 @@ export class SourceManagerService {
     // Load fullscreen URL setting, default to https://testube.app if not set
     if (fullscreenUrlFromStorage) {
       this.fullscreenUrl = fullscreenUrlFromStorage;
+      console.log('Loaded fullscreen URL from storage:', this.fullscreenUrl);
     } else {
       this.fullscreenUrl = 'https://testube.app';
       localStorage.setItem('fullscreenUrl', 'https://testube.app');
+      console.log('No fullscreen URL in storage, using default:', this.fullscreenUrl);
     }
   }
 
@@ -97,8 +99,10 @@ export class SourceManagerService {
   }
 
   setFullscreenUrl(url: string) {
+    console.log('Setting fullscreen URL:', url);
     this.fullscreenUrl = url;
     localStorage.setItem('fullscreenUrl', url);
+    console.log('Saved to localStorage:', localStorage.getItem('fullscreenUrl'));
     this.userSettings.set({ 
       selectedRegion: this.selectedRegion, 
       hiddenSources: new Map(this.hiddenSources),

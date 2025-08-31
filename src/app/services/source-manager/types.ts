@@ -363,7 +363,7 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     {
       name: 'Sling',
       category: CategoryType.Live,
-      url: 'https://watch.sling.com',
+      url: 'https://watch.sling.com/dashboard/home',
       colors: {
         dark: '#02223b',
         light: '#02223b'

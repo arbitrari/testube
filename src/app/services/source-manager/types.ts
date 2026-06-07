@@ -950,8 +950,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#2196f3'
       },
       logos: {
-        dark: 'https://new.abetterrouteplanner.com/abrp_banner.png',
-        light: 'https://new.abetterrouteplanner.com/abrp_banner.png',
+        dark: 'https://abetterrouteplanner.com/compare/img/abrp_banner.png',
+        light: 'https://abetterrouteplanner.com/compare/img/abrp_banner.png',
       },
       visible: true
     }

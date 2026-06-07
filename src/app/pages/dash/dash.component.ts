@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { SourceManagerService } from 'src/app/services/source-manager/source-manager.service';
 import { Category } from 'src/app/services/source-manager/types';
 import { CardComponent } from '../../elements/card/card.component';
@@ -7,6 +7,7 @@ import { CardComponent } from '../../elements/card/card.component';
     selector: 'app-dash',
     templateUrl: './dash.component.html',
     styleUrls: ['./dash.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [ CardComponent]
 })
 export class DashComponent implements OnInit {

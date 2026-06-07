@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Source } from 'src/app/services/source-manager/types';
 import { MatAnchor } from '@angular/material/button';
 import { MatCardContent } from '@angular/material/card';
@@ -9,6 +9,7 @@ import { NgOptimizedImage } from '@angular/common';
     selector: 'app-card',
     templateUrl: './card.component.html',
     styleUrls: ['./card.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
       MatAnchor, MatCardContent
     ]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { VERSION } from '../../../environments/version';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
@@ -10,6 +10,7 @@ import { RouterLink } from '@angular/router';
     selector: 'app-footer',
     templateUrl: './footer.component.html',
     styleUrls: ['./footer.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [MatToolbar, MatToolbarRow, MatAnchor, RouterLink, MatIconAnchor, DatePipe]
 })
 export class FooterComponent implements OnInit {

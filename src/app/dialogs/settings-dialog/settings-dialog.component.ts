@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { MatSelectionList, MatListOption } from '@angular/material/list';
 import { SourceManagerService } from 'src/app/services/source-manager/source-manager.service';
 import { DEFAULT_SOURCES } from 'src/app/services/source-manager/types';
@@ -11,6 +11,7 @@ import { MatIcon } from '@angular/material/icon';
     selector: 'app-settings-dialog',
     templateUrl: './settings-dialog.component.html',
     styleUrl: './settings-dialog.component.scss',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [MatDialogTitle, CdkScrollable, MatDialogContent, MatButton, MatSelectionList, MatListOption, MatIcon, MatDialogActions, MatDialogClose]
 })
 export class SettingsDialogComponent {

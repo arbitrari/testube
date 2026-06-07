@@ -1,13 +1,13 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SettingsDialogComponent } from '../../dialogs/settings-dialog/settings-dialog.component';
-import { SourceManagerService } from 'src/app/services/source-manager/source-manager.service';
-import { MatToolbar } from '@angular/material/toolbar';
+import { SourceManagerService } from '../../services/source-manager/source-manager.service';
 
-import { MatButton } from '@angular/material/button';
-import { MatIcon } from '@angular/material/icon';
-import { MatFormField, MatSuffix } from '@angular/material/form-field';
-import { MatInput } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { LogoComponent } from '../logo/logo.component';
 
@@ -16,18 +16,20 @@ import { LogoComponent } from '../logo/logo.component';
     templateUrl: './toolbar.component.html',
     styleUrls: ['./toolbar.component.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [MatToolbar, MatButton, MatIcon, MatFormField, MatInput, FormsModule, MatSuffix, LogoComponent]
+    imports: [
+      MatToolbarModule, MatButtonModule, MatIconModule, MatFormFieldModule,
+      FormsModule, LogoComponent, MatInputModule
+    ]
 })
 export class ToolbarComponent implements OnInit {
   urlBarOpen : boolean = false;
-  url : string;
+  url: string = '';
   showTip : boolean = false;
 
   constructor(public dialog: MatDialog,
               public sourceManager: SourceManagerService) { }
 
   ngOnInit() {
-    this.url = '';
     this.showTip = localStorage.getItem('hide-settings-tip') != 'true';
   }
 

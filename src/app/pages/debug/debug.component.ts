@@ -7,25 +7,28 @@ import {
   VERSION
 } from '../../../environments/version';
 import * as Sentry from '@sentry/angular';
-import { MatButton } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
-import { MatIcon } from '@angular/material/icon';
-import { MatFormField, MatLabel } from '@angular/material/form-field';
-import { MatInput } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 @Component({
     selector: 'app-debug',
     templateUrl: './debug.component.html',
     styleUrls: ['./debug.component.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [MatButton, RouterLink, MatIcon, MatFormField, MatLabel, MatInput]
+    imports: [
+      MatButtonModule, RouterLink, MatIconModule, MatFormFieldModule, MatInputModule
+    ]
 })
 export class DebugComponent implements OnInit {
-  buildDate: string;
-  buildHash: string;
-  userAgent: string;
-  zoom: number;
-  maxZoom: number;
-  minZoom: number;
+  buildDate!: string;
+  buildHash!: string;
+  userAgent!: string;
+  zoom!: number;
+  maxZoom!: number;
+  minZoom!: number;
   // teslaUserAgentRegEx = /Tesla\/(?:develop-)*(?:feature-)*(?:.*fsd.*)*(?:factory-)*(?:terminal-)*([0-9]{4}.[0-9]{1,3}.?[0-9]{0,3}.?[0-9]{0,3}.?[0-9]{0,3})*-(.*)/g;
 
   constructor() {}
@@ -37,7 +40,7 @@ export class DebugComponent implements OnInit {
     this.maxZoom = 2.0;
     this.minZoom = 0;
     if (document.documentElement.getAttribute('style')) {
-      this.zoom = Number(document.documentElement.getAttribute('style').split(': ')[1]);
+      this.zoom = Number(document.documentElement.getAttribute('style')?.split(': ')[1]);
     } else
       this.zoom = 1;
     // console.log(this.isTesla(), this.userAgent, this.userAgent.match(this.teslaUserAgentRegEx));

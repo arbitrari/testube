@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
-import { Source } from 'src/app/services/source-manager/types';
-import { MatAnchor } from '@angular/material/button';
-import { MatCardContent } from '@angular/material/card';
-import { NgOptimizedImage } from '@angular/common';
+import { Source } from '../../services/source-manager/types';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
@@ -11,13 +10,13 @@ import { NgOptimizedImage } from '@angular/common';
     styleUrls: ['./card.component.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
-      MatAnchor, MatCardContent
+      MatCardModule, MatButtonModule
     ]
 })
 export class CardComponent implements OnInit {
-  @Input() source : Source;
-  logo: string;
-  color: string;
+  @Input() source!: Source;
+  logo!: string;
+  color!: string;
 
   constructor() { }
 

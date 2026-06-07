@@ -386,8 +386,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#c2c2c2'
       },
       logos: {
-        dark: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/DIRECTV_STREAM_2021_logo.svg/220px-DIRECTV_STREAM_2021_logo.svg.png',
-        light: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/DIRECTV_STREAM_2021_logo.svg/220px-DIRECTV_STREAM_2021_logo.svg.png'
+        dark: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/DIRECTV_STREAM_2021_logo.svg',
+        light: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/DIRECTV_STREAM_2021_logo.svg'
       },
       visible: true
     }

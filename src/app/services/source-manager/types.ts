@@ -821,23 +821,6 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
     }
   ],
   [
-    'dlive',
-    {
-      name: 'DLive',
-      category: CategoryType.Gaming,
-      url: 'https://dlive.tv',
-      colors: {
-        dark: '#121212',
-        light: '#121212'
-      },
-      logos: {
-        dark: 'https://dlive.tv/img/logo-darkmode.50133ca0.svg',
-        light: 'https://dlive.tv/img/logo-darkmode.50133ca0.svg',
-      },
-      visible: true
-    }
-  ],
-  [
     'xbox',
     {
       name: 'XBOX',

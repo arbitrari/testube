@@ -1,8 +1,10 @@
 <mat-toolbar>
-  <mat-toolbar-row *ngIf="device.isMobile()" style="justify-content: center;">
-    <a mat-button routerLink="about">about</a>
-    <a mat-button href="https://github.com/arbitrari/testube/issues">report issue</a>
-  </mat-toolbar-row>
+  @if (device.isMobile()) {
+    <mat-toolbar-row style="justify-content: center;">
+      <a mat-button routerLink="about">about</a>
+      <a mat-button href="https://github.com/arbitrari/testube/issues">report issue</a>
+    </mat-toolbar-row>
+  }
   <mat-toolbar-row>
     <a mat-icon-button href="https://arbitrari.dev" style=" margin-right: 16px">
       <svg style="height: 32px; opacity: 0.3;" xmlns="http://www.w3.org/2000/svg" viewBox="382.3 410 463.06 367.69000000000005">
@@ -10,13 +12,17 @@
       M845.31,728.32A24.65,24.65,0,0,0,821.7,704.7v-.05H797a24.67,24.67,0,0,0-24.64,23.67h-.05V754h.05A24.67,24.67,0,0,0,797,777.69h23.67A24.69,24.69,0,0,0,845.36,753V728.32Z" fill="#ffff"/>
       </svg>
     </a>
-    <div class="copy" *ngIf="device.isMobile() == false">
-      &copy;{{today | date: 'yyyy'}} arbitrari
-    </div>
-    <div *ngIf="device.isMobile() == false" class="nav">
-      <a mat-button routerLink="about">about</a>
-      <a mat-button href="https://github.com/arbitrari/testube/issues">report issue</a>
-    </div>
+    @if (device.isMobile() == false) {
+      <div class="copy">
+        &copy;{{today | date: 'yyyy'}} arbitrari
+      </div>
+    }
+    @if (device.isMobile() == false) {
+      <div class="nav">
+        <a mat-button routerLink="about">about</a>
+        <a mat-button href="https://github.com/arbitrari/testube/issues">report issue</a>
+      </div>
+    }
     <a class="hash" routerLink="debug">{{hash}}</a>
     <div class="creation">
       <!-- <span style="opacity: 0.3;">{{ getReferrer() }}</span> -->

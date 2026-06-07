@@ -950,8 +950,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#47cfee'
       },
       logos: {
-        dark: 'https://upload.wikimedia.org/wikipedia/fr/thumb/d/d0/Waze-logo-2020.svg/800px-Waze-logo-2020.svg.png',
-        light: 'https://upload.wikimedia.org/wikipedia/fr/thumb/d/d0/Waze-logo-2020.svg/800px-Waze-logo-2020.svg.png',
+        dark: 'https://upload.wikimedia.org/wikipedia/en/b/bc/Logo_for_waze.svg',
+        light: 'https://upload.wikimedia.org/wikipedia/en/b/bc/Logo_for_waze.svg',
       },
       visible: true
     }

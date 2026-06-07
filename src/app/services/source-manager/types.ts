@@ -146,8 +146,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#121212'
       },
       logos: {
-        dark: 'https://tv.apple.com/assets/brands/Apple_TV_Plus_logo_white-fa7126f2bf5269837b484153a88493f8.png',
-        light: 'https://tv.apple.com/assets/brands/Apple_TV_Plus_logo_white-fa7126f2bf5269837b484153a88493f8.png'
+        dark: 'https://www.apple.com/tv-pr/about-assets/images/logo/Apple_TV_Plus_logo_About.png.large.png',
+        light: 'https://www.apple.com/tv-pr/about-assets/images/logo/Apple_TV_Plus_logo_About.png.large.png'
       },
       visible: true
     }

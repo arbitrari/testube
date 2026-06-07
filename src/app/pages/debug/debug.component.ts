@@ -1,6 +1,7 @@
 import {
   Component,
-  OnInit
+  OnInit,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import {
   VERSION
@@ -15,6 +16,7 @@ import { MatInput } from '@angular/material/input';
     selector: 'app-debug',
     templateUrl: './debug.component.html',
     styleUrls: ['./debug.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [MatButton, RouterLink, MatIcon, MatFormField, MatLabel, MatInput]
 })
 export class DebugComponent implements OnInit {

@@ -1,23 +1,27 @@
 <mat-toolbar>
-    <button mat-stroked-button class="custom-url-button" *ngIf="!urlBarOpen" (click)="urlBarOpen = true">
-        <mat-icon fontIcon="link"/>
-        Custom URL
+  @if (!urlBarOpen) {
+    <button mat-stroked-button class="custom-url-button" (click)="urlBarOpen = true">
+      <mat-icon fontIcon="link"/>
+      Custom URL
     </button>
-    <mat-form-field cdkFocusInitial #urlBar class="url-bar" appearance="outline" *ngIf="urlBarOpen" (keydown.enter)="navigate()">
-        <input matInput autofocus [(ngModel)]="url" placeholder="Enter a URL">
-        <mat-icon matSuffix (click)="navigate()">login</mat-icon>
+  }
+  @if (urlBarOpen) {
+    <mat-form-field cdkFocusInitial #urlBar class="url-bar" appearance="outline" (keydown.enter)="navigate()">
+      <input matInput autofocus [(ngModel)]="url" placeholder="Enter a URL">
+      <mat-icon matSuffix (click)="navigate()">login</mat-icon>
     </mat-form-field>
-    <app-logo></app-logo>
-    <button mat-stroked-button class="settings-button" (click)="openSettingsDialog()">
-        <mat-icon fontIcon="tune"></mat-icon>
-        @if (sourceManager.hiddenData().size > 0) {
-          <div class="hidden-container">
-            {{sourceManager.hiddenData().size}} Hidden
-          </div>
-        }
-    </button>
+  }
+  <app-logo></app-logo>
+  <button mat-stroked-button class="settings-button" (click)="openSettingsDialog()">
+    <mat-icon fontIcon="tune"></mat-icon>
+    @if (sourceManager.hiddenData().size > 0) {
+      <div class="hidden-container">
+        {{sourceManager.hiddenData().size}} Hidden
+      </div>
+    }
+  </button>
 </mat-toolbar>
 
 <!-- <div *ngIf="showTip" class="settings-tip" (click)="hideTip()">
-    <b style="margin-right: 8px">NEW</b> Source hiding is here
+<b style="margin-right: 8px">NEW</b> Source hiding is here
 </div> -->

@@ -19,10 +19,10 @@ p {
   border: 1px solid currentColor;
   border-radius: 8px;
 
-  --mdc-checkbox-unselected-icon-color: currentColor;
-  --mdc-checkbox-selected-icon-color: currentColor;
-  --mdc-checkbox-selected-checkmark-color: black;
-  --mdc-list-list-item-one-line-container-height: 50px;
+  --mat-checkbox-unselected-icon-color: currentColor;
+  --mat-checkbox-selected-icon-color: currentColor;
+  --mat-checkbox-selected-checkmark-color: black;
+  --mat-list-list-item-one-line-container-height: 50px;
 
   .mat-mdc-list-item-interactive:not(:last-child)::before {
     border-bottom: 1px solid currentColor;

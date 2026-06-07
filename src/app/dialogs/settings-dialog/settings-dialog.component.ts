@@ -1,7 +1,7 @@
 import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { MatSelectionList, MatListOption } from '@angular/material/list';
-import { SourceManagerService } from 'src/app/services/source-manager/source-manager.service';
-import { DEFAULT_SOURCES } from 'src/app/services/source-manager/types';
+import { SourceManagerService } from '../../services/source-manager/source-manager.service';
+import { DEFAULT_SOURCES } from '../../services/source-manager/types';
 import { MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
 import { CdkScrollable } from '@angular/cdk/scrolling';
 
@@ -17,7 +17,7 @@ import { MatIcon } from '@angular/material/icon';
 export class SettingsDialogComponent {
   DEFAULT_SOURCES = DEFAULT_SOURCES;
 
-  @ViewChild('sourceList') sourceList : MatSelectionList;
+  @ViewChild('sourceList') sourceList!: MatSelectionList;
 
   constructor(public sourceManager: SourceManagerService) {
     

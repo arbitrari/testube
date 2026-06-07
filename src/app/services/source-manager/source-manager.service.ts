@@ -15,7 +15,7 @@ export class SourceManagerService {
   }
 
   loadFromStorage() {
-    let hiddenFromStorage = JSON.parse(localStorage.getItem('hiddenSources'));
+    let hiddenFromStorage = JSON.parse(localStorage.getItem('hiddenSources')?? '{}');
     console.log(hiddenFromStorage);
     if (hiddenFromStorage) {
       this.hiddenSources = new Map(Object.entries(hiddenFromStorage));

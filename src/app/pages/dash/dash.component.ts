@@ -11,7 +11,6 @@ import { CardComponent } from '../../elements/card/card.component';
     imports: [ CardComponent]
 })
 export class DashComponent implements OnInit {
-  categories : Category[];
   loading: boolean = true;
 
   constructor(
@@ -22,6 +21,5 @@ export class DashComponent implements OnInit {
 
   ngOnInit() {
     this.sourceManager.load();
-    this.categories = this.sourceManager.data();
   }
 }

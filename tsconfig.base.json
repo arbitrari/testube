@@ -7,9 +7,10 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "es2022",
+    "moduleResolution": "bundler",
     "importHelpers": true,
+    "skipLibCheck": true,
     "target": "es2022",
     "typeRoots": [
       "node_modules/@types"
@@ -17,10 +18,11 @@
     "lib": [
       "es2022",
       "dom"
-    ]
+    ],
+    "ignoreDeprecations": "6.0"
   },
   "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
+    "strictTemplates": true,
     "strictInjectionParameters": true
   }
 }

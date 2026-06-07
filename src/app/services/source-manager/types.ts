@@ -180,8 +180,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#0036c4'
       },
       logos: {
-        dark: 'https://wwwimage-us.pplusstatic.com/base/files/cbs_page_attribute/pplus_logo_white.svg',
-        light: 'https://wwwimage-us.pplusstatic.com/base/files/cbs_page_attribute/pplus_logo_white.svg'
+        dark: 'https://wwwimage-us.pplusstatic.com/base/files/cbs_page_attribute/32/79/1/image_124a1063-414d-4caf-aef6-8adea89c3455.svg',
+        light: 'https://wwwimage-us.pplusstatic.com/base/files/cbs_page_attribute/32/79/1/image_124a1063-414d-4caf-aef6-8adea89c3455.svg'
       },
       visible: true
     }

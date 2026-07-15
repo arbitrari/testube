@@ -1001,8 +1001,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#31537d'
       },
       logos: {
-        dark: 'https://i.imgur.com/OOZBXGw.png',
-        light: 'https://i.imgur.com/OOZBXGw.png',
+        dark: 'https://static.ventusky.com/images/ventusky-logo-white.svg',
+        light: 'https://static.ventusky.com/images/ventusky-logo-white.svg',
       },
       visible: true
     }

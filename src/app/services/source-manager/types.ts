@@ -471,8 +471,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#121212'
       },
       logos: {
-        dark: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Pluto_TV_logo_2024.svg/220px-Pluto_TV_logo_2024.svg.png',
-        light: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Pluto_TV_logo_2024.svg/220px-Pluto_TV_logo_2024.svg.png'
+        dark: 'https://public-assets-pressexpress.s3.amazonaws.com/assets/photos/embed/2024/09/04/PlutoTV_Logo_1080x1080_Plutonium3-3ae84a2914e286e8.png',
+        light: 'https://public-assets-pressexpress.s3.amazonaws.com/assets/photos/embed/2024/09/04/PlutoTV_Logo_1080x1080_Plutonium3-3ae84a2914e286e8.png'
       },
       visible: true
     }

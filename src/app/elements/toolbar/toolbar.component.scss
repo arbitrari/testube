@@ -65,8 +65,8 @@ button.mat-mdc-outlined-button.settings-button {
 }
 
 .settings-tip {
-  background: rgb(236, 236, 236);
-  color: #000;
+  background: var(--settings-tip-bg);
+  color: var(--settings-tip-text);
   padding: 16px;
   position: fixed;
   right: 120px;
@@ -75,7 +75,7 @@ button.mat-mdc-outlined-button.settings-button {
 
   &::after {
     content: "";
-    background: rgb(236, 236, 236);
+    background: var(--settings-tip-bg);
     right: 113px;
     height: 14px;
     width: 14px;

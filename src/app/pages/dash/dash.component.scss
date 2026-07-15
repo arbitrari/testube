@@ -1,6 +1,5 @@
 .category {
  margin-left: 32px;
-//  margin-right: 32px;
 }
 
 .overflow-fade {
@@ -10,11 +9,11 @@
     height: 100%;
     width: 16px;
     z-index: 2;
-    background: linear-gradient(to left,#000 10%,transparent);
+    background: linear-gradient(to left, var(--overflow-gradient) 10%, transparent);
 }
 
 .category-title {
-    color: white;
+    color: var(--category-text);
     font-size: x-large;
     font-weight: 500;
     margin-bottom: 8px;

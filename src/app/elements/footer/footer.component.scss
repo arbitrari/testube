@@ -1,6 +1,6 @@
 div, span {
     font-size: 15px;
-    opacity: 0.3;
+    opacity: 0.5;
     font-weight: 400;
     letter-spacing: 1.2px;
 }
@@ -18,11 +18,12 @@ div.creation {
         margin-bottom: 4px;
         width: auto;
         filter: grayscale(100%);
+        opacity: 0.3;
     }
 }
 
 a {
-    color: silver;
+    color: var(--app-text);
 
     svg {
         margin-top: -5px;
@@ -34,7 +35,7 @@ a {
     left: 50%;
     transform: translateX(-50%);
     font-size: x-small;
-    color: darkgrey;
+    color: var(--app-text);
     text-decoration: none;
-    opacity: 0.3;
+    opacity: 0.5;
 }

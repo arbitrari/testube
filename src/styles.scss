@@ -31,15 +31,58 @@ html {
   @include mat.input-theme($black-app-theme);
   @include mat.tooltip-theme($black-app-theme);
   @include mat.icon-theme($black-app-theme);
+
+  --app-bg: #000000;
+  --app-text: rgb(236, 236, 236);
+  --card-bg: #1a1a1a;
+  --card-border: rgba(255, 255, 255, 0.1);
+  --category-text: white;
+  --logo-tes: silver;
+  --logo-tube: white;
+  --dialog-container-color: #000000;
+  --dialog-subhead-color: #FFFFFF;
+  --dialog-supporting-text-color: #FFFFFF;
+  --toolbar-bg: #000000;
+  --fallback-shadow: #000;
+  --overflow-gradient: #000;
+  --settings-tip-bg: rgb(236, 236, 236);
+  --settings-tip-text: #000;
+}
+
+html.light-theme {
+  @include mat.toolbar-color($light-app-theme);
+  @include mat.button-color($light-app-theme);
+  @include mat.card-color($light-app-theme);
+  @include mat.snack-bar-color($light-app-theme);
+  @include mat.form-field-color($light-app-theme);
+  @include mat.input-color($light-app-theme);
+  @include mat.tooltip-color($light-app-theme);
+  @include mat.icon-color($light-app-theme);
+
+  --app-bg: #ffffff;
+  --app-text: rgb(33, 33, 33);
+  --card-bg: #f5f5f5;
+  --card-border: rgba(0, 0, 0, 0.1);
+  --category-text: #212121;
+  --logo-tes: #616161;
+  --logo-tube: #212121;
+  --dialog-container-color: #ffffff;
+  --dialog-subhead-color: #000000;
+  --dialog-supporting-text-color: #000000;
+  --toolbar-bg: #ffffff;
+  --fallback-shadow: #fff;
+  --overflow-gradient: #fff;
+  --settings-tip-bg: #333333;
+  --settings-tip-text: #ffffff;
 }
 
 :root {
-  --mat-dialog-container-color: #000000;
-  --mat-dialog-subhead-color: #FFFFFF;
-  --mat-dialog-supporting-text-color: #FFFFFF;
-  --mat-form-field-outlined-caret-color: #FFFFFF;
-  --mat-app-background-color: #000000;
-  --mat-app-text-color: rgb(236, 236, 236);
+  --mat-dialog-container-color: var(--dialog-container-color);
+  --mat-dialog-subhead-color: var(--dialog-subhead-color);
+  --mat-dialog-supporting-text-color: var(--dialog-supporting-text-color);
+  --mat-form-field-outlined-caret-color: var(--app-text);
+  --mat-app-background-color: var(--app-bg);
+  --mat-app-text-color: var(--app-text);
 }
 
 .cdk-overlay-dark-backdrop {
@@ -54,27 +97,13 @@ html {
 
 .mat-app-background,
 .mat-toolbar {
-  --mat-toolbar-container-background-color: #000000;
-  background-color: #000000;
-  color: rgb(236, 236, 236);
+  background-color: var(--toolbar-bg);
+  color: var(--app-text);
 }
 
 .mat-mdc-card {
-  background-color: #1a1a1a;
-  color: rgb(236, 236, 236);
-}
-
-.light-theme {
-  @include mat.elevation-classes();
-  @include mat.app-background();
-  @include mat.toolbar-color($light-app-theme);
-  @include mat.button-color($light-app-theme);
-  @include mat.card-color($light-app-theme);
-  @include mat.snack-bar-color($light-app-theme);
-  @include mat.form-field-color($light-app-theme);
-  @include mat.input-color($light-app-theme);
-  @include mat.tooltip-color($light-app-theme);
-  @include mat.icon-color($light-app-theme);
+  background-color: var(--card-bg);
+  color: var(--app-text);
 }
 
 body {

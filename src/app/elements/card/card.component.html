@@ -1,7 +1,7 @@
-<a mat-button [style.background]="color" [href]="source.url">
+<a mat-button [style.background]="color()" [href]="source.url">
   <mat-card-content>
-    @if (logo) {
-      <img [src]="logo" class="logo" [class.svg]="logo.endsWith('.svg')" (error)="logo = ''">
+    @if (logo()) {
+      <img [src]="logo()" class="logo" [class.svg]="logo().endsWith('.svg')" (error)="onLogoError()">
     } @else {
       <h2 class="fallback-title">{{source.name}}</h2>
     }

@@ -23,10 +23,10 @@ img.svg {
 }
 
 .fallback-title {
-    color: white;
+    color: var(--app-text);
     text-shadow:
-        1px 1px 0 #000,
-        -1px -1x 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000;
+        1px 1px 0 var(--fallback-shadow),
+        -1px -1px 0 var(--fallback-shadow),
+        1px -1px 0 var(--fallback-shadow),
+        -1px 1px 0 var(--fallback-shadow);
 }

@@ -26,6 +26,7 @@ html {
   @include mat.toolbar-theme($black-app-theme);
   @include mat.button-theme($black-app-theme);
   @include mat.card-theme($black-app-theme);
+  @include mat.checkbox-theme($black-app-theme);
   @include mat.snack-bar-theme($black-app-theme);
   @include mat.form-field-theme($black-app-theme);
   @include mat.input-theme($black-app-theme);
@@ -48,12 +49,14 @@ html {
   --settings-tip-bg: rgb(236, 236, 236);
   --settings-tip-text: #000;
   --footer-logo-filter: none;
+  --checkbox-checkmark: black;
 }
 
 html.light-theme {
   @include mat.toolbar-color($light-app-theme);
   @include mat.button-color($light-app-theme);
   @include mat.card-color($light-app-theme);
+  @include mat.checkbox-color($light-app-theme);
   @include mat.snack-bar-color($light-app-theme);
   @include mat.form-field-color($light-app-theme);
   @include mat.input-color($light-app-theme);
@@ -76,6 +79,7 @@ html.light-theme {
   --settings-tip-bg: #333333;
   --settings-tip-text: #ffffff;
   --footer-logo-filter: invert(1);
+  --checkbox-checkmark: white;
 }
 
 :root {

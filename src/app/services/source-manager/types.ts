@@ -797,8 +797,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#0c0e0f'
       },
       logos: {
-        dark: 'https://i.imgur.com/BdexlQP.png',
-        light: 'https://i.imgur.com/BdexlQP.png',
+        dark: 'https://about.kick.com/img/kick-logo.svg',
+        light: 'https://about.kick.com/img/kick-logo.svg',
       },
       visible: true
     }

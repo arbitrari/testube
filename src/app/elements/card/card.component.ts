@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, computed, inject, signal } from '@angular/core';
 import { Source } from '../../services/source-manager/types';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { ThemeService } from '../../services/theme/theme.service';
 
 
 @Component({
@@ -13,24 +14,24 @@ import { MatButtonModule } from '@angular/material/button';
       MatCardModule, MatButtonModule
     ]
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   @Input() source!: Source;
-  logo!: string;
-  color!: string;
 
-  constructor() { }
+  private themeService = inject(ThemeService);
+  logoFailed = signal(false);
 
-  ngOnInit() {
-    this.setLogo();
-    this.setColor();
+  logo = computed(() => {
+    if (this.logoFailed()) return '';
+    const mode = this.themeService.resolved();
+    return this.source.logos[mode] || this.source.logos.dark;
+  });
+
+  color = computed(() => {
+    const mode = this.themeService.resolved();
+    return this.source.colors[mode] || this.source.colors.dark;
+  });
+
+  onLogoError() {
+    this.logoFailed.set(true);
   }
-
-  setLogo() {
-    this.logo = this.source.logos.dark;
-  }
-
-  setColor() {
-    this.color = this.source.colors.dark;
-  }
-
 }

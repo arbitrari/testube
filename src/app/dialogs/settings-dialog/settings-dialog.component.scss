@@ -27,7 +27,7 @@ p {
 
   --mat-checkbox-unselected-icon-color: currentColor;
   --mat-checkbox-selected-icon-color: currentColor;
-  --mat-checkbox-selected-checkmark-color: black;
+  --mat-checkbox-selected-checkmark-color: var(--checkbox-checkmark);
   --mat-list-list-item-one-line-container-height: 50px;
 
   .mat-mdc-list-item-interactive:not(:last-child)::before {

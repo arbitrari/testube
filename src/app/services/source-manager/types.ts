@@ -660,8 +660,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#c2c2c2'
       },
       logos: {
-        dark: 'https://fonts.gstatic.com/s/i/productlogos/drive_2020q4/v8/web-64dp/logo_drive_2020q4_color_2x_web_64dp.png',
-        light: 'https://fonts.gstatic.com/s/i/productlogos/drive_2020q4/v8/web-64dp/logo_drive_2020q4_color_2x_web_64dp.png',
+        dark: 'https://www.gstatic.com/images/branding/productlogos/drive_2026/v1/web-48dp/logo_drive_2026_color_2x_web_48dp.png',
+        light: 'https://www.gstatic.com/images/branding/productlogos/drive_2026/v1/web-48dp/logo_drive_2026_color_2x_web_48dp.png',
       },
       visible: true
     }
@@ -745,8 +745,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#c2c2c2'
       },
       logos: {
-        dark: 'https://www.google.com/photos/static/2020/images/index/logo_photos_192px.svg',
-        light: 'https://www.google.com/photos/static/2020/images/index/logo_photos_192px.svg',
+        dark: 'https://www.gstatic.com/social/photosui/images/logo/2025/2x/photos_96dp.png',
+        light: 'https://www.gstatic.com/social/photosui/images/logo/2025/2x/photos_96dp.png',
       },
       visible: true
     }
@@ -916,8 +916,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#c2c2c2'
       },
       logos: {
-        dark: 'https://lh3.googleusercontent.com/9tLfTpdILdHDAvGrRm7GdbjWdpbWSMOa0csoQ8pUba9tLP8tq7M4Quks1xuMQAVnAxVfryiDXRzZ-KDnkPv8Sm4g_YFom1ltQHjQ6Q',
-        light: 'https://lh3.googleusercontent.com/9tLfTpdILdHDAvGrRm7GdbjWdpbWSMOa0csoQ8pUba9tLP8tq7M4Quks1xuMQAVnAxVfryiDXRzZ-KDnkPv8Sm4g_YFom1ltQHjQ6Q',
+        dark: 'https://upload.wikimedia.org/wikipedia/commons/a/a3/Google_Maps_icon_%282026%29.svg',
+        light: 'https://upload.wikimedia.org/wikipedia/commons/a/a3/Google_Maps_icon_%282026%29.svg',
       },
       visible: true
     }
@@ -1018,8 +1018,8 @@ export const DEFAULT_SOURCES: Map<string, Source> = new Map([
         light: '#c2c2c2'
       },
       logos: {
-        dark: `https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_${new Date().getDate()}_2x.png`,
-        light: `https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_${new Date().getDate()}_2x.png`,
+        dark: `https://www.gstatic.com/images/branding/productlogos/calendar_2026_${new Date().getDate()}/v2/png/calendar_2026_14_96dp.png`,
+        light: `https://www.gstatic.com/images/branding/productlogos/calendar_2026_${new Date().getDate()}/v2/png/calendar_2026_14_96dp.png`,
       },
       visible: true
     }

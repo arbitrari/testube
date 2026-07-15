@@ -97,6 +97,7 @@ html.light-theme {
 
 .mat-app-background,
 .mat-toolbar {
+  --mat-toolbar-container-background-color: var(--toolbar-bg);
   background-color: var(--toolbar-bg);
   color: var(--app-text);
 }

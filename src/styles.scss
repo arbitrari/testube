@@ -47,6 +47,7 @@ html {
   --overflow-gradient: #000;
   --settings-tip-bg: rgb(236, 236, 236);
   --settings-tip-text: #000;
+  --footer-logo-filter: none;
 }
 
 html.light-theme {
@@ -74,6 +75,7 @@ html.light-theme {
   --overflow-gradient: #fff;
   --settings-tip-bg: #333333;
   --settings-tip-text: #ffffff;
+  --footer-logo-filter: invert(1);
 }
 
 :root {

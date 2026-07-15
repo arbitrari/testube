@@ -1,6 +1,6 @@
 div, span {
     font-size: 15px;
-    opacity: 0.5;
+    opacity: 0.7;
     font-weight: 400;
     letter-spacing: 1.2px;
 }
@@ -17,16 +17,16 @@ div.creation {
         height: 18px;
         margin-bottom: 4px;
         width: auto;
-        filter: grayscale(100%);
-        opacity: 0.3;
+        filter: grayscale(100%) var(--footer-logo-filter);
+        opacity: 0.5;
     }
 }
 
 a {
     color: var(--app-text);
-
     svg {
         margin-top: -5px;
+        filter: var(--footer-logo-filter);
     }
 }
 

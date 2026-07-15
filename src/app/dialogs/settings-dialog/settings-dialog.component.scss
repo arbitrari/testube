@@ -7,6 +7,12 @@ p {
   margin-top: 0;
 }
 
+.theme-radio-group {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
 .reset-button {
   position: absolute;
   right: 24px;
@@ -28,13 +34,4 @@ p {
     border-bottom: 1px solid currentColor;
     opacity: 0.10;
   }
-}
-
-.coming-soon-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 72px;
-  opacity: 0.25;
 }

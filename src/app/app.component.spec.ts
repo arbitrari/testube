@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ describe('AppComponent', () => {
         RouterTestingModule
     ],
     declarations: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 }).compileComponents();
   }));
 
@@ -24,10 +26,12 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('testube');
   });
 
-  it('should render title', () => {
+  it('should render the app shell', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('testube app is running!');
+    const compiled: HTMLElement = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('app-toolbar')).toBeTruthy();
+    expect(compiled.querySelector('main.content router-outlet')).toBeTruthy();
+    expect(compiled.querySelector('app-footer')).toBeTruthy();
   });
 });

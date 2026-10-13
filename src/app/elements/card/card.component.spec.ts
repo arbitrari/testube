@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CardComponent } from './card.component';
+import { DEFAULT_SOURCES } from '../../services/source-manager/types';
 
 describe('CardComponent', () => {
   let component: CardComponent;
@@ -16,6 +17,7 @@ describe('CardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CardComponent);
     component = fixture.componentInstance;
+    component.source = DEFAULT_SOURCES.get('youtube')!;
     fixture.detectChanges();
   });
 

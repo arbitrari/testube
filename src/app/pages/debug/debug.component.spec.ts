@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
+import { provideRouter } from '@angular/router';
 import { DebugComponent } from './debug.component';
 
 describe('DebugComponent', () => {
@@ -8,7 +9,8 @@ describe('DebugComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [DebugComponent]
+    imports: [DebugComponent],
+    providers: [provideRouter([])]
 })
     .compileComponents();
   }));
